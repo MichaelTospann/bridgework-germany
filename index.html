@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BridgeWork Germany – Internationale Fachkräfte für den Mittelstand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a3a28;
+    --forest-mid: #214d34;
+    --green: #3d8f60;
+    --green-bright: #52c47e;
+    --mint: #baf2d0;
+    --cream: #f4f9f6;
+    --text: #142010;
+    --text-light: #526b5c;
+    --white: #ffffff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); overflow-x:hidden; }
+
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.2rem 4rem; display:flex; justify-content:space-between; align-items:center; background:rgba(26,58,40,0.97); backdrop-filter:blur(8px); border-bottom:1px solid rgba(82,196,126,0.15); }
+  .logo { font-family:'Playfair Display',serif; color:var(--white); font-size:1.4rem; }
+  .logo span { color:var(--green-bright); }
+  .nav-links { display:flex; gap:2.5rem; align-items:center; }
+  nav a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
+  nav a:hover { color:var(--mint); }
+  .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+
+  .hero { min-height:100vh; background:var(--forest); display:flex; align-items:center; padding:8rem 4rem 5rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; top:-10%; right:-5%; width:700px; height:700px; background:radial-gradient(circle, rgba(82,196,126,0.09) 0%, transparent 65%); pointer-events:none; }
+  .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--green-bright), transparent); }
+  .hero-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:5rem; align-items:center; position:relative; }
+  .hero-label { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green-bright); margin-bottom:1.5rem; }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,4vw,3.4rem); color:var(--white); line-height:1.2; margin-bottom:1.5rem; }
+  .hero h1 em { font-style:italic; color:var(--mint); }
+  .hero p { color:rgba(255,255,255,0.6); font-size:1.05rem; line-height:1.85; margin-bottom:2.5rem; font-weight:300; }
+  .hero-cta { display:inline-block; background:var(--green-bright); color:var(--forest); padding:1rem 2.2rem; font-weight:500; text-decoration:none; border-radius:2px; transition:all 0.2s; }
+  .hero-stats { display:flex; flex-direction:column; gap:1.2rem; }
+  .stat-card { background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:1.6rem 1.8rem; position:relative; }
+  .stat-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--green-bright); }
+  .stat-number { font-family:'Playfair Display',serif; font-size:2rem; color:var(--mint); line-height:1; margin-bottom:0.4rem; }
+  .stat-label { color:rgba(255,255,255,0.5); font-size:0.82rem; font-weight:300; line-height:1.5; }
+
+  section { padding:5rem 4rem; }
+  .section-inner { max-width:1100px; margin:0 auto; }
+  .section-label { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green); margin-bottom:1rem; }
+  .section-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3vw,2.5rem); color:var(--forest); margin-bottom:1.2rem; line-height:1.25; }
+  .section-sub { color:var(--text-light); font-size:1rem; line-height:1.8; max-width:580px; font-weight:300; }
+
+  .problem { background:var(--white); }
+  .problem-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-top:3rem; }
+  .problem-points { display:flex; flex-direction:column; gap:1.5rem; }
+  .problem-point { display:flex; gap:1.2rem; align-items:flex-start; }
+  .point-icon { width:36px; height:36px; background:rgba(61,143,96,0.08); border:1px solid var(--green); border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--green); }
+  .point-text h4 { font-weight:500; margin-bottom:0.3rem; font-size:0.95rem; color:var(--forest); }
+  .point-text p { color:var(--text-light); font-size:0.88rem; line-height:1.65; font-weight:300; }
+  .problem-quote { background:var(--forest); color:var(--white); padding:2.5rem; border-radius:4px; position:relative; }
+  .problem-quote::before { content:'"'; font-family:'Playfair Display',serif; font-size:5rem; color:var(--green-bright); position:absolute; top:-0.5rem; left:1.5rem; line-height:1; opacity:0.3; }
+  .problem-quote blockquote { font-size:1rem; line-height:1.8; font-style:italic; color:rgba(255,255,255,0.82); font-weight:300; margin-top:1.5rem; }
+  .problem-quote cite { display:block; margin-top:1.2rem; font-size:0.78rem; color:var(--green-bright); font-style:normal; letter-spacing:0.1em; text-transform:uppercase; }
+
+  .how { background:var(--cream); }
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3rem; }
+  .step { padding:2rem; background:var(--white); border-radius:4px; border-top:3px solid var(--green-bright); }
+  .step-number { font-family:'Playfair Display',serif; font-size:3rem; color:rgba(61,143,96,0.13); line-height:1; margin-bottom:1rem; }
+  .step h3 { font-size:1rem; font-weight:500; margin-bottom:0.7rem; color:var(--forest); }
+  .step p { font-size:0.88rem; color:var(--text-light); line-height:1.7; font-weight:300; }
+
+  .pricing { background:var(--forest-mid); color:var(--white); }
+  .pricing .section-title { color:var(--white); }
+  .pricing .section-label { color:var(--green-bright); }
+  .pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:3rem; align-items:start; }
+  .pricing-card { background:rgba(255,255,255,0.05); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:2.5rem; }
+  .pricing-card h3 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--mint); margin-bottom:0.5rem; }
+  .pricing-card .price-note { font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:1.5rem; font-weight:300; }
+  .pricing-items { list-style:none; display:flex; flex-direction:column; gap:0.9rem; }
+  .pricing-items li { display:flex; align-items:flex-start; gap:0.8rem; font-size:0.88rem; color:rgba(255,255,255,0.72); font-weight:300; line-height:1.5; }
+  .pricing-items li::before { content:'→'; color:var(--green-bright); flex-shrink:0; }
+  .risk-box { background:rgba(82,196,126,0.06); border:1px solid rgba(82,196,126,0.2); border-radius:4px; padding:2rem; grid-column:1/-1; }
+  .risk-box h3 { font-weight:500; color:var(--mint); margin-bottom:1.2rem; font-size:0.92rem; letter-spacing:0.06em; text-transform:uppercase; }
+  .risk-phases { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+  .risk-phase { text-align:center; padding:1.2rem; background:rgba(255,255,255,0.04); border-radius:3px; }
+  .risk-phase .phase-label { font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--green-bright); margin-bottom:0.5rem; }
+  .risk-phase p { font-size:0.84rem; color:rgba(255,255,255,0.6); font-weight:300; line-height:1.55; }
+
+  .ethical { background:var(--white); }
+  .ethical-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:3rem; align-items:start; }
+  .ilo-badge { display:inline-flex; align-items:center; gap:0.6rem; background:rgba(61,143,96,0.07); border:1px solid var(--green); border-radius:2px; padding:0.5rem 1rem; font-size:0.78rem; color:var(--green); font-weight:500; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:1.5rem; }
+  .ethical-points { display:flex; flex-direction:column; gap:1rem; }
+  .ethical-point { display:flex; gap:1rem; align-items:flex-start; padding:1.1rem 1.2rem; background:var(--cream); border-radius:3px; border-left:3px solid var(--green-bright); }
+  .ethical-point .check { color:var(--green-bright); font-size:1rem; flex-shrink:0; font-weight:700; }
+  .ethical-point p { font-size:0.88rem; color:var(--text); line-height:1.6; }
+  .employer-pays { background:var(--forest); color:var(--white); border-radius:4px; padding:2rem; margin-top:1.5rem; text-align:center; }
+  .employer-pays .ep-label { font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--green-bright); margin-bottom:0.8rem; }
+  .employer-pays .ep-title { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--mint); margin-bottom:0.8rem; line-height:1.3; }
+  .employer-pays p { font-size:0.85rem; color:rgba(255,255,255,0.55); font-weight:300; line-height:1.65; }
+
+  .sectors { background:var(--cream); }
+  .sector-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
+  .sector-card { background:var(--white); border-radius:4px; padding:2rem 1.5rem; border-bottom:3px solid transparent; transition:border-color 0.3s, transform 0.2s; }
+  .sector-card:hover { border-color:var(--green-bright); transform:translateY(-2px); }
+  .sector-icon { font-size:1.8rem; margin-bottom:0.9rem; }
+  .sector-card h3 { font-weight:500; font-size:0.95rem; margin-bottom:0.6rem; color:var(--forest); }
+  .sector-card p { font-size:0.84rem; color:var(--text-light); line-height:1.65; font-weight:300; }
+
+  .contact { background:var(--forest); color:var(--white); }
+  .contact .section-title { color:var(--white); }
+  .contact .section-label { color:var(--green-bright); }
+  .contact-inner { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:3rem; align-items:start; }
+  .contact-info { display:flex; flex-direction:column; gap:1.5rem; }
+  .contact-item { display:flex; gap:1rem; align-items:flex-start; }
+  .ci-icon { width:40px; height:40px; background:rgba(82,196,126,0.1); border:1px solid rgba(82,196,126,0.22); border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--green-bright); }
+  .ci-text { padding-top:0.2rem; }
+  .ci-label { font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.35); margin-bottom:0.3rem; }
+  .ci-value { color:var(--white); font-size:0.95rem; text-decoration:none; }
+  a.ci-value:hover { color:var(--mint); }
+  .contact-note { background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:2rem; }
+  .contact-note h3 { font-weight:500; font-size:0.92rem; color:var(--mint); margin-bottom:1rem; }
+  .contact-note p { font-size:0.87rem; color:rgba(255,255,255,0.55); line-height:1.75; font-weight:300; margin-bottom:0.8rem; }
+
+  footer { background:#0c1f14; color:rgba(255,255,255,0.3); padding:2rem 4rem; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; }
+  footer a { color:rgba(255,255,255,0.3); text-decoration:none; }
+  footer a:hover { color:var(--green-bright); }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .hero-content > * { animation:fadeUp 0.7s ease both; }
+
+  @media (max-width:768px) {
+    nav { padding:1rem 1.5rem; }
+    .nav-links { display:none; }
+    section { padding:3.5rem 1.5rem; }
+    .hero { padding:7rem 1.5rem 4rem; }
+    .hero-inner, .problem-grid, .pricing-grid, .ethical-grid, .contact-inner { grid-template-columns:1fr; gap:2.5rem; }
+    .steps, .sector-cards, .risk-phases { grid-template-columns:1fr; }
+    footer { flex-direction:column; gap:1rem; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Bridge<span>Work</span> Germany</div>
+  <div class="nav-links">
+    <a href="#prozess">Prozess</a>
+    <a href="#branchen">Branchen</a>
+    <a href="#ethisch">Unser Ansatz</a>
+    <a href="#kontakt" class="nav-cta">Erstgespräch anfragen</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-label">Internationale Personalvermittlung · Mittelstand · Deutschland</p>
+      <h1>Wir machen es möglich.<br><em>Verlässliche Fachkräfte.</em><br>Strukturiert vermittelt.</h1>
+      <p>Inhabergeführte Betriebe finden keine Mitarbeitenden mehr. Wir lösen dieses Problem – mit international vermittelten Arbeitskräften, die ankommen wollen und bleiben. Ethisch, organisiert, mit minimalem Risiko für Sie.</p>
+      <a href="#kontakt" class="hero-cta">Jetzt kostenloses Erstgespräch anfragen</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-number">44.000+</div>
+        <div class="stat-label">fehlende Arbeitskräfte allein im deutschen Gastgewerbe (2026)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2–3</div>
+        <div class="stat-label">Personen pro Gruppe – für stabile, nachhaltige Integration</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">0 €</div>
+        <div class="stat-label">Kosten für Bewerber – der Arbeitgeber zahlt, niemals der Kandidat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="section-inner">
+    <p class="section-label">Die Lage am Markt</p>
+    <h2 class="section-title">Der lokale Bewerbermarkt<br>ist ausgeschöpft.</h2>
+    <div class="problem-grid">
+      <div class="problem-points">
+        <div class="problem-point">
+          <div class="point-icon">↓</div>
+          <div class="point-text">
+            <h4>Fachkräftemangel in Gastgewerbe, Bau, Logistik &amp; Pflege</h4>
+            <p>Über 44.000 fehlende Mitarbeitende allein im Gastgewerbe. Inhaber führen Schichten selbst oder schließen früher – weil niemand mehr kommt.</p>
+          </div>
+        </div>
+        <div class="problem-point">
+          <div class="point-icon">✗</div>
+          <div class="point-text">
+            <h4>Aushilfen fehlen genau dann, wenn Sie sie brauchen</h4>
+            <p>Studenten und Teilzeitkräfte sind unzuverlässig an Wochenenden und Feiertagen. Internationale Vollzeitkräfte suchen Stabilität – das ist Ihr Vorteil.</p>
+          </div>
+        </div>
+        <div class="problem-point">
+          <div class="point-icon">⏱</div>
+          <div class="point-text">
+            <h4>Internationale Rekrutierung ist zeitintensiv</h4>
+            <p>Visa, Behörden, Wohnungssuche, Onboarding – inhabergeführte Betriebe haben keine HR-Abteilung dafür. Wir begleiten den Prozess von A bis Z.</p>
+          </div>
+        </div>
+      </div>
+      <div class="problem-quote">
+        <blockquote>„Verlässlichkeit und Vollzeitbereitschaft – das ist, was inhabergeführte Betriebe heute suchen und auf dem lokalen Markt nicht mehr finden."</blockquote>
+        <cite>Marktanalyse Gastgewerbe Deutschland, 2026</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="prozess">
+  <div class="section-inner">
+    <p class="section-label">Unser Prozess</p>
+    <h2 class="section-title">Vom ersten Gespräch<br>bis zum ersten Arbeitstag.</h2>
+    <p class="section-sub">Wir begleiten beide Seiten durch jeden Schritt – strukturiert, transparent und mit klaren Verantwortlichkeiten.</p>
+    <div class="steps">
+      <div class="step"><div class="step-number">01</div><h3>Erstgespräch &amp; Bedarfsanalyse</h3><p>Wir klären: Welche Positionen, wie viele Personen, welche Anforderungen. Digital, in 20–30 Minuten. Kein Aufwand für Sie, keine Kosten.</p></div>
+      <div class="step"><div class="step-number">02</div><h3>Matching &amp; Kandidatenauswahl</h3><p>Wir präsentieren passende, vorqualifizierte Kandidaten. Kleine Gruppen von 2–3 Personen – für langfristige Stabilität.</p></div>
+      <div class="step"><div class="step-number">03</div><h3>Integration &amp; Begleitung</h3><p>Visa, Behördengänge, Unterkunft, erste Schritte in Deutschland – wir koordinieren den gesamten Prozess.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="section-inner">
+    <p class="section-label">Konditionen</p>
+    <h2 class="section-title">Transparentes Modell.<br>Kalkulierbares Risiko.</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Was wir leisten</h3>
+        <p class="price-note">Im Rahmen der Vermittlung inklusive</p>
+        <ul class="pricing-items">
+          <li>Kandidatenauswahl nach Ihren Anforderungen</li>
+          <li>Visa- und Behördenkoordination</li>
+          <li>Unterstützung bei der Wohnungssuche</li>
+          <li>Kulturelles Onboarding der Kandidaten</li>
+          <li>Willkommensmappe &amp; erste Schritte in Deutschland</li>
+          <li>Nachbetreuung nach Arbeitsaufnahme</li>
+          <li>Prüfung aller Arbeitsverträge auf faire Konditionen</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>Was Sie zahlen</h3>
+        <p class="price-note">Gestaffelt – kein Vorausrisiko</p>
+        <ul class="pricing-items">
+          <li>Vergütung orientiert sich an 3–4 Monatsgehältern pro vermittelter Person</li>
+          <li>Keine Vorauszahlung – 3-phasiges gestaffeltes Modell</li>
+          <li>Abschlusszahlung erst wenn die Person stabil im Betrieb ist</li>
+          <li>Kostenloser Erstkontakt &amp; Bedarfsanalyse</li>
+          <li>Bewerber zahlen niemals – Kosten trägt ausschließlich der Arbeitgeber</li>
+        </ul>
+      </div>
+      <div class="risk-box">
+        <h3>Das 3-Phasen Zahlungsmodell</h3>
+        <div class="risk-phases">
+          <div class="risk-phase"><div class="phase-label">Phase 1 · Vertragsstart</div><p>Erster Teil bei Auftragsbestätigung</p></div>
+          <div class="risk-phase"><div class="phase-label">Phase 2 · Anreise</div><p>Zweiter Teil bei Arbeitsaufnahme</p></div>
+          <div class="risk-phase"><div class="phase-label">Phase 3 · Integration</div><p>Abschlusszahlung nach stabiler Integration</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ethical" id="ethisch">
+  <div class="section-inner">
+    <p class="section-label">Unser Ansatz</p>
+    <h2 class="section-title">Ethical Recruitment.<br>Nach ILO-Standard.</h2>
+    <div class="ethical-grid">
+      <div>
+        <div class="ilo-badge">✓ ILO Employer Pays Principle</div>
+        <p class="section-sub" style="max-width:100%; margin-bottom:1.5rem">Wir folgen den internationalen Standards der International Labour Organization (ILO). Keine Gebühren für Bewerber, transparente Verträge, faire Löhne.</p>
+        <div class="employer-pays">
+          <div class="ep-label">Grundsatz</div>
+          <div class="ep-title">Der Arbeitgeber zahlt.<br>Niemals der Bewerber.</div>
+          <p>Vermittlungsgebühren, Visakosten, Reisekosten – all das trägt ausschließlich der Arbeitgeber.</p>
+        </div>
+      </div>
+      <div class="ethical-points">
+        <div class="ethical-point"><span class="check">✓</span><p>Nullkosten für Bewerber – ILO Employer Pays Principle</p></div>
+        <div class="ethical-point"><span class="check">✓</span><p>Prüfung aller Arbeitsverträge – keine Dumpinglöhne</p></div>
+        <div class="ethical-point"><span class="check">✓</span><p>Vollständige Transparenz über Arbeitsbedingungen und Rechte</p></div>
+        <div class="ethical-point"><span class="check">✓</span><p>Willkommensmappe &amp; strukturiertes Onboarding</p></div>
+        <div class="ethical-point"><span class="check">✓</span><p>Nachbetreuung &amp; Feedbacksystem</p></div>
+        <div class="ethical-point"><span class="check">✓</span><p>Keine versteckten Kosten für keine Seite</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectors" id="branchen">
+  <div class="section-inner">
+    <p class="section-label">Branchen</p>
+    <h2 class="section-title">Für welche Betriebe wir arbeiten</h2>
+    <p class="section-sub">Inhabergeführte KMU mit echtem Personalbedarf – das ist unser Fokus.</p>
+    <div class="sector-cards">
+      <div class="sector-card"><div class="sector-icon">🏨</div><h3>Hotel &amp; Gastgewerbe</h3><p>Housekeeping, Küchenhilfe, Frühstücksservice, Reinigung.</p></div>
+      <div class="sector-card"><div class="sector-icon">🔨</div><h3>Bau &amp; Handwerk</h3><p>Bauhelfer, Montageunterstützung, Zuarbeiter.</p></div>
+      <div class="sector-card"><div class="sector-icon">🚚</div><h3>Logistik &amp; Spedition</h3><p>Lagerhelfer, Kommissionierer, Fahrer.</p></div>
+      <div class="sector-card"><div class="sector-icon">🏥</div><h3>Pflege &amp; Soziales</h3><p>Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaft.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="section-inner">
+    <p class="section-label">Kontakt</p>
+    <h2 class="section-title">Sprechen wir.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.55); max-width:100%">Das erste Gespräch ist kostenlos und unverbindlich. In 20 Minuten klären wir, ob und wie wir Ihnen helfen können.</p>
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="ci-icon">✉</div>
+          <div class="ci-text">
+            <div class="ci-label">E-Mail</div>
+            <a href="mailto:kontakt@bridgework-germany.de" class="ci-value">kontakt@bridgework-germany.de</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">☎</div>
+          <div class="ci-text">
+            <div class="ci-label">Telefon</div>
+            <a href="tel:+491789755191" class="ci-value">+49 178 9755191</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">⏱</div>
+          <div class="ci-text">
+            <div class="ci-label">Erstgespräch</div>
+            <span class="ci-value">Digital · 20–30 Minuten · kostenlos</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-note">
+        <h3>Was Sie im Erstgespräch erwartet</h3>
+        <p>Wir fragen Sie nach Ihrem konkreten Bedarf – welche Positionen, wie viele Personen, wann. Keine Verkaufspräsentation, kein Druck.</p>
+        <p>Wenn es passt, erklären wir den genauen Prozess und das Kostenmodell transparent. Wenn nicht, sagen wir das auch direkt.</p>
+        <p>Rufen Sie einfach an oder schreiben Sie eine kurze Mail. Wir melden uns innerhalb von 24 Stunden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Bridge<span style="color:var(--green-bright)">Work</span> Germany</div>
+  <div>&#169; 2026 BridgeWork Germany</div>
+  <div><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+</footer>
+
+</body>
+</html>
