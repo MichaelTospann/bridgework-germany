@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Für Bewerber – BridgeWork Germany</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a3a28;
+    --forest-mid: #214d34;
+    --green: #3d8f60;
+    --green-bright: #52c47e;
+    --mint: #baf2d0;
+    --cream: #f4f9f6;
+    --text: #142010;
+    --text-light: #526b5c;
+    --white: #ffffff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); overflow-x:hidden; }
+
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.2rem 4rem; display:flex; justify-content:space-between; align-items:center; background:rgba(26,58,40,0.97); backdrop-filter:blur(8px); border-bottom:1px solid rgba(82,196,126,0.15); }
+  .logo { font-family:'Playfair Display',serif; color:var(--white); font-size:1.4rem; text-decoration:none; }
+  .logo span { color:var(--green-bright); }
+  .nav-links { display:flex; gap:2.5rem; align-items:center; }
+  nav a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
+  nav a:hover { color:var(--mint); }
+  nav a.active { color:var(--green-bright); }
+  .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+
+  .hero { min-height:90vh; background:var(--forest); display:flex; align-items:center; padding:8rem 4rem 5rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; top:-10%; right:-5%; width:700px; height:700px; background:radial-gradient(circle, rgba(82,196,126,0.09) 0%, transparent 65%); pointer-events:none; }
+  .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--green-bright), transparent); }
+  .hero-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:5rem; align-items:center; position:relative; }
+  .hero-label { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green-bright); margin-bottom:1.5rem; }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,4vw,3.4rem); color:var(--white); line-height:1.2; margin-bottom:1.5rem; }
+  .hero h1 em { font-style:italic; color:var(--mint); }
+  .hero p { color:rgba(255,255,255,0.6); font-size:1.05rem; line-height:1.85; margin-bottom:2.5rem; font-weight:300; }
+  .hero-cta { display:inline-block; background:var(--green-bright); color:var(--forest); padding:1rem 2.2rem; font-weight:500; text-decoration:none; border-radius:2px; transition:all 0.2s; }
+  .hero-cta:hover { background:var(--mint); }
+
+  .hero-cards { display:flex; flex-direction:column; gap:1.2rem; }
+  .hero-card { background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:1.6rem 1.8rem; position:relative; }
+  .hero-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--green-bright); }
+  .hero-card-icon { font-size:1.4rem; margin-bottom:0.5rem; }
+  .hero-card h4 { color:var(--mint); font-size:0.95rem; font-weight:500; margin-bottom:0.3rem; }
+  .hero-card p { color:rgba(255,255,255,0.5); font-size:0.84rem; font-weight:300; line-height:1.55; }
+
+  section { padding:5rem 4rem; }
+  .section-inner { max-width:1100px; margin:0 auto; }
+  .section-label { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green); margin-bottom:1rem; }
+  .section-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3vw,2.5rem); color:var(--forest); margin-bottom:1.2rem; line-height:1.25; }
+  .section-sub { color:var(--text-light); font-size:1rem; line-height:1.8; max-width:580px; font-weight:300; }
+
+  /* Kostenlos Banner */
+  .free-banner { background:var(--green-bright); padding:1.2rem 4rem; text-align:center; }
+  .free-banner p { font-size:0.92rem; font-weight:500; color:var(--forest); }
+  .free-banner strong { font-weight:700; }
+
+  /* Wie es funktioniert */
+  .how { background:var(--white); }
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
+  .step { padding:2rem; background:var(--cream); border-radius:4px; border-top:3px solid var(--green-bright); }
+  .step-number { font-family:'Playfair Display',serif; font-size:3rem; color:rgba(61,143,96,0.13); line-height:1; margin-bottom:1rem; }
+  .step h3 { font-size:0.95rem; font-weight:500; margin-bottom:0.7rem; color:var(--forest); }
+  .step p { font-size:0.85rem; color:var(--text-light); line-height:1.7; font-weight:300; }
+
+  /* Was wir bieten */
+  .offer { background:var(--cream); }
+  .offer-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-top:3rem; align-items:start; }
+  .offer-points { display:flex; flex-direction:column; gap:1rem; }
+  .offer-point { display:flex; gap:1rem; align-items:flex-start; padding:1.2rem; background:var(--white); border-radius:3px; border-left:3px solid var(--green-bright); }
+  .offer-point .check { color:var(--green-bright); font-size:1rem; flex-shrink:0; font-weight:700; }
+  .offer-point div h4 { font-size:0.92rem; font-weight:500; color:var(--forest); margin-bottom:0.2rem; }
+  .offer-point div p { font-size:0.84rem; color:var(--text-light); line-height:1.6; font-weight:300; }
+  .visa-box { background:var(--forest); color:var(--white); border-radius:4px; padding:2.5rem; }
+  .visa-box .vb-label { font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--green-bright); margin-bottom:1rem; }
+  .visa-box h3 { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--mint); margin-bottom:1rem; line-height:1.3; }
+  .visa-box p { font-size:0.88rem; color:rgba(255,255,255,0.6); line-height:1.75; font-weight:300; margin-bottom:0.8rem; }
+  .visa-box p:last-child { margin-bottom:0; }
+
+  /* Anforderungen */
+  .requirements { background:var(--white); }
+  .req-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+  .req-card { background:var(--cream); border-radius:4px; padding:2rem; border-bottom:3px solid transparent; }
+  .req-card.required { border-color:var(--green-bright); }
+  .req-card.optional { border-color:rgba(61,143,96,0.3); }
+  .req-tag { font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:0.8rem; }
+  .req-card h3 { font-size:1rem; font-weight:500; color:var(--forest); margin-bottom:0.6rem; }
+  .req-card p { font-size:0.85rem; color:var(--text-light); line-height:1.65; font-weight:300; }
+
+  /* Branchen */
+  .sectors { background:var(--forest-mid); }
+  .sectors .section-title { color:var(--white); }
+  .sectors .section-label { color:var(--green-bright); }
+  .sectors .section-sub { color:rgba(255,255,255,0.5); }
+  .sector-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
+  .sector-card { background:rgba(255,255,255,0.05); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:2rem 1.5rem; transition:border-color 0.3s; }
+  .sector-card:hover { border-color:var(--green-bright); }
+  .sector-icon { font-size:1.8rem; margin-bottom:0.9rem; }
+  .sector-card h3 { font-weight:500; font-size:0.95rem; margin-bottom:0.6rem; color:var(--mint); }
+  .sector-card p { font-size:0.84rem; color:rgba(255,255,255,0.45); line-height:1.65; font-weight:300; }
+
+  /* Kontakt */
+  .contact { background:var(--forest); color:var(--white); }
+  .contact .section-title { color:var(--white); }
+  .contact .section-label { color:var(--green-bright); }
+  .contact-inner { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:3rem; align-items:start; }
+  .contact-info { display:flex; flex-direction:column; gap:1.5rem; }
+  .contact-item { display:flex; gap:1rem; align-items:flex-start; }
+  .ci-icon { width:40px; height:40px; background:rgba(82,196,126,0.1); border:1px solid rgba(82,196,126,0.22); border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--green-bright); }
+  .ci-text { padding-top:0.2rem; }
+  .ci-label { font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.35); margin-bottom:0.3rem; }
+  .ci-value { color:var(--white); font-size:0.95rem; text-decoration:none; }
+  a.ci-value:hover { color:var(--mint); }
+  .contact-note { background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:2rem; }
+  .contact-note h3 { font-weight:500; font-size:0.92rem; color:var(--mint); margin-bottom:1rem; }
+  .contact-note p { font-size:0.87rem; color:rgba(255,255,255,0.55); line-height:1.75; font-weight:300; margin-bottom:0.8rem; }
+  .contact-note p:last-child { margin-bottom:0; }
+
+  footer { background:#0c1f14; color:rgba(255,255,255,0.3); padding:2rem 4rem; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; }
+  footer a { color:rgba(255,255,255,0.3); text-decoration:none; }
+  footer a:hover { color:var(--green-bright); }
+
+  @media (max-width:768px) {
+    nav { padding:1rem 1.5rem; }
+    .nav-links { display:none; }
+    .free-banner { padding:1rem 1.5rem; }
+    section { padding:3.5rem 1.5rem; }
+    .hero { padding:7rem 1.5rem 4rem; }
+    .hero-inner, .offer-grid, .contact-inner { grid-template-columns:1fr; gap:2.5rem; }
+    .steps, .req-grid, .sector-cards { grid-template-columns:1fr; }
+    footer { flex-direction:column; gap:1rem; text-align:center; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRHHB7GQGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MRHHB7GQGB');
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Bridge<span>Work</span> Germany</a>
+  <div class="nav-links">
+    <a href="index.html">Für Unternehmen</a>
+    <a href="bewerber.html" class="active">Für Bewerber</a>
+    <a href="mailto:kontakt@bridgework-germany.de" class="nav-cta">Jetzt bewerben</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-label">Ihr Weg nach Deutschland · Kostenlos · Strukturiert</p>
+      <h1>Arbeiten in Deutschland.<br><em>Wir begleiten Sie.</em><br>Von Anfang an.</h1>
+      <p>Sie haben Erfahrung, Motivation und den Wunsch, in Deutschland zu arbeiten. Wir verbinden Sie mit inhabergeführten Betrieben, die genau Sie suchen – und begleiten Sie durch den gesamten Prozess. Visa, Unterkunft, erster Tag.</p>
+      <a href="mailto:kontakt@bridgework-germany.de" class="hero-cta">Jetzt Kontakt aufnehmen</a>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <div class="hero-card-icon">🎯</div>
+        <h4>Kostenlos für Bewerber</h4>
+        <p>Unsere Vermittlung ist für Sie vollständig kostenlos. Keine Gebühren, keine versteckten Kosten. Der Arbeitgeber trägt alle Kosten.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🛂</div>
+        <h4>Visa-Unterstützung inklusive</h4>
+        <p>Wir begleiten Sie durch den Visa-Prozess – Unterlagen, Behördenkommunikation, Koordination. Sie sind nicht allein.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🤝</div>
+        <h4>Persönliche Betreuung</h4>
+        <p>Wir vermitteln keine Massen. Kleine Gruppen, echter Kontakt, ehrliche Kommunikation über alle Schritte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="free-banner">
+  <p><strong>Wichtig:</strong> Für Bewerber entstehen keinerlei Vermittlungsgebühren. Alle Kosten trägt ausschließlich der Arbeitgeber. Das ist unser Grundsatz.</p>
+</div>
+
+<section class="how">
+  <div class="section-inner">
+    <p class="section-label">Ihr Weg mit uns</p>
+    <h2 class="section-title">So funktioniert die Vermittlung.</h2>
+    <p class="section-sub">Vier Schritte von der ersten Nachricht bis zum ersten Arbeitstag in Deutschland.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Erstkontakt per E-Mail</h3>
+        <p>Schreiben Sie uns mit Ihren Erfahrungen, Ihrer Branche und Ihren Sprachkenntnissen. Kein aufwändiges Formular – eine kurze Mail genügt.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Kennenlerngespräch</h3>
+        <p>Wir vereinbaren einen kurzen Videocall. Wir lernen Sie kennen und klären, welche Stellen und Regionen zu Ihnen passen.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Matching & Angebot</h3>
+        <p>Wir suchen aktiv nach passenden Arbeitgebern für Sie. Sie entscheiden, ob das Angebot für Sie stimmt. Kein Druck.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Visa & Anreise</h3>
+        <p>Wir begleiten Sie durch den Visa-Prozess und koordinieren Ihre Anreise. Sie kommen vorbereitet an.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="section-inner">
+    <p class="section-label">Was wir bieten</p>
+    <h2 class="section-title">Unsere Unterstützung<br>für Sie.</h2>
+    <div class="offer-grid">
+      <div class="offer-points">
+        <div class="offer-point">
+          <span class="check">✓</span>
+          <div>
+            <h4>Jobvermittlung in Deutschland</h4>
+            <p>Wir verbinden Sie mit inhabergeführten Betrieben die verlässliche, engagierte Mitarbeitende suchen.</p>
+          </div>
+        </div>
+        <div class="offer-point">
+          <span class="check">✓</span>
+          <div>
+            <h4>Visa-Prozess Begleitung</h4>
+            <p>Wir unterstützen Sie bei der Zusammenstellung aller nötigen Unterlagen und begleiten den Behördenprozess.</p>
+          </div>
+        </div>
+        <div class="offer-point">
+          <span class="check">✓</span>
+          <div>
+            <h4>Unterstützung bei der Unterkunft</h4>
+            <p>Wo möglich koordinieren wir gemeinsam mit dem Arbeitgeber eine Wohnlösung für Ihre erste Zeit.</p>
+          </div>
+        </div>
+        <div class="offer-point">
+          <span class="check">✓</span>
+          <div>
+            <h4>Willkommensmappe & erste Schritte</h4>
+            <p>Informationen über Ihren neuen Wohnort, Ihre Rechte als Arbeitnehmer, wichtige Behörden und Alltagshilfen.</p>
+          </div>
+        </div>
+        <div class="offer-point">
+          <span class="check">✓</span>
+          <div>
+            <h4>Nachbetreuung</h4>
+            <p>Auch nach Ihrer Ankunft sind wir ansprechbar. Wir wollen dass Sie ankommen – und bleiben können.</p>
+          </div>
+        </div>
+      </div>
+      <div class="visa-box">
+        <div class="vb-label">Visa & Aufenthalt</div>
+        <h3>Der Weg nach Deutschland ist organisierbar.</h3>
+        <p>Viele Menschen denken, das Arbeitsvisum für Deutschland sei unüberwindbar. In Wirklichkeit gibt es klare Wege – besonders wenn ein konkretes Jobangebot vorliegt.</p>
+        <p>Das Fachkräfteeinwanderungsgesetz hat die Möglichkeiten deutlich erweitert. Wir kennen den Prozess und begleiten Sie Schritt für Schritt.</p>
+        <p>Die Visagebühr beim deutschen Konsulat (ca. 75 €) trägt der Bewerber selbst – alle weiteren Prozesskosten übernimmt der Arbeitgeber im Rahmen der Vermittlung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="requirements">
+  <div class="section-inner">
+    <p class="section-label">Voraussetzungen</p>
+    <h2 class="section-title">Was Sie mitbringen sollten.</h2>
+    <p class="section-sub">Wir vermitteln keine Idealbilder – sondern Menschen mit echtem Willen zu arbeiten. Das zählt mehr als perfekte Lebensläufe.</p>
+    <div class="req-grid">
+      <div class="req-card required">
+        <div class="req-tag">Voraussetzung</div>
+        <h3>Deutschkenntnisse mind. B1</h3>
+        <p>Für die meisten Stellen im Gastgewerbe, Pflege und Service benötigen Sie solide Grundkenntnisse in Deutsch. B1 ist unser Standard – B2 oder höher eröffnet weitere Möglichkeiten.</p>
+      </div>
+      <div class="req-card required">
+        <div class="req-tag">Voraussetzung</div>
+        <h3>Berufserfahrung in der Branche</h3>
+        <p>Sie haben praktische Erfahrung in Ihrem Bereich – sei es Housekeeping, Küche, Logistik, Pflege oder Handwerk. Quereinsteiger sind in bestimmten Bereichen willkommen.</p>
+      </div>
+      <div class="req-card optional">
+        <div class="req-tag">Von Vorteil</div>
+        <h3>Weitere Sprachen & Flexibilität</h3>
+        <p>Englisch, Französisch oder weitere Sprachen sind in vielen Betrieben ein echter Bonus. Umzugsbereitschaft erhöht Ihre Chancen erheblich.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectors">
+  <div class="section-inner">
+    <p class="section-label">Branchen</p>
+    <h2 class="section-title">In diesen Bereichen vermitteln wir.</h2>
+    <p class="section-sub">Inhabergeführte Betriebe in ganz Deutschland – mit echtem Personalbedarf.</p>
+    <div class="sector-cards">
+      <div class="sector-card">
+        <div class="sector-icon">🏨</div>
+        <h3>Hotel & Gastgewerbe</h3>
+        <p>Housekeeping, Zimmerreinigung, Frühstücksservice, Küchenhilfe, Service.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🔨</div>
+        <h3>Bau & Handwerk</h3>
+        <p>Bauhelfer, Montageunterstützung, Zuarbeiter in handwerklichen Betrieben.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🚚</div>
+        <h3>Logistik & Spedition</h3>
+        <p>Lagerhelfer, Kommissionierer, Fahrer mit entsprechender Qualifikation.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏥</div>
+        <h3>Pflege & Soziales</h3>
+        <p>Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaftskräfte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="section-inner">
+    <p class="section-label">Kontakt</p>
+    <h2 class="section-title">Schreiben Sie uns.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.55); max-width:100%">Eine kurze Mail mit Ihren Erfahrungen und Ihrem Deutschniveau genügt. Wir melden uns innerhalb von 48 Stunden.</p>
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="ci-icon">✉</div>
+          <div class="ci-text">
+            <div class="ci-label">E-Mail</div>
+            <a href="mailto:kontakt@bridgework-germany.de" class="ci-value">kontakt@bridgework-germany.de</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🌍</div>
+          <div class="ci-text">
+            <div class="ci-label">Sprachen</div>
+            <span class="ci-value" style="font-size:0.88rem;">Deutsch · Englisch · Französisch</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">⏱</div>
+          <div class="ci-text">
+            <div class="ci-label">Antwortzeit</div>
+            <span class="ci-value">Innerhalb von 48 Stunden</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-note">
+        <h3>Was Sie in Ihrer Mail schreiben können</h3>
+        <p>Kein perfekter Lebenslauf nötig – schreiben Sie einfach: Welche Erfahrung haben Sie? In welcher Branche? Wie sind Ihre Deutschkenntnisse? Wohin in Deutschland würden Sie gerne?</p>
+        <p>Wir lesen jede Mail persönlich und antworten ehrlich. Wenn wir aktuell keine passende Stelle haben, sagen wir das direkt – und halten Sie im Blick für zukünftige Möglichkeiten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" style="font-family:'Playfair Display',serif; font-size:1rem; color:rgba(255,255,255,0.3); text-decoration:none;">Bridge<span style="color:#52c47e">Work</span> Germany</a>
+  <div>© 2026 BridgeWork Germany · Michael Tospann</div>
+  <div><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+</footer>
+
+</body>
+</html>
