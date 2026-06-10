@@ -6,17 +6,19 @@
 <title>Für Bewerber – BridgeWork Germany</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRHHB7GQGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MRHHB7GQGB');
+</script>
 <style>
   :root {
-    --forest: #1a3a28;
-    --forest-mid: #214d34;
-    --green: #3d8f60;
-    --green-bright: #52c47e;
-    --mint: #baf2d0;
-    --cream: #f4f9f6;
-    --text: #142010;
-    --text-light: #526b5c;
-    --white: #ffffff;
+    --forest: #1a3a28; --forest-mid: #214d34; --green: #3d8f60;
+    --green-bright: #52c47e; --mint: #baf2d0; --cream: #f4f9f6;
+    --text: #142010; --text-light: #526b5c; --white: #ffffff;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
@@ -25,11 +27,13 @@
   nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.2rem 4rem; display:flex; justify-content:space-between; align-items:center; background:rgba(26,58,40,0.97); backdrop-filter:blur(8px); border-bottom:1px solid rgba(82,196,126,0.15); }
   .logo { font-family:'Playfair Display',serif; color:var(--white); font-size:1.4rem; text-decoration:none; }
   .logo span { color:var(--green-bright); }
-  .nav-links { display:flex; gap:2.5rem; align-items:center; }
+  .nav-links { display:flex; gap:2rem; align-items:center; }
   nav a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
   nav a:hover { color:var(--mint); }
   nav a.active { color:var(--green-bright); }
   .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+  .lang-toggle { background:rgba(255,255,255,0.1); border:1px solid rgba(82,196,126,0.35); color:rgba(255,255,255,0.85)!important; padding:0.45rem 1rem; border-radius:2px; cursor:pointer; font-size:0.82rem; font-weight:500; letter-spacing:0.05em; transition:all 0.2s; }
+  .lang-toggle:hover { background:rgba(82,196,126,0.2); border-color:var(--green-bright); color:var(--mint)!important; }
 
   .hero { min-height:90vh; background:var(--forest); display:flex; align-items:center; padding:8rem 4rem 5rem; position:relative; overflow:hidden; }
   .hero::before { content:''; position:absolute; top:-10%; right:-5%; width:700px; height:700px; background:radial-gradient(circle, rgba(82,196,126,0.09) 0%, transparent 65%); pointer-events:none; }
@@ -41,7 +45,6 @@
   .hero p { color:rgba(255,255,255,0.6); font-size:1.05rem; line-height:1.85; margin-bottom:2.5rem; font-weight:300; }
   .hero-cta { display:inline-block; background:var(--green-bright); color:var(--forest); padding:1rem 2.2rem; font-weight:500; text-decoration:none; border-radius:2px; transition:all 0.2s; }
   .hero-cta:hover { background:var(--mint); }
-
   .hero-cards { display:flex; flex-direction:column; gap:1.2rem; }
   .hero-card { background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:1.6rem 1.8rem; position:relative; }
   .hero-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--green-bright); }
@@ -55,12 +58,10 @@
   .section-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3vw,2.5rem); color:var(--forest); margin-bottom:1.2rem; line-height:1.25; }
   .section-sub { color:var(--text-light); font-size:1rem; line-height:1.8; max-width:580px; font-weight:300; }
 
-  /* Kostenlos Banner */
   .free-banner { background:var(--green-bright); padding:1.2rem 4rem; text-align:center; }
   .free-banner p { font-size:0.92rem; font-weight:500; color:var(--forest); }
   .free-banner strong { font-weight:700; }
 
-  /* Wie es funktioniert */
   .how { background:var(--white); }
   .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
   .step { padding:2rem; background:var(--cream); border-radius:4px; border-top:3px solid var(--green-bright); }
@@ -68,7 +69,6 @@
   .step h3 { font-size:0.95rem; font-weight:500; margin-bottom:0.7rem; color:var(--forest); }
   .step p { font-size:0.85rem; color:var(--text-light); line-height:1.7; font-weight:300; }
 
-  /* Was wir bieten */
   .offer { background:var(--cream); }
   .offer-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-top:3rem; align-items:start; }
   .offer-points { display:flex; flex-direction:column; gap:1rem; }
@@ -81,8 +81,9 @@
   .visa-box h3 { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--mint); margin-bottom:1rem; line-height:1.3; }
   .visa-box p { font-size:0.88rem; color:rgba(255,255,255,0.6); line-height:1.75; font-weight:300; margin-bottom:0.8rem; }
   .visa-box p:last-child { margin-bottom:0; }
+  .visa-note { background:rgba(82,196,126,0.1); border:1px solid rgba(82,196,126,0.25); border-radius:3px; padding:1rem 1.2rem; margin-top:1rem; }
+  .visa-note p { font-size:0.82rem; color:rgba(255,255,255,0.75)!important; margin-bottom:0!important; }
 
-  /* Anforderungen */
   .requirements { background:var(--white); }
   .req-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
   .req-card { background:var(--cream); border-radius:4px; padding:2rem; border-bottom:3px solid transparent; }
@@ -92,7 +93,6 @@
   .req-card h3 { font-size:1rem; font-weight:500; color:var(--forest); margin-bottom:0.6rem; }
   .req-card p { font-size:0.85rem; color:var(--text-light); line-height:1.65; font-weight:300; }
 
-  /* Branchen */
   .sectors { background:var(--forest-mid); }
   .sectors .section-title { color:var(--white); }
   .sectors .section-label { color:var(--green-bright); }
@@ -104,7 +104,6 @@
   .sector-card h3 { font-weight:500; font-size:0.95rem; margin-bottom:0.6rem; color:var(--mint); }
   .sector-card p { font-size:0.84rem; color:rgba(255,255,255,0.45); line-height:1.65; font-weight:300; }
 
-  /* Kontakt */
   .contact { background:var(--forest); color:var(--white); }
   .contact .section-title { color:var(--white); }
   .contact .section-label { color:var(--green-bright); }
@@ -136,83 +135,76 @@
     footer { flex-direction:column; gap:1rem; text-align:center; }
   }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRHHB7GQGB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MRHHB7GQGB');
-</script>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="logo">Bridge<span>Work</span> Germany</a>
   <div class="nav-links">
-    <a href="index.html">Für Unternehmen</a>
-    <a href="bewerber.html" class="active">Für Bewerber</a>
-    <a href="mailto:kontakt@bridgework-germany.de" class="nav-cta">Jetzt bewerben</a>
+    <a href="index.html" data-i18n="nav_employers">Für Unternehmen</a>
+    <a href="bewerber.html" class="active" data-i18n="nav_applicants">Für Bewerber</a>
+    <a href="#" class="lang-toggle" id="langBtn" onclick="toggleLang(); return false;">🇬🇧 English</a>
+    <a href="mailto:kontakt@bridgework-germany.de" class="nav-cta" data-i18n="nav_apply">Jetzt bewerben</a>
   </div>
 </nav>
 
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <p class="hero-label">Ihr Weg nach Deutschland · Kostenlos · Strukturiert</p>
-      <h1>Arbeiten in Deutschland.<br><em>Wir begleiten Sie.</em><br>Von Anfang an.</h1>
-      <p>Sie haben Erfahrung, Motivation und den Wunsch, in Deutschland zu arbeiten. Wir verbinden Sie mit inhabergeführten Betrieben, die genau Sie suchen – und begleiten Sie durch den gesamten Prozess. Visa, Unterkunft, erster Tag.</p>
-      <a href="mailto:kontakt@bridgework-germany.de" class="hero-cta">Jetzt Kontakt aufnehmen</a>
+      <p class="hero-label" data-i18n="hero_label">Ihr Weg nach Deutschland · Kostenlos · Strukturiert</p>
+      <h1 data-i18n="hero_h1">Work in Germany.<br><em>Wir begleiten Sie.</em><br>Von Anfang an.</h1>
+      <p data-i18n="hero_p">Sie haben Erfahrung, Motivation und den Wunsch, in Deutschland zu arbeiten. Wir verbinden Sie mit inhabergeführten Betrieben, die genau Sie suchen – und begleiten Sie durch den gesamten Prozess. Visa, Unterkunft, erster Tag.</p>
+      <a href="mailto:kontakt@bridgework-germany.de" class="hero-cta" data-i18n="hero_cta">Lebenslauf einreichen</a>
     </div>
     <div class="hero-cards">
       <div class="hero-card">
         <div class="hero-card-icon">🎯</div>
-        <h4>Kostenlos für Bewerber</h4>
-        <p>Unsere Vermittlung ist für Sie vollständig kostenlos. Keine Gebühren, keine versteckten Kosten. Der Arbeitgeber trägt alle Kosten.</p>
+        <h4 data-i18n="card1_h">Kostenlos für Bewerber</h4>
+        <p data-i18n="card1_p">Unsere Vermittlung ist für Sie vollständig kostenlos. Keine Gebühren, keine versteckten Kosten. Der Arbeitgeber trägt alle Vermittlungskosten.</p>
       </div>
       <div class="hero-card">
         <div class="hero-card-icon">🛂</div>
-        <h4>Visa-Unterstützung inklusive</h4>
-        <p>Wir begleiten Sie durch den Visa-Prozess – Unterlagen, Behördenkommunikation, Koordination. Sie sind nicht allein.</p>
+        <h4 data-i18n="card2_h">Visa-Begleitung inklusive</h4>
+        <p data-i18n="card2_p">Wir begleiten Sie durch den Visa-Prozess – Unterlagen, Behördenkommunikation, Koordination. Sie sind nicht allein. (Staatliche Gebühren ~75€ trägt der Bewerber selbst.)</p>
       </div>
       <div class="hero-card">
         <div class="hero-card-icon">🤝</div>
-        <h4>Persönliche Betreuung</h4>
-        <p>Wir vermitteln keine Massen. Kleine Gruppen, echter Kontakt, ehrliche Kommunikation über alle Schritte.</p>
+        <h4 data-i18n="card3_h">Persönliche Betreuung</h4>
+        <p data-i18n="card3_p">Wir vermitteln keine Massen. Kleine Gruppen, echter Kontakt, ehrliche Kommunikation. Bewerbungen auf Deutsch oder Englisch möglich.</p>
       </div>
     </div>
   </div>
 </section>
 
 <div class="free-banner">
-  <p><strong>Wichtig:</strong> Für Bewerber entstehen keinerlei Vermittlungsgebühren. Alle Kosten trägt ausschließlich der Arbeitgeber. Das ist unser Grundsatz.</p>
+  <p data-i18n="banner"><strong>Für Bewerber entstehen keinerlei Vermittlungsgebühren.</strong> Alle Vermittlungskosten trägt ausschließlich der Arbeitgeber. · Applications in English are welcome.</p>
 </div>
 
 <section class="how">
   <div class="section-inner">
-    <p class="section-label">Ihr Weg mit uns</p>
-    <h2 class="section-title">So funktioniert die Vermittlung.</h2>
-    <p class="section-sub">Vier Schritte von der ersten Nachricht bis zum ersten Arbeitstag in Deutschland.</p>
+    <p class="section-label" data-i18n="how_label">Ihr Weg mit uns</p>
+    <h2 class="section-title" data-i18n="how_title">So funktioniert die Vermittlung.</h2>
+    <p class="section-sub" data-i18n="how_sub">Vier Schritte von der ersten Nachricht bis zum ersten Arbeitstag in Deutschland.</p>
     <div class="steps">
       <div class="step">
         <div class="step-number">01</div>
-        <h3>Erstkontakt per E-Mail</h3>
-        <p>Schreiben Sie uns mit Ihren Erfahrungen, Ihrer Branche und Ihren Sprachkenntnissen. Kein aufwändiges Formular – eine kurze Mail genügt.</p>
+        <h3 data-i18n="step1_h">Erstkontakt per E-Mail</h3>
+        <p data-i18n="step1_p">Schreiben Sie uns auf Deutsch oder Englisch – mit Ihren Erfahrungen, Ihrer Branche und Ihren Sprachkenntnissen. Eine kurze Mail genügt.</p>
       </div>
       <div class="step">
         <div class="step-number">02</div>
-        <h3>Kennenlerngespräch</h3>
-        <p>Wir vereinbaren einen kurzen Videocall. Wir lernen Sie kennen und klären, welche Stellen und Regionen zu Ihnen passen.</p>
+        <h3 data-i18n="step2_h">Kennenlerngespräch</h3>
+        <p data-i18n="step2_p">Wir vereinbaren einen kurzen Videocall. Wir lernen Sie kennen und klären, welche Stellen und Regionen zu Ihnen passen.</p>
       </div>
       <div class="step">
         <div class="step-number">03</div>
-        <h3>Matching & Angebot</h3>
-        <p>Wir suchen aktiv nach passenden Arbeitgebern für Sie. Sie entscheiden, ob das Angebot für Sie stimmt. Kein Druck.</p>
+        <h3 data-i18n="step3_h">Matching & Angebot</h3>
+        <p data-i18n="step3_p">Wir suchen aktiv nach passenden Arbeitgebern für Sie. Sie entscheiden, ob das Angebot für Sie stimmt. Kein Druck.</p>
       </div>
       <div class="step">
         <div class="step-number">04</div>
-        <h3>Visa & Anreise</h3>
-        <p>Wir begleiten Sie durch den Visa-Prozess und koordinieren Ihre Anreise. Sie kommen vorbereitet an.</p>
+        <h3 data-i18n="step4_h">Visa & Anreise</h3>
+        <p data-i18n="step4_p">Wir begleiten Sie durch den Visa-Prozess und koordinieren Ihre Anreise. Sie kommen vorbereitet an.</p>
       </div>
     </div>
   </div>
@@ -220,52 +212,24 @@
 
 <section class="offer">
   <div class="section-inner">
-    <p class="section-label">Was wir bieten</p>
-    <h2 class="section-title">Unsere Unterstützung<br>für Sie.</h2>
+    <p class="section-label" data-i18n="offer_label">Was wir bieten</p>
+    <h2 class="section-title" data-i18n="offer_title">Unsere Unterstützung<br>für Sie.</h2>
     <div class="offer-grid">
       <div class="offer-points">
-        <div class="offer-point">
-          <span class="check">✓</span>
-          <div>
-            <h4>Jobvermittlung in Deutschland</h4>
-            <p>Wir verbinden Sie mit inhabergeführten Betrieben die verlässliche, engagierte Mitarbeitende suchen.</p>
-          </div>
-        </div>
-        <div class="offer-point">
-          <span class="check">✓</span>
-          <div>
-            <h4>Visa-Prozess Begleitung</h4>
-            <p>Wir unterstützen Sie bei der Zusammenstellung aller nötigen Unterlagen und begleiten den Behördenprozess.</p>
-          </div>
-        </div>
-        <div class="offer-point">
-          <span class="check">✓</span>
-          <div>
-            <h4>Unterstützung bei der Unterkunft</h4>
-            <p>Wo möglich koordinieren wir gemeinsam mit dem Arbeitgeber eine Wohnlösung für Ihre erste Zeit.</p>
-          </div>
-        </div>
-        <div class="offer-point">
-          <span class="check">✓</span>
-          <div>
-            <h4>Willkommensmappe & erste Schritte</h4>
-            <p>Informationen über Ihren neuen Wohnort, Ihre Rechte als Arbeitnehmer, wichtige Behörden und Alltagshilfen.</p>
-          </div>
-        </div>
-        <div class="offer-point">
-          <span class="check">✓</span>
-          <div>
-            <h4>Nachbetreuung</h4>
-            <p>Auch nach Ihrer Ankunft sind wir ansprechbar. Wir wollen dass Sie ankommen – und bleiben können.</p>
-          </div>
-        </div>
+        <div class="offer-point"><span class="check">✓</span><div><h4 data-i18n="op1_h">Jobvermittlung in Deutschland</h4><p data-i18n="op1_p">Wir verbinden Sie mit inhabergeführten Betrieben die verlässliche, engagierte Mitarbeitende suchen.</p></div></div>
+        <div class="offer-point"><span class="check">✓</span><div><h4 data-i18n="op2_h">Visa-Prozess Begleitung</h4><p data-i18n="op2_p">Wir unterstützen Sie bei der Zusammenstellung aller nötigen Unterlagen und begleiten den Behördenprozess. Die staatliche Konsulatsgebühr (~75 €) zahlen Sie selbst – alle weiteren Kosten trägt der Arbeitgeber.</p></div></div>
+        <div class="offer-point"><span class="check">✓</span><div><h4 data-i18n="op3_h">Unterstützung bei der Unterkunft</h4><p data-i18n="op3_p">Wo möglich koordinieren wir gemeinsam mit dem Arbeitgeber eine Wohnlösung für Ihre erste Zeit.</p></div></div>
+        <div class="offer-point"><span class="check">✓</span><div><h4 data-i18n="op4_h">Willkommensmappe & erste Schritte</h4><p data-i18n="op4_p">Informationen über Ihren neuen Wohnort, Ihre Rechte als Arbeitnehmer, wichtige Behörden und Alltagshilfen.</p></div></div>
+        <div class="offer-point"><span class="check">✓</span><div><h4 data-i18n="op5_h">Nachbetreuung</h4><p data-i18n="op5_p">Auch nach Ihrer Ankunft sind wir ansprechbar. Wir wollen dass Sie ankommen – und bleiben können.</p></div></div>
       </div>
       <div class="visa-box">
-        <div class="vb-label">Visa & Aufenthalt</div>
-        <h3>Der Weg nach Deutschland ist organisierbar.</h3>
-        <p>Viele Menschen denken, das Arbeitsvisum für Deutschland sei unüberwindbar. In Wirklichkeit gibt es klare Wege – besonders wenn ein konkretes Jobangebot vorliegt.</p>
-        <p>Das Fachkräfteeinwanderungsgesetz hat die Möglichkeiten deutlich erweitert. Wir kennen den Prozess und begleiten Sie Schritt für Schritt.</p>
-        <p>Die Visagebühr beim deutschen Konsulat (ca. 75 €) trägt der Bewerber selbst – alle weiteren Prozesskosten übernimmt der Arbeitgeber im Rahmen der Vermittlung.</p>
+        <div class="vb-label" data-i18n="vb_label">Visa & Aufenthalt</div>
+        <h3 data-i18n="vb_title">Der Weg nach Deutschland ist organisierbar.</h3>
+        <p data-i18n="vb_p1">Viele Menschen denken, das Arbeitsvisum für Deutschland sei unüberwindbar. In Wirklichkeit gibt es klare Wege – besonders wenn ein konkretes Jobangebot vorliegt.</p>
+        <p data-i18n="vb_p2">Das Fachkräfteeinwanderungsgesetz hat die Möglichkeiten deutlich erweitert. Wir kennen den Prozess und begleiten Sie Schritt für Schritt.</p>
+        <div class="visa-note">
+          <p data-i18n="vb_note">💡 Die staatliche Visagebühr beim deutschen Konsulat (ca. 75 €) zahlen Sie selbst. Das ist eine Behördengebühr – keine Vermittlungsgebühr. Alle weiteren Kosten des Vermittlungs- und Integrationsprozesses trägt der Arbeitgeber.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -273,24 +237,24 @@
 
 <section class="requirements">
   <div class="section-inner">
-    <p class="section-label">Voraussetzungen</p>
-    <h2 class="section-title">Was Sie mitbringen sollten.</h2>
-    <p class="section-sub">Wir vermitteln keine Idealbilder – sondern Menschen mit echtem Willen zu arbeiten. Das zählt mehr als perfekte Lebensläufe.</p>
+    <p class="section-label" data-i18n="req_label">Voraussetzungen</p>
+    <h2 class="section-title" data-i18n="req_title">Was Sie mitbringen sollten.</h2>
+    <p class="section-sub" data-i18n="req_sub">Wir vermitteln keine Idealbilder – sondern Menschen mit echtem Willen zu arbeiten. Das zählt mehr als perfekte Lebensläufe.</p>
     <div class="req-grid">
       <div class="req-card required">
-        <div class="req-tag">Voraussetzung</div>
-        <h3>Deutschkenntnisse mind. B1</h3>
-        <p>Für die meisten Stellen im Gastgewerbe, Pflege und Service benötigen Sie solide Grundkenntnisse in Deutsch. B1 ist unser Standard – B2 oder höher eröffnet weitere Möglichkeiten.</p>
+        <div class="req-tag" data-i18n="req1_tag">Voraussetzung</div>
+        <h3 data-i18n="req1_h">Deutschkenntnisse mind. B1</h3>
+        <p data-i18n="req1_p">Für die meisten Stellen im Gastgewerbe, Pflege und Service benötigen Sie solide Grundkenntnisse in Deutsch. B1 ist unser Standard – B2 oder höher eröffnet weitere Möglichkeiten.</p>
       </div>
       <div class="req-card required">
-        <div class="req-tag">Voraussetzung</div>
-        <h3>Berufserfahrung in der Branche</h3>
-        <p>Sie haben praktische Erfahrung in Ihrem Bereich – sei es Housekeeping, Küche, Logistik, Pflege oder Handwerk. Quereinsteiger sind in bestimmten Bereichen willkommen.</p>
+        <div class="req-tag" data-i18n="req2_tag">Voraussetzung</div>
+        <h3 data-i18n="req2_h">Berufserfahrung in der Branche</h3>
+        <p data-i18n="req2_p">Sie haben praktische Erfahrung in Ihrem Bereich – sei es Housekeeping, Küche, Logistik, Pflege oder Handwerk. Quereinsteiger sind in bestimmten Bereichen willkommen.</p>
       </div>
       <div class="req-card optional">
-        <div class="req-tag">Von Vorteil</div>
-        <h3>Weitere Sprachen & Flexibilität</h3>
-        <p>Englisch, Französisch oder weitere Sprachen sind in vielen Betrieben ein echter Bonus. Umzugsbereitschaft erhöht Ihre Chancen erheblich.</p>
+        <div class="req-tag" data-i18n="req3_tag">Von Vorteil</div>
+        <h3 data-i18n="req3_h">Weitere Sprachen & Flexibilität</h3>
+        <p data-i18n="req3_p">Englisch, Französisch oder weitere Sprachen sind in vielen Betrieben ein echter Bonus. Umzugsbereitschaft erhöht Ihre Chancen erheblich.</p>
       </div>
     </div>
   </div>
@@ -298,67 +262,51 @@
 
 <section class="sectors">
   <div class="section-inner">
-    <p class="section-label">Branchen</p>
-    <h2 class="section-title">In diesen Bereichen vermitteln wir.</h2>
-    <p class="section-sub">Inhabergeführte Betriebe in ganz Deutschland – mit echtem Personalbedarf.</p>
+    <p class="section-label" data-i18n="sec_label">Branchen</p>
+    <h2 class="section-title" data-i18n="sec_title">In diesen Bereichen vermitteln wir.</h2>
+    <p class="section-sub" data-i18n="sec_sub">Inhabergeführte Betriebe in ganz Deutschland – mit echtem Personalbedarf.</p>
     <div class="sector-cards">
-      <div class="sector-card">
-        <div class="sector-icon">🏨</div>
-        <h3>Hotel & Gastgewerbe</h3>
-        <p>Housekeeping, Zimmerreinigung, Frühstücksservice, Küchenhilfe, Service.</p>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">🔨</div>
-        <h3>Bau & Handwerk</h3>
-        <p>Bauhelfer, Montageunterstützung, Zuarbeiter in handwerklichen Betrieben.</p>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">🚚</div>
-        <h3>Logistik & Spedition</h3>
-        <p>Lagerhelfer, Kommissionierer, Fahrer mit entsprechender Qualifikation.</p>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">🏥</div>
-        <h3>Pflege & Soziales</h3>
-        <p>Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaftskräfte.</p>
-      </div>
+      <div class="sector-card"><div class="sector-icon">🏨</div><h3 data-i18n="s1_h">Hotel & Gastgewerbe</h3><p data-i18n="s1_p">Housekeeping, Zimmerreinigung, Frühstücksservice, Küchenhilfe, Service.</p></div>
+      <div class="sector-card"><div class="sector-icon">🔨</div><h3 data-i18n="s2_h">Bau & Handwerk</h3><p data-i18n="s2_p">Bauhelfer, Montageunterstützung, Zuarbeiter in handwerklichen Betrieben.</p></div>
+      <div class="sector-card"><div class="sector-icon">🚚</div><h3 data-i18n="s3_h">Logistik & Spedition</h3><p data-i18n="s3_p">Lagerhelfer, Kommissionierer, Fahrer mit entsprechender Qualifikation.</p></div>
+      <div class="sector-card"><div class="sector-icon">🏥</div><h3 data-i18n="s4_h">Pflege & Soziales</h3><p data-i18n="s4_p">Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaftskräfte.</p></div>
     </div>
   </div>
 </section>
 
 <section class="contact" id="kontakt">
   <div class="section-inner">
-    <p class="section-label">Kontakt</p>
-    <h2 class="section-title">Schreiben Sie uns.</h2>
-    <p class="section-sub" style="color:rgba(255,255,255,0.55); max-width:100%">Eine kurze Mail mit Ihren Erfahrungen und Ihrem Deutschniveau genügt. Wir melden uns innerhalb von 48 Stunden.</p>
+    <p class="section-label" data-i18n="con_label">Kontakt</p>
+    <h2 class="section-title" data-i18n="con_title">Schreiben Sie uns.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.55); max-width:100%" data-i18n="con_sub">Eine kurze Mail auf Deutsch oder Englisch genügt. Wir melden uns innerhalb von 48 Stunden.</p>
     <div class="contact-inner">
       <div class="contact-info">
         <div class="contact-item">
           <div class="ci-icon">✉</div>
           <div class="ci-text">
-            <div class="ci-label">E-Mail</div>
+            <div class="ci-label" data-i18n="ci1_label">E-Mail</div>
             <a href="mailto:kontakt@bridgework-germany.de" class="ci-value">kontakt@bridgework-germany.de</a>
           </div>
         </div>
         <div class="contact-item">
           <div class="ci-icon">🌍</div>
           <div class="ci-text">
-            <div class="ci-label">Sprachen</div>
-            <span class="ci-value" style="font-size:0.88rem;">Deutsch · Englisch · Französisch</span>
+            <div class="ci-label" data-i18n="ci2_label">Sprachen</div>
+            <span class="ci-value" style="font-size:0.88rem;" data-i18n="ci2_val">Deutsch · Englisch · Französisch</span>
           </div>
         </div>
         <div class="contact-item">
           <div class="ci-icon">⏱</div>
           <div class="ci-text">
-            <div class="ci-label">Antwortzeit</div>
-            <span class="ci-value">Innerhalb von 48 Stunden</span>
+            <div class="ci-label" data-i18n="ci3_label">Antwortzeit</div>
+            <span class="ci-value" data-i18n="ci3_val">Innerhalb von 48 Stunden</span>
           </div>
         </div>
       </div>
       <div class="contact-note">
-        <h3>Was Sie in Ihrer Mail schreiben können</h3>
-        <p>Kein perfekter Lebenslauf nötig – schreiben Sie einfach: Welche Erfahrung haben Sie? In welcher Branche? Wie sind Ihre Deutschkenntnisse? Wohin in Deutschland würden Sie gerne?</p>
-        <p>Wir lesen jede Mail persönlich und antworten ehrlich. Wenn wir aktuell keine passende Stelle haben, sagen wir das direkt – und halten Sie im Blick für zukünftige Möglichkeiten.</p>
+        <h3 data-i18n="note_h">Was Sie in Ihrer Mail schreiben können</h3>
+        <p data-i18n="note_p1">Kein perfekter Lebenslauf nötig – schreiben Sie einfach: Welche Erfahrung haben Sie? In welcher Branche? Wie sind Ihre Deutschkenntnisse? Wohin in Deutschland würden Sie gerne?</p>
+        <p data-i18n="note_p2">Wir lesen jede Mail persönlich und antworten ehrlich. Wenn wir aktuell keine passende Stelle haben, sagen wir das direkt – und halten Sie im Blick für zukünftige Möglichkeiten.</p>
       </div>
     </div>
   </div>
@@ -369,6 +317,159 @@
   <div>© 2026 BridgeWork Germany · Michael Tospann</div>
   <div><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
 </footer>
+
+<script>
+const translations = {
+  de: {
+    nav_employers: "Für Unternehmen",
+    nav_applicants: "Für Bewerber",
+    nav_apply: "Jetzt bewerben",
+    hero_label: "Ihr Weg nach Deutschland · Kostenlos · Strukturiert",
+    hero_h1: 'Work in Germany.<br><em>Wir begleiten Sie.</em><br>Von Anfang an.',
+    hero_p: "Sie haben Erfahrung, Motivation und den Wunsch, in Deutschland zu arbeiten. Wir verbinden Sie mit inhabergeführten Betrieben, die genau Sie suchen – und begleiten Sie durch den gesamten Prozess. Visa, Unterkunft, erster Tag.",
+    hero_cta: "Lebenslauf einreichen",
+    card1_h: "Kostenlos für Bewerber",
+    card1_p: "Unsere Vermittlung ist für Sie vollständig kostenlos. Keine Gebühren, keine versteckten Kosten. Der Arbeitgeber trägt alle Vermittlungskosten.",
+    card2_h: "Visa-Begleitung inklusive",
+    card2_p: "Wir begleiten Sie durch den Visa-Prozess – Unterlagen, Behördenkommunikation, Koordination. Sie sind nicht allein. (Staatliche Gebühren ~75€ trägt der Bewerber selbst.)",
+    card3_h: "Persönliche Betreuung",
+    card3_p: "Wir vermitteln keine Massen. Kleine Gruppen, echter Kontakt, ehrliche Kommunikation. Bewerbungen auf Deutsch oder Englisch möglich.",
+    banner: "<strong>Für Bewerber entstehen keinerlei Vermittlungsgebühren.</strong> Alle Vermittlungskosten trägt ausschließlich der Arbeitgeber. · Applications in English are welcome.",
+    how_label: "Ihr Weg mit uns",
+    how_title: "So funktioniert die Vermittlung.",
+    how_sub: "Vier Schritte von der ersten Nachricht bis zum ersten Arbeitstag in Deutschland.",
+    step1_h: "Erstkontakt per E-Mail",
+    step1_p: "Schreiben Sie uns auf Deutsch oder Englisch – mit Ihren Erfahrungen, Ihrer Branche und Ihren Sprachkenntnissen. Eine kurze Mail genügt.",
+    step2_h: "Kennenlerngespräch",
+    step2_p: "Wir vereinbaren einen kurzen Videocall. Wir lernen Sie kennen und klären, welche Stellen und Regionen zu Ihnen passen.",
+    step3_h: "Matching & Angebot",
+    step3_p: "Wir suchen aktiv nach passenden Arbeitgebern für Sie. Sie entscheiden, ob das Angebot für Sie stimmt. Kein Druck.",
+    step4_h: "Visa & Anreise",
+    step4_p: "Wir begleiten Sie durch den Visa-Prozess und koordinieren Ihre Anreise. Sie kommen vorbereitet an.",
+    offer_label: "Was wir bieten",
+    offer_title: "Unsere Unterstützung<br>für Sie.",
+    op1_h: "Jobvermittlung in Deutschland",
+    op1_p: "Wir verbinden Sie mit inhabergeführten Betrieben die verlässliche, engagierte Mitarbeitende suchen.",
+    op2_h: "Visa-Prozess Begleitung",
+    op2_p: "Wir unterstützen Sie bei der Zusammenstellung aller nötigen Unterlagen und begleiten den Behördenprozess. Die staatliche Konsulatsgebühr (~75 €) zahlen Sie selbst – alle weiteren Kosten trägt der Arbeitgeber.",
+    op3_h: "Unterstützung bei der Unterkunft",
+    op3_p: "Wo möglich koordinieren wir gemeinsam mit dem Arbeitgeber eine Wohnlösung für Ihre erste Zeit.",
+    op4_h: "Willkommensmappe & erste Schritte",
+    op4_p: "Informationen über Ihren neuen Wohnort, Ihre Rechte als Arbeitnehmer, wichtige Behörden und Alltagshilfen.",
+    op5_h: "Nachbetreuung",
+    op5_p: "Auch nach Ihrer Ankunft sind wir ansprechbar. Wir wollen dass Sie ankommen – und bleiben können.",
+    vb_label: "Visa & Aufenthalt",
+    vb_title: "Der Weg nach Deutschland ist organisierbar.",
+    vb_p1: "Viele Menschen denken, das Arbeitsvisum für Deutschland sei unüberwindbar. In Wirklichkeit gibt es klare Wege – besonders wenn ein konkretes Jobangebot vorliegt.",
+    vb_p2: "Das Fachkräfteeinwanderungsgesetz hat die Möglichkeiten deutlich erweitert. Wir kennen den Prozess und begleiten Sie Schritt für Schritt.",
+    vb_note: "💡 Die staatliche Visagebühr beim deutschen Konsulat (ca. 75 €) zahlen Sie selbst. Beim beschleunigten Fachkräfteverfahren fällt zusätzlich eine Behördengebühr von 411 € an. Das sind Behördengebühren – keine Vermittlungsgebühren. Alle weiteren Kosten des Vermittlungs- und Integrationsprozesses trägt der Arbeitgeber.",
+    req_label: "Voraussetzungen",
+    req_title: "Was Sie mitbringen sollten.",
+    req_sub: "Wir vermitteln keine Idealbilder – sondern Menschen mit echtem Willen zu arbeiten. Das zählt mehr als perfekte Lebensläufe.",
+    req1_tag: "Voraussetzung", req1_h: "Deutschkenntnisse mind. B1",
+    req1_p: "Für die meisten Stellen im Gastgewerbe, Pflege und Service benötigen Sie solide Grundkenntnisse in Deutsch. B1 ist unser Standard – B2 oder höher eröffnet weitere Möglichkeiten.",
+    req2_tag: "Voraussetzung", req2_h: "Berufserfahrung in der Branche",
+    req2_p: "Sie haben praktische Erfahrung in Ihrem Bereich – sei es Housekeeping, Küche, Logistik, Pflege oder Handwerk. Quereinsteiger sind in bestimmten Bereichen willkommen.",
+    req3_tag: "Von Vorteil", req3_h: "Weitere Sprachen & Flexibilität",
+    req3_p: "Englisch, Französisch oder weitere Sprachen sind in vielen Betrieben ein echter Bonus. Umzugsbereitschaft erhöht Ihre Chancen erheblich.",
+    sec_label: "Branchen", sec_title: "In diesen Bereichen vermitteln wir.",
+    sec_sub: "Inhabergeführte Betriebe in ganz Deutschland – mit echtem Personalbedarf.",
+    s1_h: "Hotel & Gastgewerbe", s1_p: "Housekeeping, Zimmerreinigung, Frühstücksservice, Küchenhilfe, Service.",
+    s2_h: "Bau & Handwerk", s2_p: "Bauhelfer, Montageunterstützung, Zuarbeiter in handwerklichen Betrieben.",
+    s3_h: "Logistik & Spedition", s3_p: "Lagerhelfer, Kommissionierer, Fahrer mit entsprechender Qualifikation.",
+    s4_h: "Pflege & Soziales", s4_p: "Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaftskräfte.",
+    con_label: "Kontakt", con_title: "Schreiben Sie uns.",
+    con_sub: "Eine kurze Mail auf Deutsch oder Englisch genügt. Wir melden uns innerhalb von 48 Stunden.",
+    ci1_label: "E-Mail", ci2_label: "Sprachen", ci2_val: "Deutsch · Englisch · Französisch",
+    ci3_label: "Antwortzeit", ci3_val: "Innerhalb von 48 Stunden",
+    note_h: "Was Sie in Ihrer Mail schreiben können",
+    note_p1: "Kein perfekter Lebenslauf nötig – schreiben Sie einfach: Welche Erfahrung haben Sie? In welcher Branche? Wie sind Ihre Deutschkenntnisse? Wohin in Deutschland würden Sie gerne?",
+    note_p2: "Wir lesen jede Mail persönlich und antworten ehrlich. Wenn wir aktuell keine passende Stelle haben, sagen wir das direkt – und halten Sie im Blick für zukünftige Möglichkeiten."
+  },
+  en: {
+    nav_employers: "For Employers",
+    nav_applicants: "For Applicants",
+    nav_apply: "Apply Now",
+    hero_label: "Your Path to Germany · Free of Charge · Structured",
+    hero_h1: 'Work in Germany.<br><em>We guide you.</em><br>Every step of the way.',
+    hero_p: "You have the experience, the motivation, and the desire to work in Germany. We connect you with owner-managed businesses that are looking for exactly you – and guide you through the entire process. Visa, accommodation, first day.",
+    hero_cta: "Send Your CV",
+    card1_h: "Free for Applicants",
+    card1_p: "Our placement service is completely free for you. No fees, no hidden costs. The employer covers all placement costs.",
+    card2_h: "Visa Support Included",
+    card2_p: "We guide you through the visa process – documents, authority communication, coordination. You are not alone. (The official consulate fee ~€75 is paid by the applicant.)",
+    card3_h: "Personal Support",
+    card3_p: "We don't do mass placements. Small groups, real contact, honest communication. Applications in German or English are welcome.",
+    banner: "<strong>No placement fees for applicants.</strong> All placement costs are covered exclusively by the employer. · Applications in English are welcome.",
+    how_label: "Your Journey With Us",
+    how_title: "How the placement works.",
+    how_sub: "Four steps from your first message to your first working day in Germany.",
+    step1_h: "First Contact by Email",
+    step1_p: "Write to us in German or English – tell us about your experience, your field and your language skills. A short email is enough.",
+    step2_h: "Getting to Know You",
+    step2_p: "We arrange a short video call. We get to know you and figure out which positions and regions suit you best.",
+    step3_h: "Matching & Offer",
+    step3_p: "We actively search for suitable employers for you. You decide whether the offer works for you. No pressure.",
+    step4_h: "Visa & Arrival",
+    step4_p: "We guide you through the visa process and coordinate your arrival. You arrive prepared.",
+    offer_label: "What We Offer",
+    offer_title: "Our support<br>for you.",
+    op1_h: "Job Placement in Germany",
+    op1_p: "We connect you with owner-managed businesses that are looking for reliable, motivated employees.",
+    op2_h: "Visa Process Support",
+    op2_p: "We help you compile all required documents and guide you through the official process. The official consulate fee (~€75) is paid by you – all other costs are covered by the employer.",
+    op3_h: "Accommodation Support",
+    op3_p: "Where possible, we coordinate a housing solution with the employer for your first period in Germany.",
+    op4_h: "Welcome Package & First Steps",
+    op4_p: "Information about your new location, your rights as an employee, important authorities and everyday essentials.",
+    op5_h: "Aftercare",
+    op5_p: "We remain available after your arrival. We want you to settle in – and stay.",
+    vb_label: "Visa & Residence",
+    vb_title: "The path to Germany is manageable.",
+    vb_p1: "Many people think a German work visa is insurmountable. In reality, there are clear pathways – especially when a concrete job offer is in place.",
+    vb_p2: "The Skilled Immigration Act has significantly expanded the possibilities. We know the process and guide you step by step.",
+    vb_note: "💡 The official visa fee at the German consulate (approx. €75) is paid by you. For the expedited skilled worker procedure, an additional government fee of €411 applies. These are official government fees – not placement fees. All other costs of the placement and integration process are covered by the employer.",
+    req_label: "Requirements",
+    req_title: "What you should bring.",
+    req_sub: "We don't place ideal profiles – we place people with a genuine will to work. That counts more than a perfect CV.",
+    req1_tag: "Required", req1_h: "German Language Skills min. B1",
+    req1_p: "For most positions in hospitality, care and service, solid basic German is required. B1 is our standard – B2 or higher opens up more opportunities.",
+    req2_tag: "Required", req2_h: "Professional Experience in the Field",
+    req2_p: "You have practical experience in your area – whether housekeeping, kitchen, logistics, care or trades. Career changers are welcome in certain areas.",
+    req3_tag: "Beneficial", req3_h: "Additional Languages & Flexibility",
+    req3_p: "English, French or other languages are a real bonus in many businesses. Willingness to relocate significantly increases your chances.",
+    sec_label: "Industries", sec_title: "We place in these sectors.",
+    sec_sub: "Owner-managed businesses across Germany – with real staffing needs.",
+    s1_h: "Hotel & Hospitality", s1_p: "Housekeeping, room cleaning, breakfast service, kitchen assistant, service staff.",
+    s2_h: "Construction & Trades", s2_p: "Construction helpers, assembly support, assistants in trade businesses.",
+    s3_h: "Logistics & Freight", s3_p: "Warehouse helpers, pickers, drivers with appropriate qualifications.",
+    s4_h: "Care & Social Services", s4_p: "Care assistants, support workers, domestic service staff.",
+    con_label: "Contact", con_title: "Write to us.",
+    con_sub: "A short email in German or English is enough. We respond within 48 hours.",
+    ci1_label: "Email", ci2_label: "Languages", ci2_val: "German · English · French",
+    ci3_label: "Response Time", ci3_val: "Within 48 hours",
+    note_h: "What you can write in your email",
+    note_p1: "No perfect CV needed – just write: What experience do you have? In which industry? What is your German level? Where in Germany would you like to work?",
+    note_p2: "We read every email personally and reply honestly. If we don't have a matching position right now, we'll tell you directly – and keep you in mind for future opportunities."
+  }
+};
+
+let currentLang = 'de';
+
+function toggleLang() {
+  currentLang = currentLang === 'de' ? 'en' : 'de';
+  const btn = document.getElementById('langBtn');
+  btn.textContent = currentLang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch';
+  document.documentElement.lang = currentLang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[currentLang][key] !== undefined) {
+      el.innerHTML = translations[currentLang][key];
+    }
+  });
+}
+</script>
 
 </body>
 </html>
