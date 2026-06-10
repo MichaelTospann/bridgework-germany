@@ -454,21 +454,26 @@ const translations = {
   }
 };
 
-let currentLang = 'de';
+let currentLang = localStorage.getItem('bwg_lang') || 'de';
 
-function toggleLang() {
-  currentLang = currentLang === 'de' ? 'en' : 'de';
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('bwg_lang', lang);
+  document.documentElement.lang = lang;
   const btn = document.getElementById('langBtn');
-  btn.textContent = currentLang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch';
-  document.documentElement.lang = currentLang;
-
+  btn.textContent = lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch';
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (translations[currentLang][key] !== undefined) {
-      el.innerHTML = translations[currentLang][key];
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      el.innerHTML = translations[lang][key];
     }
   });
 }
+
+function toggleLang() {
+  applyLang(currentLang === 'de' ? 'en' : 'de');
+}
+document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
 </script>
 
 </body>
