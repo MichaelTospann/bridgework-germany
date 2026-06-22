@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pflegekräfte & Pflegehilfskräfte aus dem Ausland einstellen | BridgeWork Germany</title>
+<meta name="description" content="Internationale Pflegehilfskräfte und Pflegefachkräfte für Pflegeeinrichtungen finden. Ethische Rekrutierung nach WHO-Kodex, keine Gebühren für Bewerber, transparente Visa-Begleitung. Kostenloses Erstgespräch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --forest:#1a3a28; --forest-mid:#214d34; --green:#3d8f60; --green-bright:#52c47e; --mint:#baf2d0; --cream:#f4f9f6; --text:#142010; --text-light:#526b5c; --white:#ffffff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); overflow-x:hidden; }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.2rem 4rem; display:flex; justify-content:space-between; align-items:center; background:rgba(26,58,40,0.97); backdrop-filter:blur(8px); border-bottom:1px solid rgba(82,196,126,0.15); }
+  .logo { font-family:'Playfair Display',serif; color:var(--white); font-size:1.4rem; text-decoration:none; }
+  .logo span { color:var(--green-bright); }
+  .nav-links { display:flex; gap:2rem; align-items:center; }
+  nav a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
+  nav a:hover { color:var(--mint); }
+  .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+  .lang-toggle { background:rgba(255,255,255,0.1); border:1px solid rgba(82,196,126,0.35); color:rgba(255,255,255,0.85)!important; padding:0.45rem 1rem; border-radius:2px; cursor:pointer; font-size:0.82rem; font-weight:500; letter-spacing:0.05em; transition:all 0.2s; text-decoration:none; }
+  .lang-toggle:hover { background:rgba(82,196,126,0.2); border-color:var(--green-bright); color:var(--mint)!important; }
+  .breadcrumb { background:var(--forest); padding:6.5rem 4rem 0; }
+  .breadcrumb-inner { max-width:1100px; margin:0 auto; }
+  .breadcrumb a { color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem; }
+  .breadcrumb a:hover { color:var(--mint); }
+  .breadcrumb span { color:rgba(255,255,255,0.4); font-size:0.8rem; margin:0 0.4rem; }
+  .hero { background:var(--forest); padding:2.5rem 4rem 4.5rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; top:-10%; right:-5%; width:600px; height:600px; background:radial-gradient(circle, rgba(82,196,126,0.09) 0%, transparent 65%); pointer-events:none; }
+  .hero-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:4rem; align-items:center; position:relative; }
+  .hero-label { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green-bright); margin-bottom:1.2rem; }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.6vw,3rem); color:var(--white); line-height:1.25; margin-bottom:1.3rem; }
+  .hero p { color:rgba(255,255,255,0.6); font-size:1.02rem; line-height:1.8; margin-bottom:2rem; font-weight:300; }
+  .hero-cta { display:inline-block; background:var(--green-bright); color:var(--forest); padding:1rem 2.2rem; font-weight:500; text-decoration:none; border-radius:2px; }
+  .hero-side { background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:1.8rem; }
+  .hero-side h4 { color:var(--mint); font-size:0.85rem; font-weight:500; margin-bottom:1rem; letter-spacing:0.05em; text-transform:uppercase; }
+  .hero-side ul { list-style:none; display:flex; flex-direction:column; gap:0.8rem; }
+  .hero-side li { display:flex; gap:0.6rem; align-items:flex-start; color:rgba(255,255,255,0.65); font-size:0.86rem; font-weight:300; line-height:1.5; }
+  .hero-side li::before { content:'✓'; color:var(--green-bright); flex-shrink:0; font-weight:700; }
+  section { padding:4.5rem 4rem; }
+  .section-inner { max-width:1100px; margin:0 auto; }
+  .section-label { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green); margin-bottom:1rem; }
+  .section-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.6vw,2.2rem); color:var(--forest); margin-bottom:1.2rem; line-height:1.3; }
+  .section-sub { color:var(--text-light); font-size:0.98rem; line-height:1.8; max-width:620px; font-weight:300; }
+  .roles { background:var(--white); }
+  .role-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-top:2.5rem; }
+  .role-card { background:var(--cream); border-radius:4px; padding:2rem; border-top:4px solid var(--green-bright); }
+  .role-card.complex { border-top-color:#c9a13f; }
+  .role-card .tag { display:inline-block; font-size:0.65rem; background:rgba(82,196,126,0.15); color:var(--green); padding:0.25rem 0.6rem; border-radius:2px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:0.8rem; }
+  .role-card.complex .tag { background:rgba(201,161,63,0.15); color:#9c7a1f; }
+  .role-card h3 { font-size:1.1rem; font-weight:500; color:var(--forest); margin-bottom:0.8rem; }
+  .role-card ul { list-style:none; display:flex; flex-direction:column; gap:0.5rem; }
+  .role-card li { font-size:0.86rem; color:var(--text-light); line-height:1.6; font-weight:300; display:flex; gap:0.5rem; }
+  .role-card li::before { content:'·'; color:var(--green); font-weight:700; }
+  .why { background:var(--cream); }
+  .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-top:2.5rem; align-items:start; }
+  .why-points { display:flex; flex-direction:column; gap:1.2rem; }
+  .why-point { display:flex; gap:1rem; align-items:flex-start; }
+  .why-icon { width:38px; height:38px; background:rgba(61,143,96,0.08); border:1px solid var(--green); border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--green); font-size:1rem; }
+  .why-text h4 { font-weight:500; margin-bottom:0.3rem; font-size:0.95rem; color:var(--forest); }
+  .why-text p { color:var(--text-light); font-size:0.86rem; line-height:1.65; font-weight:300; }
+  .stat-box { background:var(--forest); color:var(--white); padding:2.2rem; border-radius:4px; }
+  .stat-box .big { font-family:'Playfair Display',serif; font-size:2.2rem; color:var(--mint); line-height:1.15; margin-bottom:0.5rem; }
+  .stat-box p { font-size:0.88rem; color:rgba(255,255,255,0.6); font-weight:300; line-height:1.6; margin-bottom:1.5rem; }
+  .stat-box .source { font-size:0.72rem; color:rgba(255,255,255,0.35); }
+  .ethics { background:var(--white); }
+  .ethics-box { background:var(--forest); color:var(--white); border-radius:4px; padding:2.5rem; margin-top:2.5rem; }
+  .ethics-box .eb-label { font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--green-bright); margin-bottom:1rem; font-weight:600; }
+  .ethics-box h4 { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--mint); margin-bottom:1rem; line-height:1.3; }
+  .ethics-box p { font-size:0.92rem; color:rgba(255,255,255,0.65); line-height:1.8; font-weight:300; margin-bottom:0.9rem; }
+  .ethics-box p:last-child { margin-bottom:0; }
+  .legal { background:var(--cream); }
+  .legal-box { background:var(--white); border-radius:4px; padding:2.2rem; margin-top:1.5rem; border-left:3px solid var(--green-bright); }
+  .legal-box h4 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--forest); margin-bottom:0.8rem; }
+  .legal-box p { font-size:0.9rem; color:var(--text-light); line-height:1.75; font-weight:300; margin-bottom:0.8rem; }
+  .legal-box p:last-child { margin-bottom:0; }
+  .legal-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2.5rem; }
+  .process { background:var(--forest-mid); color:var(--white); }
+  .process .section-title { color:var(--white); }
+  .process .section-label { color:var(--green-bright); }
+  .process .section-sub { color:rgba(255,255,255,0.55); }
+  .timeline { display:flex; flex-direction:column; gap:1.2rem; margin-top:2.5rem; }
+  .tl-item { display:grid; grid-template-columns:60px 1fr; gap:1.5rem; align-items:start; background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.15); border-radius:4px; padding:1.5rem 1.8rem; }
+  .tl-number { font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--green-bright); opacity:0.6; }
+  .tl-item h4 { font-size:0.95rem; font-weight:500; color:var(--mint); margin-bottom:0.4rem; }
+  .tl-item p { font-size:0.86rem; color:rgba(255,255,255,0.6); font-weight:300; line-height:1.6; }
+  .faq { background:var(--white); }
+  .faq-list { display:flex; flex-direction:column; gap:1rem; margin-top:2.5rem; }
+  .faq-item { background:var(--cream); border-radius:4px; padding:1.6rem 1.8rem; border-left:3px solid var(--green-bright); }
+  .faq-item h4 { font-size:0.95rem; font-weight:500; color:var(--forest); margin-bottom:0.5rem; }
+  .faq-item p { font-size:0.87rem; color:var(--text-light); line-height:1.7; font-weight:300; }
+  .cta-final { background:var(--forest); color:var(--white); text-align:center; }
+  .cta-final .section-title { color:var(--white); }
+  .cta-final .section-sub { max-width:100%; margin:0 auto 2rem; color:rgba(255,255,255,0.6); }
+  .cta-btn { display:inline-block; background:var(--green-bright); color:var(--forest); padding:1.1rem 2.5rem; font-weight:500; text-decoration:none; border-radius:2px; font-size:1rem; }
+  .other-sectors { margin-top:1.5rem; font-size:0.85rem; }
+  .other-sectors a { color:var(--mint); text-decoration:none; }
+  .other-sectors a:hover { text-decoration:underline; }
+  footer { background:#0c1f14; color:rgba(255,255,255,0.3); padding:2rem 4rem; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; }
+  footer a { color:rgba(255,255,255,0.3); text-decoration:none; }
+  footer a:hover { color:var(--green-bright); }
+  @media (max-width:768px) {
+    nav { padding:1rem 1.5rem; } .nav-links { display:none; }
+    .breadcrumb { padding:6rem 1.5rem 0; }
+    section { padding:3rem 1.5rem; }
+    .hero { padding:2rem 1.5rem 3rem; }
+    .hero-inner, .why-grid, .legal-grid, .role-grid { grid-template-columns:1fr; gap:2rem; }
+    footer { flex-direction:column; gap:1rem; text-align:center; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRHHB7GQGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MRHHB7GQGB');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Was ist der Unterschied zwischen Pflegehilfskraft und Pflegefachkraft?","acceptedAnswer":{"@type":"Answer","text":"Pflegefachkraft ist ein reglementierter Beruf in Deutschland und erfordert eine formale Anerkennung der ausländischen Qualifikation. Pflegehilfskräfte benötigen diese Anerkennung nicht und haben seit kurzem einen eigenen, einfacheren Aufenthaltstitel."}},
+    {"@type":"Question","name":"Aus welchen Ländern darf nicht aktiv angeworben werden?","acceptedAnswer":{"@type":"Answer","text":"Gemäß WHO-Verhaltenskodex und §38 BeschV gilt für 55 Länder mit kritischem Personalmangel im Gesundheitswesen ein Anwerbeverbot. Wir halten uns strikt an diese ethischen Vorgaben."}},
+    {"@type":"Question","name":"Was kostet die Vermittlung einer Pflegekraft?","acceptedAnswer":{"@type":"Answer","text":"Die Vermittlung erfolgt über eine einmalige Pauschale, die sich an etwa ein bis zwei Monatsgehältern der Position orientiert. Für Bewerber entstehen keine Kosten."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Bridge<span>Work</span> Germany</a>
+  <div class="nav-links">
+    <a href="index.html#prozess" data-i18n="nav_process">Prozess</a>
+    <a href="index.html#branchen" data-i18n="nav_sectors">Branchen</a>
+    <a href="bewerber.html" data-i18n="nav_applicants">Für Bewerber</a>
+    <a href="#" class="lang-toggle" id="langBtn" onclick="toggleLang(); return false;">🇬🇧 English</a>
+    <a href="index.html#kontakt" class="nav-cta" data-i18n="nav_cta">Erstgespräch anfragen</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html" data-i18n="bc_home">Startseite</a><span>/</span><a href="index.html#branchen" data-i18n="bc_sectors">Branchen</a><span>/</span><span style="color:rgba(255,255,255,0.7)" data-i18n="bc_current">Pflege & Soziales</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-label" data-i18n="hero_label">Für Pflegeeinrichtungen & Soziale Träger</p>
+      <h1 data-i18n="hero_h1">Pflegehilfskräfte & Pflegefachkräfte aus dem Ausland einstellen.</h1>
+      <p data-i18n="hero_p">Eine unbesetzte Pflegestelle kostet oft 40.000–60.000 € pro Jahr durch Zeitarbeit. Wir vermitteln motivierte Fachkräfte – ethisch, transparent und nach dem WHO-Verhaltenskodex.</p>
+      <a href="index.html#kontakt" class="hero-cta" data-i18n="hero_cta">Kostenloses Erstgespräch anfragen</a>
+    </div>
+    <div class="hero-side">
+      <h4 data-i18n="side_h">Auf einen Blick</h4>
+      <ul>
+        <li data-i18n="side_l1">Pflegehilfskräfte: eigener, einfacherer Aufenthaltstitel</li>
+        <li data-i18n="side_l2">Ethische Rekrutierung nach WHO-Kodex</li>
+        <li data-i18n="side_l3">Keine Kosten für Bewerber – nur Sie zahlen</li>
+        <li data-i18n="side_l4">Einmalige Pauschale, kein Abo</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="roles">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="roles_label">Positionen</p>
+    <h2 class="section-title" data-i18n="roles_title">Zwei Wege, ein klarer Unterschied</h2>
+    <p class="section-sub" data-i18n="roles_sub">Pflege ist gesetzlich anders geregelt als andere Branchen – wir erklären transparent, welcher Weg für welche Position gilt.</p>
+    <div class="role-grid">
+      <div class="role-card">
+        <span class="tag" data-i18n="rc1_tag">Einfacherer Weg</span>
+        <h3 data-i18n="rc1_h">Pflegehilfskräfte</h3>
+        <ul>
+          <li data-i18n="rc1_l1">Eigener, neu geschaffener Aufenthaltstitel</li>
+          <li data-i18n="rc1_l2">Keine formale Anerkennung der Ausbildung nötig</li>
+          <li data-i18n="rc1_l3">Unterstützung bei Grundpflege, Betreuung, Hauswirtschaft</li>
+          <li data-i18n="rc1_l4">Schnellerer, planbarer Prozess</li>
+        </ul>
+      </div>
+      <div class="role-card complex">
+        <span class="tag" data-i18n="rc2_tag">Reglementierter Beruf</span>
+        <h3 data-i18n="rc2_h">Pflegefachkräfte</h3>
+        <ul>
+          <li data-i18n="rc2_l1">Formale Anerkennung der Qualifikation erforderlich</li>
+          <li data-i18n="rc2_l2">Anerkennungspartnerschaft: Einreise vor Verfahrensabschluss möglich</li>
+          <li data-i18n="rc2_l3">Beschleunigtes Fachkräfteverfahren verkürzt die Dauer erheblich</li>
+          <li data-i18n="rc2_l4">Längerer Prozess, aber strukturiert begleitbar</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="why_label">Die Ausgangslage</p>
+    <h2 class="section-title" data-i18n="why_title">Warum der lokale Markt nicht mehr reicht</h2>
+    <div class="why-grid">
+      <div class="why-points">
+        <div class="why-point"><div class="why-icon">⚠</div><div class="why-text"><h4 data-i18n="wp1_h">Hohe Kosten durch unbesetzte Stellen</h4><p data-i18n="wp1_p">Eine unbesetzte Pflegestelle kostet durch Zeitarbeit oder Leistungsreduzierung oft 40.000 bis 60.000 € pro Jahr.</p></div></div>
+        <div class="why-point"><div class="why-icon">🌍</div><div class="why-text"><h4 data-i18n="wp2_h">Internationale Rekrutierung als Bundesstrategie</h4><p data-i18n="wp2_p">Die Bundesregierung setzt seit Jahren strukturell auf internationale Pflegekräfte, um die Versorgungssicherheit zu stabilisieren.</p></div></div>
+        <div class="why-point"><div class="why-icon">🔁</div><div class="why-text"><h4 data-i18n="wp3_h">Loyalität und Planbarkeit</h4><p data-i18n="wp3_p">Internationale Fachkräfte zeigen häufig hohe Arbeitgeberloyalität und ermöglichen langfristige Personalplanung.</p></div></div>
+      </div>
+      <div class="stat-box">
+        <div class="big">40.000–60.000 €</div>
+        <p data-i18n="stat_p">jährliche Kosten einer unbesetzten Pflegestelle durch Zeitarbeit – ein starkes Argument für strukturierte internationale Rekrutierung.</p>
+        <div class="source" data-i18n="stat_source">Quelle: Branchenanalyse Pflegepersonal 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ethics">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="ethics_label">Unser Ansatz</p>
+    <h2 class="section-title" data-i18n="ethics_title">Ethische Rekrutierung ist in der Pflege keine Option, sondern Pflicht</h2>
+    <p class="section-sub" data-i18n="ethics_sub">Gerade im Gesundheitswesen hat die Art der Rekrutierung direkte Auswirkungen auf die Versorgungssicherheit in den Herkunftsländern.</p>
+    <div class="ethics-box">
+      <div class="eb-label" data-i18n="eb_label">WHO-Verhaltenskodex</div>
+      <h4 data-i18n="eb_title">Anwerbeverbot für 55 Länder mit kritischem Personalmangel</h4>
+      <p data-i18n="eb_p1">Die Weltgesundheitsorganisation (WHO) hat Länder identifiziert, in denen ein kritischer Mangel an Gesundheits- und Pflegepersonal herrscht. Für diese 55 Länder gilt nach §38 BeschV ein gesetzliches Anwerbeverbot.</p>
+      <p data-i18n="eb_p2">Wir halten uns strikt an diese Vorgaben. Eine Vermittlung aus diesen Ländern findet bei uns grundsätzlich nicht statt – das ist Teil unseres ILO Employer Pays Principle und unseres ethischen Selbstverständnisses.</p>
+    </div>
+  </div>
+</section>
+
+<section class="legal">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="legal_label">Rechtliche Grundlage</p>
+    <h2 class="section-title" data-i18n="legal_title">Was Sie als Arbeitgeber wissen sollten</h2>
+    <p class="section-sub" data-i18n="legal_sub">Pflege ist rechtlich besonders geregelt – wir kennen die Details und begleiten Sie strukturiert.</p>
+    <div class="legal-grid">
+      <div class="legal-box">
+        <h4 data-i18n="lb1_h">EU/EWR-Staatsangehörige</h4>
+        <p data-i18n="lb1_p1">Pflegefachkräfte aus EU/EWR-Staaten und der Schweiz erhalten in der Regel eine automatische Anerkennung ihrer Qualifikation.</p>
+      </div>
+      <div class="legal-box">
+        <h4 data-i18n="lb2_h">Beschleunigtes Fachkräfteverfahren</h4>
+        <p data-i18n="lb2_p1">Nach §81a AufenthG verkürzt sich das Anerkennungsverfahren auf rund zwei Monate – Gesamtdauer ca. 3–4 statt 6–12 Monate. Gebühr: 411 € (Make it in Germany).</p>
+      </div>
+      <div class="legal-box">
+        <h4 data-i18n="lb3_h">Anerkennungspartnerschaft</h4>
+        <p data-i18n="lb3_p1">Seit März 2024 können Pflegefachkräfte einreisen, bevor das Anerkennungsverfahren abgeschlossen ist – sie arbeiten währenddessen unter Anleitung als Pflegehilfskraft.</p>
+      </div>
+      <div class="legal-box">
+        <h4 data-i18n="lb4_h">Förderung der Qualifizierungskosten</h4>
+        <p data-i18n="lb4_p1">Die Agentur für Arbeit übernimmt für die Qualifizierung internationaler Pflegefachkräfte unter bestimmten Voraussetzungen bis zu 100 % der Lehrgangskosten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="proc_label">Der Prozess</p>
+    <h2 class="section-title" data-i18n="proc_title">So läuft die Vermittlung konkret ab</h2>
+    <p class="section-sub" data-i18n="proc_sub">Speziell für Pflege-Positionen – von der Anfrage bis zum ersten Arbeitstag.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-number">01</div><div><h4 data-i18n="t1_h">Bedarfsanalyse</h4><p data-i18n="t1_p">Pflegehilfskraft oder Pflegefachkraft, wie viele Stellen, welcher Bereich – wir klären den genauen Bedarf in einem kurzen Gespräch.</p></div></div>
+      <div class="tl-item"><div class="tl-number">02</div><div><h4 data-i18n="t2_h">Realistische Einschätzung</h4><p data-i18n="t2_p">Wir erklären transparent, welcher rechtliche Weg und welche Zeitschiene realistisch sind.</p></div></div>
+      <div class="tl-item"><div class="tl-number">03</div><div><h4 data-i18n="t3_h">Kandidatensuche & Vorqualifizierung</h4><p data-i18n="t3_p">Wir prüfen Qualifikation, Erfahrung und Sprachstand jedes Kandidaten – unter strikter Einhaltung des WHO-Kodex.</p></div></div>
+      <div class="tl-item"><div class="tl-number">04</div><div><h4 data-i18n="t4_h">Anerkennung, Visa & Anreise</h4><p data-i18n="t4_p">Wir koordinieren Anerkennungsverfahren, Visumantrag und die Anreise nach Deutschland.</p></div></div>
+      <div class="tl-item"><div class="tl-number">05</div><div><h4 data-i18n="t5_h">Onboarding & Nachbetreuung</h4><p data-i18n="t5_p">Wir begleiten den Start in der Einrichtung und bleiben für beide Seiten ansprechbar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="faq_label">Häufige Fragen</p>
+    <h2 class="section-title" data-i18n="faq_title">Was Arbeitgeber uns am häufigsten fragen</h2>
+    <div class="faq-list">
+      <div class="faq-item"><h4 data-i18n="f1_h">Was ist der Unterschied zwischen Pflegehilfskraft und Pflegefachkraft?</h4><p data-i18n="f1_p">Pflegefachkraft ist ein reglementierter Beruf und erfordert eine formale Anerkennung der ausländischen Qualifikation. Pflegehilfskräfte benötigen diese Anerkennung nicht und haben einen eigenen, einfacheren Aufenthaltstitel.</p></div>
+      <div class="faq-item"><h4 data-i18n="f2_h">Aus welchen Ländern darf nicht aktiv angeworben werden?</h4><p data-i18n="f2_p">Gemäß WHO-Verhaltenskodex und §38 BeschV gilt für 55 Länder mit kritischem Personalmangel im Gesundheitswesen ein Anwerbeverbot. Wir halten uns strikt an diese ethischen Vorgaben.</p></div>
+      <div class="faq-item"><h4 data-i18n="f3_h">Was kostet die Vermittlung?</h4><p data-i18n="f3_p">Eine einmalige Pauschale, die sich an etwa ein bis zwei Monatsgehältern der Position orientiert. Für Bewerber entstehen niemals Kosten.</p></div>
+      <div class="faq-item"><h4 data-i18n="f4_h">Wie lange dauert die Anerkennung einer Pflegefachkraft?</h4><p data-i18n="f4_p">Über das beschleunigte Fachkräfteverfahren in der Regel 3–4 Monate statt 6–12 Monate im regulären Verfahren – plus Anreisezeit.</p></div>
+      <div class="faq-item"><h4 data-i18n="f5_h">Kann die Pflegekraft schon während der Anerkennung arbeiten?</h4><p data-i18n="f5_p">Ja, über die Anerkennungspartnerschaft – sie arbeitet während des laufenden Verfahrens bereits als Pflegehilfskraft unter Anleitung.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="cta_label">Nächster Schritt</p>
+    <h2 class="section-title" data-i18n="cta_title">Lassen Sie uns über Ihren Bedarf sprechen.</h2>
+    <p class="section-sub" data-i18n="cta_sub">20 Minuten, kostenlos, unverbindlich. Wir klären gemeinsam, ob und wie wir Ihnen helfen können.</p>
+    <a href="index.html#kontakt" class="cta-btn" data-i18n="cta_btn">Kostenloses Erstgespräch anfragen</a>
+    <div class="other-sectors" data-i18n="other_sectors">Auch interessant: <a href="housekeeping-personal.html">Housekeeping-Personal</a> · <a href="bau-handwerk-personal.html">Bau &amp; Handwerk</a> · <a href="logistik-spedition-personal.html">Logistik &amp; Spedition</a> · <a href="bewerber.html">Informationen für Bewerber</a></div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" style="font-family:'Playfair Display',serif; font-size:1rem; color:rgba(255,255,255,0.3); text-decoration:none;">Bridge<span style="color:#52c47e">Work</span> Germany</a>
+  <div>© 2026 BridgeWork Germany · Michael Tospann</div>
+  <div><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+</footer>
+
+<script>
+const translations = {
+  de: {
+    nav_process:"Prozess", nav_sectors:"Branchen", nav_applicants:"Für Bewerber", nav_cta:"Erstgespräch anfragen",
+    bc_home:"Startseite", bc_sectors:"Branchen", bc_current:"Pflege & Soziales",
+    hero_label:"Für Pflegeeinrichtungen & Soziale Träger",
+    hero_h1:"Pflegehilfskräfte & Pflegefachkräfte aus dem Ausland einstellen.",
+    hero_p:"Eine unbesetzte Pflegestelle kostet oft 40.000–60.000 € pro Jahr durch Zeitarbeit. Wir vermitteln motivierte Fachkräfte – ethisch, transparent und nach dem WHO-Verhaltenskodex.",
+    hero_cta:"Kostenloses Erstgespräch anfragen",
+    side_h:"Auf einen Blick",
+    side_l1:"Pflegehilfskräfte: eigener, einfacherer Aufenthaltstitel",
+    side_l2:"Ethische Rekrutierung nach WHO-Kodex",
+    side_l3:"Keine Kosten für Bewerber – nur Sie zahlen",
+    side_l4:"Einmalige Pauschale, kein Abo",
+    roles_label:"Positionen", roles_title:"Zwei Wege, ein klarer Unterschied",
+    roles_sub:"Pflege ist gesetzlich anders geregelt als andere Branchen – wir erklären transparent, welcher Weg für welche Position gilt.",
+    rc1_tag:"Einfacherer Weg", rc1_h:"Pflegehilfskräfte",
+    rc1_l1:"Eigener, neu geschaffener Aufenthaltstitel",
+    rc1_l2:"Keine formale Anerkennung der Ausbildung nötig",
+    rc1_l3:"Unterstützung bei Grundpflege, Betreuung, Hauswirtschaft",
+    rc1_l4:"Schnellerer, planbarer Prozess",
+    rc2_tag:"Reglementierter Beruf", rc2_h:"Pflegefachkräfte",
+    rc2_l1:"Formale Anerkennung der Qualifikation erforderlich",
+    rc2_l2:"Anerkennungspartnerschaft: Einreise vor Verfahrensabschluss möglich",
+    rc2_l3:"Beschleunigtes Fachkräfteverfahren verkürzt die Dauer erheblich",
+    rc2_l4:"Längerer Prozess, aber strukturiert begleitbar",
+    why_label:"Die Ausgangslage", why_title:"Warum der lokale Markt nicht mehr reicht",
+    wp1_h:"Hohe Kosten durch unbesetzte Stellen",
+    wp1_p:"Eine unbesetzte Pflegestelle kostet durch Zeitarbeit oder Leistungsreduzierung oft 40.000 bis 60.000 € pro Jahr.",
+    wp2_h:"Internationale Rekrutierung als Bundesstrategie",
+    wp2_p:"Die Bundesregierung setzt seit Jahren strukturell auf internationale Pflegekräfte, um die Versorgungssicherheit zu stabilisieren.",
+    wp3_h:"Loyalität und Planbarkeit",
+    wp3_p:"Internationale Fachkräfte zeigen häufig hohe Arbeitgeberloyalität und ermöglichen langfristige Personalplanung.",
+    stat_p:"jährliche Kosten einer unbesetzten Pflegestelle durch Zeitarbeit – ein starkes Argument für strukturierte internationale Rekrutierung.",
+    stat_source:"Quelle: Branchenanalyse Pflegepersonal 2026",
+    ethics_label:"Unser Ansatz", ethics_title:"Ethische Rekrutierung ist in der Pflege keine Option, sondern Pflicht",
+    ethics_sub:"Gerade im Gesundheitswesen hat die Art der Rekrutierung direkte Auswirkungen auf die Versorgungssicherheit in den Herkunftsländern.",
+    eb_label:"WHO-Verhaltenskodex", eb_title:"Anwerbeverbot für 55 Länder mit kritischem Personalmangel",
+    eb_p1:"Die Weltgesundheitsorganisation (WHO) hat Länder identifiziert, in denen ein kritischer Mangel an Gesundheits- und Pflegepersonal herrscht. Für diese 55 Länder gilt nach §38 BeschV ein gesetzliches Anwerbeverbot.",
+    eb_p2:"Wir halten uns strikt an diese Vorgaben. Eine Vermittlung aus diesen Ländern findet bei uns grundsätzlich nicht statt – das ist Teil unseres ILO Employer Pays Principle und unseres ethischen Selbstverständnisses.",
+    legal_label:"Rechtliche Grundlage", legal_title:"Was Sie als Arbeitgeber wissen sollten",
+    legal_sub:"Pflege ist rechtlich besonders geregelt – wir kennen die Details und begleiten Sie strukturiert.",
+    lb1_h:"EU/EWR-Staatsangehörige",
+    lb1_p1:"Pflegefachkräfte aus EU/EWR-Staaten und der Schweiz erhalten in der Regel eine automatische Anerkennung ihrer Qualifikation.",
+    lb2_h:"Beschleunigtes Fachkräfteverfahren",
+    lb2_p1:"Nach §81a AufenthG verkürzt sich das Anerkennungsverfahren auf rund zwei Monate – Gesamtdauer ca. 3–4 statt 6–12 Monate. Gebühr: 411 € (Make it in Germany).",
+    lb3_h:"Anerkennungspartnerschaft",
+    lb3_p1:"Seit März 2024 können Pflegefachkräfte einreisen, bevor das Anerkennungsverfahren abgeschlossen ist – sie arbeiten währenddessen unter Anleitung als Pflegehilfskraft.",
+    lb4_h:"Förderung der Qualifizierungskosten",
+    lb4_p1:"Die Agentur für Arbeit übernimmt für die Qualifizierung internationaler Pflegefachkräfte unter bestimmten Voraussetzungen bis zu 100 % der Lehrgangskosten.",
+    proc_label:"Der Prozess", proc_title:"So läuft die Vermittlung konkret ab",
+    proc_sub:"Speziell für Pflege-Positionen – von der Anfrage bis zum ersten Arbeitstag.",
+    t1_h:"Bedarfsanalyse", t1_p:"Pflegehilfskraft oder Pflegefachkraft, wie viele Stellen, welcher Bereich – wir klären den genauen Bedarf in einem kurzen Gespräch.",
+    t2_h:"Realistische Einschätzung", t2_p:"Wir erklären transparent, welcher rechtliche Weg und welche Zeitschiene realistisch sind.",
+    t3_h:"Kandidatensuche & Vorqualifizierung", t3_p:"Wir prüfen Qualifikation, Erfahrung und Sprachstand jedes Kandidaten – unter strikter Einhaltung des WHO-Kodex.",
+    t4_h:"Anerkennung, Visa & Anreise", t4_p:"Wir koordinieren Anerkennungsverfahren, Visumantrag und die Anreise nach Deutschland.",
+    t5_h:"Onboarding & Nachbetreuung", t5_p:"Wir begleiten den Start in der Einrichtung und bleiben für beide Seiten ansprechbar.",
+    faq_label:"Häufige Fragen", faq_title:"Was Arbeitgeber uns am häufigsten fragen",
+    f1_h:"Was ist der Unterschied zwischen Pflegehilfskraft und Pflegefachkraft?", f1_p:"Pflegefachkraft ist ein reglementierter Beruf und erfordert eine formale Anerkennung der ausländischen Qualifikation. Pflegehilfskräfte benötigen diese Anerkennung nicht und haben einen eigenen, einfacheren Aufenthaltstitel.",
+    f2_h:"Aus welchen Ländern darf nicht aktiv angeworben werden?", f2_p:"Gemäß WHO-Verhaltenskodex und §38 BeschV gilt für 55 Länder mit kritischem Personalmangel im Gesundheitswesen ein Anwerbeverbot. Wir halten uns strikt an diese ethischen Vorgaben.",
+    f3_h:"Was kostet die Vermittlung?", f3_p:"Eine einmalige Pauschale, die sich an etwa ein bis zwei Monatsgehältern der Position orientiert. Für Bewerber entstehen niemals Kosten.",
+    f4_h:"Wie lange dauert die Anerkennung einer Pflegefachkraft?", f4_p:"Über das beschleunigte Fachkräfteverfahren in der Regel 3–4 Monate statt 6–12 Monate im regulären Verfahren – plus Anreisezeit.",
+    f5_h:"Kann die Pflegekraft schon während der Anerkennung arbeiten?", f5_p:"Ja, über die Anerkennungspartnerschaft – sie arbeitet während des laufenden Verfahrens bereits als Pflegehilfskraft unter Anleitung.",
+    cta_label:"Nächster Schritt", cta_title:"Lassen Sie uns über Ihren Bedarf sprechen.",
+    cta_sub:"20 Minuten, kostenlos, unverbindlich. Wir klären gemeinsam, ob und wie wir Ihnen helfen können.",
+    cta_btn:"Kostenloses Erstgespräch anfragen",
+    other_sectors:'Auch interessant: <a href="housekeeping-personal.html">Housekeeping-Personal</a> · <a href="bau-handwerk-personal.html">Bau &amp; Handwerk</a> · <a href="logistik-spedition-personal.html">Logistik &amp; Spedition</a> · <a href="bewerber.html">Informationen für Bewerber</a>'
+  },
+  en: {
+    nav_process:"Process", nav_sectors:"Industries", nav_applicants:"For Applicants", nav_cta:"Request Consultation",
+    bc_home:"Home", bc_sectors:"Industries", bc_current:"Care & Social Services",
+    hero_label:"For Care Facilities & Social Service Providers",
+    hero_h1:"Hire care assistants & qualified nurses from abroad.",
+    hero_p:"An unfilled care position often costs €40,000–60,000 per year through temp staffing. We place motivated professionals – ethically, transparently and in line with the WHO Code of Practice.",
+    hero_cta:"Request a free consultation",
+    side_h:"At a glance",
+    side_l1:"Care assistants: dedicated, simpler residence permit",
+    side_l2:"Ethical recruitment under the WHO Code",
+    side_l3:"No costs for applicants – only you pay",
+    side_l4:"One-time fee, no subscription",
+    roles_label:"Positions", roles_title:"Two pathways, one clear distinction",
+    roles_sub:"Care is regulated differently than other sectors – we explain transparently which pathway applies to which position.",
+    rc1_tag:"Simpler Pathway", rc1_h:"Care Assistants",
+    rc1_l1:"Dedicated, newly created residence permit",
+    rc1_l2:"No formal recognition of training required",
+    rc1_l3:"Support with basic care, supervision, domestic duties",
+    rc1_l4:"Faster, more plannable process",
+    rc2_tag:"Regulated Profession", rc2_h:"Qualified Nurses",
+    rc2_l1:"Formal recognition of qualification required",
+    rc2_l2:"Recognition partnership: entry possible before procedure completion",
+    rc2_l3:"Accelerated skilled worker procedure significantly shortens duration",
+    rc2_l4:"Longer process, but can be structured and supported",
+    why_label:"The Situation", why_title:"Why the local market is no longer enough",
+    wp1_h:"High costs from unfilled positions",
+    wp1_p:"An unfilled care position often costs €40,000 to 60,000 per year through temp staffing or service reduction.",
+    wp2_h:"International recruitment as federal strategy",
+    wp2_p:"The federal government has for years strategically relied on international care professionals to stabilise care provision.",
+    wp3_h:"Loyalty and predictability",
+    wp3_p:"International professionals often show high employer loyalty and enable long-term staff planning.",
+    stat_p:"annual cost of an unfilled care position through temp staffing – a strong argument for structured international recruitment.",
+    stat_source:"Source: Care Staffing Industry Analysis 2026",
+    ethics_label:"Our Approach", ethics_title:"Ethical recruitment in care is not optional – it's mandatory",
+    ethics_sub:"Especially in healthcare, the way recruitment is conducted has direct effects on care provision in the countries of origin.",
+    eb_label:"WHO Code of Practice", eb_title:"Recruitment ban for 55 countries with critical staff shortages",
+    eb_p1:"The World Health Organization (WHO) has identified countries with a critical shortage of health and care personnel. A statutory recruitment ban applies to these 55 countries under §38 BeschV.",
+    eb_p2:"We strictly adhere to these requirements. We fundamentally do not place candidates from these countries – this is part of our ILO Employer Pays Principle and our ethical self-understanding.",
+    legal_label:"Legal Basis", legal_title:"What you should know as an employer",
+    legal_sub:"Care is subject to special legal regulation – we know the details and provide structured support.",
+    lb1_h:"EU/EEA Nationals",
+    lb1_p1:"Qualified nurses from EU/EEA states and Switzerland generally receive automatic recognition of their qualification.",
+    lb2_h:"Accelerated Skilled Worker Procedure",
+    lb2_p1:"Under §81a of the Residence Act, the recognition procedure is shortened to around two months – total duration approx. 3–4 instead of 6–12 months. Fee: €411 (Make it in Germany).",
+    lb3_h:"Recognition Partnership",
+    lb3_p1:"Since March 2024, qualified nurses can enter before the recognition procedure is complete – they work as supervised care assistants in the meantime.",
+    lb4_h:"Funding for Qualification Costs",
+    lb4_p1:"The Federal Employment Agency covers up to 100% of training course costs for qualifying international nurses under certain conditions.",
+    proc_label:"The Process", proc_title:"How the placement works in practice",
+    proc_sub:"Specifically for care positions – from inquiry to first working day.",
+    t1_h:"Needs Analysis", t1_p:"Care assistant or qualified nurse, how many positions, which department – we clarify the exact needs in a short conversation.",
+    t2_h:"Realistic Assessment", t2_p:"We explain transparently which legal pathway and timeline are realistic.",
+    t3_h:"Candidate Search & Pre-qualification", t3_p:"We verify qualification, experience and language level of every candidate – strictly adhering to the WHO Code.",
+    t4_h:"Recognition, Visa & Arrival", t4_p:"We coordinate the recognition procedure, visa application and arrival in Germany.",
+    t5_h:"Onboarding & Aftercare", t5_p:"We support the start at your facility and remain available for both sides.",
+    faq_label:"FAQ", faq_title:"What employers ask us most often",
+    f1_h:"What's the difference between a care assistant and a qualified nurse?", f1_p:"Qualified nurse is a regulated profession requiring formal recognition of the foreign qualification. Care assistants don't need this recognition and have their own, simpler residence permit.",
+    f2_h:"Which countries can't be actively recruited from?", f2_p:"Under the WHO Code of Practice and §38 BeschV, a recruitment ban applies to 55 countries with critical healthcare staff shortages. We strictly adhere to these ethical requirements.",
+    f3_h:"What does the placement cost?", f3_p:"A one-time flat fee, typically reflecting one to two months' salary of the position. Applicants never pay anything.",
+    f4_h:"How long does recognition of a qualified nurse take?", f4_p:"Via the accelerated skilled worker procedure, typically 3–4 months instead of 6–12 months under the regular procedure – plus travel time.",
+    f5_h:"Can the nurse already work during the recognition process?", f5_p:"Yes, via the recognition partnership – they already work as a supervised care assistant during the ongoing procedure.",
+    cta_label:"Next Step", cta_title:"Let's talk about your needs.",
+    cta_sub:"20 minutes, free, non-binding. We'll clarify together whether and how we can help you.",
+    cta_btn:"Request a free consultation",
+    other_sectors:'Also of interest: <a href="housekeeping-personal.html">Housekeeping Staff</a> · <a href="bau-handwerk-personal.html">Construction &amp; Trades</a> · <a href="logistik-spedition-personal.html">Logistics &amp; Freight</a> · <a href="bewerber.html">Information for applicants</a>'
+  }
+};
+
+let currentLang = localStorage.getItem('bwg_lang') || 'de';
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('bwg_lang', lang);
+  document.documentElement.lang = lang;
+  const btn = document.getElementById('langBtn');
+  if (btn) btn.textContent = lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+}
+function toggleLang() { applyLang(currentLang === 'de' ? 'en' : 'de'); }
+document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
+</script>
+
+</body>
+</html>
