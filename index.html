@@ -86,6 +86,7 @@
   .sectors { background:var(--cream); }
   .sector-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
   .sector-card { background:var(--white); border-radius:4px; padding:2rem 1.5rem; border-bottom:3px solid transparent; transition:border-color 0.3s, transform 0.2s; }
+  a.sector-card { color:inherit; }
   .sector-card:hover { border-color:var(--green-bright); transform:translateY(-2px); }
   .sector-icon { font-size:1.8rem; margin-bottom:0.9rem; }
   .sector-card h3 { font-weight:500; font-size:0.95rem; margin-bottom:0.6rem; color:var(--forest); }
@@ -253,7 +254,7 @@
     <h2 class="section-title" data-i18n="sec_title">Für welche Betriebe wir arbeiten</h2>
     <p class="section-sub" data-i18n="sec_sub">Inhabergeführte KMU mit echtem Personalbedarf – das ist unser Fokus.</p>
     <div class="sector-cards">
-      <div class="sector-card"><div class="sector-icon">🏨</div><h3 data-i18n="s1_h">Hotel &amp; Gastgewerbe</h3><p data-i18n="s1_p">Housekeeping, Küchenhilfe, Frühstücksservice, Reinigung.</p></div>
+      <a href="housekeeping-personal.html" class="sector-card" style="text-decoration:none; display:block; cursor:pointer;"><div class="sector-icon">🏨</div><h3 data-i18n="s1_h">Hotel &amp; Gastgewerbe</h3><p data-i18n="s1_p">Housekeeping, Küchenhilfe, Frühstücksservice, Reinigung.</p><span style="display:inline-block; margin-top:0.8rem; font-size:0.78rem; color:var(--green); font-weight:500;" data-i18n="s1_link">Mehr erfahren →</span></a>
       <div class="sector-card"><div class="sector-icon">🔨</div><h3 data-i18n="s2_h">Bau &amp; Handwerk</h3><p data-i18n="s2_p">Bauhelfer, Montageunterstützung, Zuarbeiter.</p></div>
       <div class="sector-card"><div class="sector-icon">🚚</div><h3 data-i18n="s3_h">Logistik &amp; Spedition</h3><p data-i18n="s3_p">Lagerhelfer, Kommissionierer, Fahrer.</p></div>
       <div class="sector-card"><div class="sector-icon">🏥</div><h3 data-i18n="s4_h">Pflege &amp; Soziales</h3><p data-i18n="s4_p">Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaft.</p></div>
@@ -348,7 +349,7 @@ const translations = {
     ep6:"Keine versteckten Kosten für keine Seite",
     sec_label:"Branchen", sec_title:"Für welche Betriebe wir arbeiten",
     sec_sub:"Inhabergeführte KMU mit echtem Personalbedarf – das ist unser Fokus.",
-    s1_h:"Hotel &amp; Gastgewerbe", s1_p:"Housekeeping, Küchenhilfe, Frühstücksservice, Reinigung.",
+    s1_h:"Hotel &amp; Gastgewerbe", s1_p:"Housekeeping, Küchenhilfe, Frühstücksservice, Reinigung.", s1_link:"Mehr erfahren →",
     s2_h:"Bau &amp; Handwerk", s2_p:"Bauhelfer, Montageunterstützung, Zuarbeiter.",
     s3_h:"Logistik &amp; Spedition", s3_p:"Lagerhelfer, Kommissionierer, Fahrer.",
     s4_h:"Pflege &amp; Soziales", s4_p:"Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaft.",
@@ -419,7 +420,7 @@ const translations = {
     ep6:"No hidden costs for either side",
     sec_label:"Industries", sec_title:"Which businesses we work with",
     sec_sub:"Owner-managed SMEs with genuine staffing needs – that's our focus.",
-    s1_h:"Hotel &amp; Hospitality", s1_p:"Housekeeping, kitchen assistance, breakfast service, cleaning.",
+    s1_h:"Hotel &amp; Hospitality", s1_p:"Housekeeping, kitchen assistance, breakfast service, cleaning.", s1_link:"Learn more →",
     s2_h:"Construction &amp; Trades", s2_p:"Construction helpers, assembly support, assistants.",
     s3_h:"Logistics &amp; Freight", s3_p:"Warehouse helpers, pickers, drivers.",
     s4_h:"Care &amp; Social Services", s4_p:"Care assistants, support workers, domestic services.",

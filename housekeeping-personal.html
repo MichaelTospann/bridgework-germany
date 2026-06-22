@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housekeeping-Personal aus dem Ausland einstellen | BridgeWork Germany</title>
+<meta name="description" content="Internationale Housekeeping-Fachkräfte für Ihr Hotel finden. Keine Vermittlungsgebühren für Bewerber, transparenter Prozess, rechtssichere Visa-Begleitung. Kostenloses Erstgespräch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --forest:#1a3a28; --forest-mid:#214d34; --green:#3d8f60; --green-bright:#52c47e; --mint:#baf2d0; --cream:#f4f9f6; --text:#142010; --text-light:#526b5c; --white:#ffffff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); overflow-x:hidden; }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.2rem 4rem; display:flex; justify-content:space-between; align-items:center; background:rgba(26,58,40,0.97); backdrop-filter:blur(8px); border-bottom:1px solid rgba(82,196,126,0.15); }
+  .logo { font-family:'Playfair Display',serif; color:var(--white); font-size:1.4rem; text-decoration:none; }
+  .logo span { color:var(--green-bright); }
+  .nav-links { display:flex; gap:2rem; align-items:center; }
+  nav a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
+  nav a:hover { color:var(--mint); }
+  .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+  .lang-toggle { background:rgba(255,255,255,0.1); border:1px solid rgba(82,196,126,0.35); color:rgba(255,255,255,0.85)!important; padding:0.45rem 1rem; border-radius:2px; cursor:pointer; font-size:0.82rem; font-weight:500; letter-spacing:0.05em; transition:all 0.2s; text-decoration:none; }
+  .lang-toggle:hover { background:rgba(82,196,126,0.2); border-color:var(--green-bright); color:var(--mint)!important; }
+  .breadcrumb { background:var(--forest); padding:6.5rem 4rem 0; }
+  .breadcrumb-inner { max-width:1100px; margin:0 auto; }
+  .breadcrumb a { color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem; }
+  .breadcrumb a:hover { color:var(--mint); }
+  .breadcrumb span { color:rgba(255,255,255,0.4); font-size:0.8rem; margin:0 0.4rem; }
+  .hero { background:var(--forest); padding:2.5rem 4rem 4.5rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; top:-10%; right:-5%; width:600px; height:600px; background:radial-gradient(circle, rgba(82,196,126,0.09) 0%, transparent 65%); pointer-events:none; }
+  .hero-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:4rem; align-items:center; position:relative; }
+  .hero-label { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green-bright); margin-bottom:1.2rem; }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.6vw,3rem); color:var(--white); line-height:1.25; margin-bottom:1.3rem; }
+  .hero p { color:rgba(255,255,255,0.6); font-size:1.02rem; line-height:1.8; margin-bottom:2rem; font-weight:300; }
+  .hero-cta { display:inline-block; background:var(--green-bright); color:var(--forest); padding:1rem 2.2rem; font-weight:500; text-decoration:none; border-radius:2px; }
+  .hero-side { background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:1.8rem; }
+  .hero-side h4 { color:var(--mint); font-size:0.85rem; font-weight:500; margin-bottom:1rem; letter-spacing:0.05em; text-transform:uppercase; }
+  .hero-side ul { list-style:none; display:flex; flex-direction:column; gap:0.8rem; }
+  .hero-side li { display:flex; gap:0.6rem; align-items:flex-start; color:rgba(255,255,255,0.65); font-size:0.86rem; font-weight:300; line-height:1.5; }
+  .hero-side li::before { content:'✓'; color:var(--green-bright); flex-shrink:0; font-weight:700; }
+  section { padding:4.5rem 4rem; }
+  .section-inner { max-width:1100px; margin:0 auto; }
+  .section-label { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green); margin-bottom:1rem; }
+  .section-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.6vw,2.2rem); color:var(--forest); margin-bottom:1.2rem; line-height:1.3; }
+  .section-sub { color:var(--text-light); font-size:0.98rem; line-height:1.8; max-width:620px; font-weight:300; }
+  .roles { background:var(--white); }
+  .role-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
+  .role-card { background:var(--cream); border-radius:4px; padding:1.8rem; border-top:3px solid var(--green-bright); }
+  .role-card h3 { font-size:0.98rem; font-weight:500; color:var(--forest); margin-bottom:0.6rem; }
+  .role-card p { font-size:0.85rem; color:var(--text-light); line-height:1.65; font-weight:300; }
+  .why { background:var(--cream); }
+  .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-top:2.5rem; align-items:start; }
+  .why-points { display:flex; flex-direction:column; gap:1.2rem; }
+  .why-point { display:flex; gap:1rem; align-items:flex-start; }
+  .why-icon { width:38px; height:38px; background:rgba(61,143,96,0.08); border:1px solid var(--green); border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--green); font-size:1rem; }
+  .why-text h4 { font-weight:500; margin-bottom:0.3rem; font-size:0.95rem; color:var(--forest); }
+  .why-text p { color:var(--text-light); font-size:0.86rem; line-height:1.65; font-weight:300; }
+  .stat-box { background:var(--forest); color:var(--white); padding:2.2rem; border-radius:4px; }
+  .stat-box .big { font-family:'Playfair Display',serif; font-size:2.6rem; color:var(--mint); line-height:1; margin-bottom:0.5rem; }
+  .stat-box p { font-size:0.88rem; color:rgba(255,255,255,0.6); font-weight:300; line-height:1.6; margin-bottom:1.5rem; }
+  .stat-box .source { font-size:0.72rem; color:rgba(255,255,255,0.35); }
+  .legal { background:var(--white); }
+  .legal-box { background:var(--cream); border-radius:4px; padding:2.2rem; margin-top:2.5rem; border-left:3px solid var(--green-bright); }
+  .legal-box h4 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--forest); margin-bottom:0.8rem; }
+  .legal-box p { font-size:0.9rem; color:var(--text-light); line-height:1.75; font-weight:300; margin-bottom:0.8rem; }
+  .legal-box p:last-child { margin-bottom:0; }
+  .legal-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1.5rem; }
+  .process { background:var(--forest-mid); color:var(--white); }
+  .process .section-title { color:var(--white); }
+  .process .section-label { color:var(--green-bright); }
+  .process .section-sub { color:rgba(255,255,255,0.55); }
+  .timeline { display:flex; flex-direction:column; gap:1.2rem; margin-top:2.5rem; }
+  .tl-item { display:grid; grid-template-columns:60px 1fr; gap:1.5rem; align-items:start; background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.15); border-radius:4px; padding:1.5rem 1.8rem; }
+  .tl-number { font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--green-bright); opacity:0.6; }
+  .tl-item h4 { font-size:0.95rem; font-weight:500; color:var(--mint); margin-bottom:0.4rem; }
+  .tl-item p { font-size:0.86rem; color:rgba(255,255,255,0.6); font-weight:300; line-height:1.6; }
+  .faq { background:var(--white); }
+  .faq-list { display:flex; flex-direction:column; gap:1rem; margin-top:2.5rem; }
+  .faq-item { background:var(--cream); border-radius:4px; padding:1.6rem 1.8rem; border-left:3px solid var(--green-bright); }
+  .faq-item h4 { font-size:0.95rem; font-weight:500; color:var(--forest); margin-bottom:0.5rem; }
+  .faq-item p { font-size:0.87rem; color:var(--text-light); line-height:1.7; font-weight:300; }
+  .cta-final { background:var(--forest); color:var(--white); text-align:center; }
+  .cta-final .section-title { color:var(--white); }
+  .cta-final .section-sub { max-width:100%; margin:0 auto 2rem; color:rgba(255,255,255,0.6); }
+  .cta-btn { display:inline-block; background:var(--green-bright); color:var(--forest); padding:1.1rem 2.5rem; font-weight:500; text-decoration:none; border-radius:2px; font-size:1rem; }
+  .other-sectors { margin-top:1.5rem; font-size:0.85rem; }
+  .other-sectors a { color:var(--mint); text-decoration:none; }
+  .other-sectors a:hover { text-decoration:underline; }
+  footer { background:#0c1f14; color:rgba(255,255,255,0.3); padding:2rem 4rem; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; }
+  footer a { color:rgba(255,255,255,0.3); text-decoration:none; }
+  footer a:hover { color:var(--green-bright); }
+  @media (max-width:768px) {
+    nav { padding:1rem 1.5rem; } .nav-links { display:none; }
+    .breadcrumb { padding:6rem 1.5rem 0; }
+    section { padding:3rem 1.5rem; }
+    .hero { padding:2rem 1.5rem 3rem; }
+    .hero-inner, .why-grid, .legal-grid { grid-template-columns:1fr; gap:2rem; }
+    .role-grid { grid-template-columns:1fr; }
+    footer { flex-direction:column; gap:1rem; text-align:center; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRHHB7GQGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MRHHB7GQGB');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Brauchen die Bewerber Deutschkenntnisse?","acceptedAnswer":{"@type":"Answer","text":"Für die meisten Housekeeping-Positionen reichen solide Deutschkenntnisse auf B1-Niveau. Wir prüfen den Sprachstand jedes Kandidaten vorab und kommunizieren das transparent."}},
+    {"@type":"Question","name":"Was kostet die Vermittlung von Housekeeping-Personal?","acceptedAnswer":{"@type":"Answer","text":"Die Vermittlung erfolgt über eine einmalige Pauschale, die sich an etwa ein bis zwei Monatsgehältern der Position orientiert. Für Bewerber entstehen keine Kosten."}},
+    {"@type":"Question","name":"Wie lange dauert der Vermittlungsprozess?","acceptedAnswer":{"@type":"Answer","text":"Vom Erstgespräch bis zur Arbeitsaufnahme dauert der Prozess je nach Visa-Situation typischerweise einige Wochen bis wenige Monate."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Bridge<span>Work</span> Germany</a>
+  <div class="nav-links">
+    <a href="index.html#prozess" data-i18n="nav_process">Prozess</a>
+    <a href="index.html#branchen" data-i18n="nav_sectors">Branchen</a>
+    <a href="bewerber.html" data-i18n="nav_applicants">Für Bewerber</a>
+    <a href="#" class="lang-toggle" id="langBtn" onclick="toggleLang(); return false;">🇬🇧 English</a>
+    <a href="index.html#kontakt" class="nav-cta" data-i18n="nav_cta">Erstgespräch anfragen</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html" data-i18n="bc_home">Startseite</a><span>/</span><a href="index.html#branchen" data-i18n="bc_sectors">Branchen</a><span>/</span><span style="color:rgba(255,255,255,0.7)" data-i18n="bc_current">Housekeeping-Personal</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-label" data-i18n="hero_label">Für Hotels & Gastgewerbe</p>
+      <h1 data-i18n="hero_h1">Housekeeping-Personal aus dem Ausland einstellen.</h1>
+      <p data-i18n="hero_p">Sie finden niemanden mehr für die Zimmerreinigung? Wir vermitteln motivierte, vorqualifizierte Housekeeping-Fachkräfte aus dem Ausland – strukturiert, rechtssicher und ohne Risiko für Sie.</p>
+      <a href="index.html#kontakt" class="hero-cta" data-i18n="hero_cta">Kostenloses Erstgespräch anfragen</a>
+    </div>
+    <div class="hero-side">
+      <h4 data-i18n="side_h">Auf einen Blick</h4>
+      <ul>
+        <li data-i18n="side_l1">Vorqualifizierte Kandidaten mit Housekeeping-Erfahrung</li>
+        <li data-i18n="side_l2">Visa- und Behördenbegleitung inklusive</li>
+        <li data-i18n="side_l3">Keine Kosten für Bewerber – nur Sie zahlen</li>
+        <li data-i18n="side_l4">Einmalige Pauschale, kein Abo</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="roles">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="roles_label">Positionen</p>
+    <h2 class="section-title" data-i18n="roles_title">Welche Rollen wir besetzen</h2>
+    <p class="section-sub" data-i18n="roles_sub">Vom Zimmermädchen bis zur Hausdamen-Assistenz – wir kennen die Anforderungen jeder Position.</p>
+    <div class="role-grid">
+      <div class="role-card"><h3 data-i18n="r1_h">Zimmerreinigung</h3><p data-i18n="r1_p">Reinigung und Aufbereitung von Gästezimmern nach Hotelstandard, Wäschewechsel, Minibar-Kontrolle.</p></div>
+      <div class="role-card"><h3 data-i18n="r2_h">Reinigung öffentlicher Bereiche</h3><p data-i18n="r2_p">Lobby, Flure, Treppenhäuser, Gemeinschaftsbereiche – konstante Sauberkeit im gesamten Haus.</p></div>
+      <div class="role-card"><h3 data-i18n="r3_h">Wäscheservice & Organisation</h3><p data-i18n="r3_p">Organisation von Berufskleidung, Handtüchern, Bettwäsche – Zusammenarbeit mit Wäschereien.</p></div>
+      <div class="role-card"><h3 data-i18n="r4_h">Frühstücksservice-Unterstützung</h3><p data-i18n="r4_p">Viele Häuser kombinieren Housekeeping mit Frühstücksservice – wir finden flexible Kandidaten.</p></div>
+      <div class="role-card"><h3 data-i18n="r5_h">Hausdamen-Assistenz</h3><p data-i18n="r5_p">Unterstützung der Hausdame bei Personaleinsatzplanung und Qualitätskontrolle.</p></div>
+      <div class="role-card"><h3 data-i18n="r6_h">Quereinsteiger willkommen</h3><p data-i18n="r6_p">Keine formale Ausbildung nötig – Sorgfalt, Zuverlässigkeit und Lernbereitschaft zählen mehr.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="why_label">Die Ausgangslage</p>
+    <h2 class="section-title" data-i18n="why_title">Warum der lokale Markt nicht mehr reicht</h2>
+    <div class="why-grid">
+      <div class="why-points">
+        <div class="why-point"><div class="why-icon">↓</div><div class="why-text"><h4 data-i18n="wp1_h">Strukturelle Lücke im Gastgewerbe</h4><p data-i18n="wp1_p">Über 44.000 fehlende Arbeitskräfte allein im deutschen Gastgewerbe (2026). Housekeeping ist eine der am stärksten betroffenen Positionen.</p></div></div>
+        <div class="why-point"><div class="why-icon">🌍</div><div class="why-text"><h4 data-i18n="wp2_h">Internationale Fachkräfte tragen die Branche bereits mit</h4><p data-i18n="wp2_p">Bereits heute leisten ausländische Mitarbeitende einen wesentlichen Beitrag zur Personalsicherung im deutschen Gastgewerbe – ein Trend, der sich verstärkt.</p></div></div>
+        <div class="why-point"><div class="why-icon">🔁</div><div class="why-text"><h4 data-i18n="wp3_h">Stabilität statt Fluktuation</h4><p data-i18n="wp3_p">Internationale Vollzeitkräfte suchen langfristige Perspektiven – im Gegensatz zu Aushilfen, die kurzfristig wieder wegfallen.</p></div></div>
+      </div>
+      <div class="stat-box">
+        <div class="big">37%</div>
+        <p data-i18n="stat_p">aller sozialversicherungspflichtig Beschäftigten im deutschen Hotel- und Gaststättengewerbe sind ausländische Staatsangehörige – mit weiter steigender Tendenz.</p>
+        <div class="source" data-i18n="stat_source">Quelle: Bundesagentur für Arbeit / Make it in Germany</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="legal">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="legal_label">Rechtliche Grundlage</p>
+    <h2 class="section-title" data-i18n="legal_title">Was Sie als Arbeitgeber wissen sollten</h2>
+    <p class="section-sub" data-i18n="legal_sub">Internationale Rekrutierung ist seit dem Fachkräfteeinwanderungsgesetz deutlich einfacher geworden – wir kennen die Details.</p>
+    <div class="legal-grid">
+      <div class="legal-box">
+        <h4 data-i18n="lb1_h">EU/EFTA-Staatsangehörige</h4>
+        <p data-i18n="lb1_p1">Für Fachkräfte aus EU- und EFTA-Staaten gilt die Arbeitnehmerfreizügigkeit. Kein Visum, keine Arbeitserlaubnis nötig – die Einstellung ist genauso unkompliziert wie bei deutschen Bewerbern.</p>
+      </div>
+      <div class="legal-box">
+        <h4 data-i18n="lb2_h">Fachkräfte aus Drittstaaten</h4>
+        <p data-i18n="lb2_p1">Housekeeping ist in der Regel ein nicht-reglementierter Beruf. Das ermöglicht nach §16d Abs. 3 AufenthG die Einreise auch zur Anerkennung im Betrieb – wir begleiten den vollständigen Prozess.</p>
+      </div>
+    </div>
+    <div class="legal-box" style="margin-top:1.5rem;">
+      <h4 data-i18n="lb3_h">Fachkräfteeinwanderungsgesetz</h4>
+      <p data-i18n="lb3_p1">Seit März 2020 wurden die Möglichkeiten zur Fachkräftegewinnung im Ausland deutlich erweitert. Für Arbeitgeber im Gastgewerbe bedeutet das: mehr legale, planbare Wege, internationales Personal einzustellen.</p>
+      <p data-i18n="lb3_p2">Wir übernehmen die komplette Koordination – von der Antragstellung bis zur Anerkennung der Berufsqualifikation, sofern erforderlich.</p>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="proc_label">Der Prozess</p>
+    <h2 class="section-title" data-i18n="proc_title">So läuft die Vermittlung konkret ab</h2>
+    <p class="section-sub" data-i18n="proc_sub">Speziell für Housekeeping-Positionen – von der Anfrage bis zum ersten Arbeitstag.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-number">01</div><div><h4 data-i18n="t1_h">Bedarfsanalyse</h4><p data-i18n="t1_p">Wie viele Stellen, welche Schichtmodelle, welche Sprachanforderungen – wir klären den genauen Bedarf in einem kurzen Gespräch.</p></div></div>
+      <div class="tl-item"><div class="tl-number">02</div><div><h4 data-i18n="t2_h">Kandidatensuche & Vorqualifizierung</h4><p data-i18n="t2_p">Wir prüfen Erfahrung, Sprachstand und Motivation jedes Kandidaten, bevor wir ihn vorstellen.</p></div></div>
+      <div class="tl-item"><div class="tl-number">03</div><div><h4 data-i18n="t3_h">Kennenlernen & Entscheidung</h4><p data-i18n="t3_p">Sie lernen die Kandidaten per Videocall kennen und entscheiden in Ruhe, ohne Druck.</p></div></div>
+      <div class="tl-item"><div class="tl-number">04</div><div><h4 data-i18n="t4_h">Visa, Anerkennung & Anreise</h4><p data-i18n="t4_p">Wir koordinieren Visumantrag, ggf. Anerkennungsverfahren und die Anreise nach Deutschland.</p></div></div>
+      <div class="tl-item"><div class="tl-number">05</div><div><h4 data-i18n="t5_h">Onboarding & Nachbetreuung</h4><p data-i18n="t5_p">Wir begleiten den Start im Betrieb und bleiben für beide Seiten ansprechbar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="faq_label">Häufige Fragen</p>
+    <h2 class="section-title" data-i18n="faq_title">Was Arbeitgeber uns am häufigsten fragen</h2>
+    <div class="faq-list">
+      <div class="faq-item"><h4 data-i18n="f1_h">Brauchen die Bewerber Deutschkenntnisse?</h4><p data-i18n="f1_p">Für die meisten Housekeeping-Positionen reichen solide Deutschkenntnisse auf B1-Niveau. Wir prüfen den Sprachstand jedes Kandidaten vorab und kommunizieren das transparent – keine Überraschungen.</p></div>
+      <div class="faq-item"><h4 data-i18n="f2_h">Was kostet die Vermittlung?</h4><p data-i18n="f2_p">Eine einmalige Pauschale, die sich an etwa ein bis zwei Monatsgehältern der Position orientiert – abhängig von Qualifikation und Integrationsaufwand. Für Bewerber entstehen niemals Kosten.</p></div>
+      <div class="faq-item"><h4 data-i18n="f3_h">Wie lange dauert der Prozess?</h4><p data-i18n="f3_p">Je nach Visa-Situation und Herkunftsland dauert es vom Erstgespräch bis zur Arbeitsaufnahme typischerweise einige Wochen bis wenige Monate.</p></div>
+      <div class="faq-item"><h4 data-i18n="f4_h">Was passiert, wenn es nicht passt?</h4><p data-i18n="f4_p">Wir vermitteln keine Idealbilder, sondern prüfen vorab gründlich. Sollte es trotzdem nicht passen, suchen wir gemeinsam nach einer Lösung – Transparenz ist unser Grundsatz.</p></div>
+      <div class="faq-item"><h4 data-i18n="f5_h">Übernehmen Sie auch die Wohnungssuche?</h4><p data-i18n="f5_p">Wo möglich, koordinieren wir gemeinsam mit Ihnen eine Unterkunftslösung für die ersten Monate – das erhöht die Bleibebereitschaft erheblich.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="cta_label">Nächster Schritt</p>
+    <h2 class="section-title" data-i18n="cta_title">Lassen Sie uns über Ihren Bedarf sprechen.</h2>
+    <p class="section-sub" data-i18n="cta_sub">20 Minuten, kostenlos, unverbindlich. Wir klären gemeinsam, ob und wie wir Ihnen helfen können.</p>
+    <a href="index.html#kontakt" class="cta-btn" data-i18n="cta_btn">Kostenloses Erstgespräch anfragen</a>
+    <div class="other-sectors" data-i18n="other_sectors">Auch interessant: <a href="index.html#branchen">weitere Branchen</a> · <a href="bewerber.html">Informationen für Bewerber</a></div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" style="font-family:'Playfair Display',serif; font-size:1rem; color:rgba(255,255,255,0.3); text-decoration:none;">Bridge<span style="color:#52c47e">Work</span> Germany</a>
+  <div>© 2026 BridgeWork Germany · Michael Tospann</div>
+  <div><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+</footer>
+
+<script>
+const translations = {
+  de: {
+    nav_process:"Prozess", nav_sectors:"Branchen", nav_applicants:"Für Bewerber", nav_cta:"Erstgespräch anfragen",
+    bc_home:"Startseite", bc_sectors:"Branchen", bc_current:"Housekeeping-Personal",
+    hero_label:"Für Hotels & Gastgewerbe",
+    hero_h1:"Housekeeping-Personal aus dem Ausland einstellen.",
+    hero_p:"Sie finden niemanden mehr für die Zimmerreinigung? Wir vermitteln motivierte, vorqualifizierte Housekeeping-Fachkräfte aus dem Ausland – strukturiert, rechtssicher und ohne Risiko für Sie.",
+    hero_cta:"Kostenloses Erstgespräch anfragen",
+    side_h:"Auf einen Blick",
+    side_l1:"Vorqualifizierte Kandidaten mit Housekeeping-Erfahrung",
+    side_l2:"Visa- und Behördenbegleitung inklusive",
+    side_l3:"Keine Kosten für Bewerber – nur Sie zahlen",
+    side_l4:"Einmalige Pauschale, kein Abo",
+    roles_label:"Positionen", roles_title:"Welche Rollen wir besetzen",
+    roles_sub:"Vom Zimmermädchen bis zur Hausdamen-Assistenz – wir kennen die Anforderungen jeder Position.",
+    r1_h:"Zimmerreinigung", r1_p:"Reinigung und Aufbereitung von Gästezimmern nach Hotelstandard, Wäschewechsel, Minibar-Kontrolle.",
+    r2_h:"Reinigung öffentlicher Bereiche", r2_p:"Lobby, Flure, Treppenhäuser, Gemeinschaftsbereiche – konstante Sauberkeit im gesamten Haus.",
+    r3_h:"Wäscheservice & Organisation", r3_p:"Organisation von Berufskleidung, Handtüchern, Bettwäsche – Zusammenarbeit mit Wäschereien.",
+    r4_h:"Frühstücksservice-Unterstützung", r4_p:"Viele Häuser kombinieren Housekeeping mit Frühstücksservice – wir finden flexible Kandidaten.",
+    r5_h:"Hausdamen-Assistenz", r5_p:"Unterstützung der Hausdame bei Personaleinsatzplanung und Qualitätskontrolle.",
+    r6_h:"Quereinsteiger willkommen", r6_p:"Keine formale Ausbildung nötig – Sorgfalt, Zuverlässigkeit und Lernbereitschaft zählen mehr.",
+    why_label:"Die Ausgangslage", why_title:"Warum der lokale Markt nicht mehr reicht",
+    wp1_h:"Strukturelle Lücke im Gastgewerbe",
+    wp1_p:"Über 44.000 fehlende Arbeitskräfte allein im deutschen Gastgewerbe (2026). Housekeeping ist eine der am stärksten betroffenen Positionen.",
+    wp2_h:"Internationale Fachkräfte tragen die Branche bereits mit",
+    wp2_p:"Bereits heute leisten ausländische Mitarbeitende einen wesentlichen Beitrag zur Personalsicherung im deutschen Gastgewerbe – ein Trend, der sich verstärkt.",
+    wp3_h:"Stabilität statt Fluktuation",
+    wp3_p:"Internationale Vollzeitkräfte suchen langfristige Perspektiven – im Gegensatz zu Aushilfen, die kurzfristig wieder wegfallen.",
+    stat_p:"aller sozialversicherungspflichtig Beschäftigten im deutschen Hotel- und Gaststättengewerbe sind ausländische Staatsangehörige – mit weiter steigender Tendenz.",
+    stat_source:"Quelle: Bundesagentur für Arbeit / Make it in Germany",
+    legal_label:"Rechtliche Grundlage", legal_title:"Was Sie als Arbeitgeber wissen sollten",
+    legal_sub:"Internationale Rekrutierung ist seit dem Fachkräfteeinwanderungsgesetz deutlich einfacher geworden – wir kennen die Details.",
+    lb1_h:"EU/EFTA-Staatsangehörige",
+    lb1_p1:"Für Fachkräfte aus EU- und EFTA-Staaten gilt die Arbeitnehmerfreizügigkeit. Kein Visum, keine Arbeitserlaubnis nötig – die Einstellung ist genauso unkompliziert wie bei deutschen Bewerbern.",
+    lb2_h:"Fachkräfte aus Drittstaaten",
+    lb2_p1:"Housekeeping ist in der Regel ein nicht-reglementierter Beruf. Das ermöglicht nach §16d Abs. 3 AufenthG die Einreise auch zur Anerkennung im Betrieb – wir begleiten den vollständigen Prozess.",
+    lb3_h:"Fachkräfteeinwanderungsgesetz",
+    lb3_p1:"Seit März 2020 wurden die Möglichkeiten zur Fachkräftegewinnung im Ausland deutlich erweitert. Für Arbeitgeber im Gastgewerbe bedeutet das: mehr legale, planbare Wege, internationales Personal einzustellen.",
+    lb3_p2:"Wir übernehmen die komplette Koordination – von der Antragstellung bis zur Anerkennung der Berufsqualifikation, sofern erforderlich.",
+    proc_label:"Der Prozess", proc_title:"So läuft die Vermittlung konkret ab",
+    proc_sub:"Speziell für Housekeeping-Positionen – von der Anfrage bis zum ersten Arbeitstag.",
+    t1_h:"Bedarfsanalyse", t1_p:"Wie viele Stellen, welche Schichtmodelle, welche Sprachanforderungen – wir klären den genauen Bedarf in einem kurzen Gespräch.",
+    t2_h:"Kandidatensuche & Vorqualifizierung", t2_p:"Wir prüfen Erfahrung, Sprachstand und Motivation jedes Kandidaten, bevor wir ihn vorstellen.",
+    t3_h:"Kennenlernen & Entscheidung", t3_p:"Sie lernen die Kandidaten per Videocall kennen und entscheiden in Ruhe, ohne Druck.",
+    t4_h:"Visa, Anerkennung & Anreise", t4_p:"Wir koordinieren Visumantrag, ggf. Anerkennungsverfahren und die Anreise nach Deutschland.",
+    t5_h:"Onboarding & Nachbetreuung", t5_p:"Wir begleiten den Start im Betrieb und bleiben für beide Seiten ansprechbar.",
+    faq_label:"Häufige Fragen", faq_title:"Was Arbeitgeber uns am häufigsten fragen",
+    f1_h:"Brauchen die Bewerber Deutschkenntnisse?", f1_p:"Für die meisten Housekeeping-Positionen reichen solide Deutschkenntnisse auf B1-Niveau. Wir prüfen den Sprachstand jedes Kandidaten vorab und kommunizieren das transparent – keine Überraschungen.",
+    f2_h:"Was kostet die Vermittlung?", f2_p:"Eine einmalige Pauschale, die sich an etwa ein bis zwei Monatsgehältern der Position orientiert – abhängig von Qualifikation und Integrationsaufwand. Für Bewerber entstehen niemals Kosten.",
+    f3_h:"Wie lange dauert der Prozess?", f3_p:"Je nach Visa-Situation und Herkunftsland dauert es vom Erstgespräch bis zur Arbeitsaufnahme typischerweise einige Wochen bis wenige Monate.",
+    f4_h:"Was passiert, wenn es nicht passt?", f4_p:"Wir vermitteln keine Idealbilder, sondern prüfen vorab gründlich. Sollte es trotzdem nicht passen, suchen wir gemeinsam nach einer Lösung – Transparenz ist unser Grundsatz.",
+    f5_h:"Übernehmen Sie auch die Wohnungssuche?", f5_p:"Wo möglich, koordinieren wir gemeinsam mit Ihnen eine Unterkunftslösung für die ersten Monate – das erhöht die Bleibebereitschaft erheblich.",
+    cta_label:"Nächster Schritt", cta_title:"Lassen Sie uns über Ihren Bedarf sprechen.",
+    cta_sub:"20 Minuten, kostenlos, unverbindlich. Wir klären gemeinsam, ob und wie wir Ihnen helfen können.",
+    cta_btn:"Kostenloses Erstgespräch anfragen",
+    other_sectors:'Auch interessant: <a href="index.html#branchen">weitere Branchen</a> · <a href="bewerber.html">Informationen für Bewerber</a>'
+  },
+  en: {
+    nav_process:"Process", nav_sectors:"Industries", nav_applicants:"For Applicants", nav_cta:"Request Consultation",
+    bc_home:"Home", bc_sectors:"Industries", bc_current:"Housekeeping Staff",
+    hero_label:"For Hotels & Hospitality",
+    hero_h1:"Hire housekeeping staff from abroad.",
+    hero_p:"Can't find anyone for room cleaning anymore? We place motivated, pre-qualified housekeeping professionals from abroad – structured, legally compliant, and with no risk for you.",
+    hero_cta:"Request a free consultation",
+    side_h:"At a glance",
+    side_l1:"Pre-qualified candidates with housekeeping experience",
+    side_l2:"Visa and authority support included",
+    side_l3:"No costs for applicants – only you pay",
+    side_l4:"One-time fee, no subscription",
+    roles_label:"Positions", roles_title:"Which roles we fill",
+    roles_sub:"From room attendants to housekeeping supervisor support – we know the requirements of every position.",
+    r1_h:"Room Cleaning", r1_p:"Cleaning and preparing guest rooms to hotel standard, linen change, minibar checks.",
+    r2_h:"Public Area Cleaning", r2_p:"Lobby, corridors, stairwells, common areas – consistent cleanliness throughout the property.",
+    r3_h:"Laundry Service & Organisation", r3_p:"Organising uniforms, towels, bed linen – coordination with laundry services.",
+    r4_h:"Breakfast Service Support", r4_p:"Many properties combine housekeeping with breakfast service – we find flexible candidates.",
+    r5_h:"Executive Housekeeper Support", r5_p:"Supporting the head of housekeeping with staff scheduling and quality control.",
+    r6_h:"Career Changers Welcome", r6_p:"No formal training required – care, reliability and willingness to learn matter more.",
+    why_label:"The Situation", why_title:"Why the local market is no longer enough",
+    wp1_h:"A structural gap in hospitality",
+    wp1_p:"Over 44,000 missing workers in German hospitality alone (2026). Housekeeping is one of the most affected positions.",
+    wp2_h:"International staff already support the industry",
+    wp2_p:"Foreign employees already make a substantial contribution to staffing in German hospitality today – a trend that continues to grow.",
+    wp3_h:"Stability instead of turnover",
+    wp3_p:"International full-time workers seek long-term prospects – unlike temps who disappear again at short notice.",
+    stat_p:"of all employees subject to social insurance contributions in the German hotel and restaurant sector are foreign nationals – with a continuing upward trend.",
+    stat_source:"Source: Federal Employment Agency / Make it in Germany",
+    legal_label:"Legal Basis", legal_title:"What you should know as an employer",
+    legal_sub:"International recruitment has become significantly easier since the Skilled Immigration Act – we know the details.",
+    lb1_h:"EU/EFTA Nationals",
+    lb1_p1:"Freedom of movement applies to professionals from EU and EFTA states. No visa, no work permit required – hiring is just as straightforward as for German applicants.",
+    lb2_h:"Professionals from Third Countries",
+    lb2_p1:"Housekeeping is generally a non-regulated profession. Under §16d Para. 3 of the Residence Act, this allows entry for on-the-job recognition – we accompany the entire process.",
+    lb3_h:"Skilled Immigration Act",
+    lb3_p1:"Since March 2020, the opportunities for recruiting skilled workers from abroad have been significantly expanded. For hospitality employers, this means more legal, plannable ways to hire international staff.",
+    lb3_p2:"We handle the complete coordination – from application to recognition of professional qualifications, where required.",
+    proc_label:"The Process", proc_title:"How the placement works in practice",
+    proc_sub:"Specifically for housekeeping positions – from inquiry to first working day.",
+    t1_h:"Needs Analysis", t1_p:"How many positions, which shift models, which language requirements – we clarify the exact needs in a short conversation.",
+    t2_h:"Candidate Search & Pre-qualification", t2_p:"We verify experience, language level and motivation of every candidate before presenting them.",
+    t3_h:"Getting to Know Each Other & Decision", t3_p:"You get to know candidates via video call and decide calmly, without pressure.",
+    t4_h:"Visa, Recognition & Arrival", t4_p:"We coordinate the visa application, any recognition procedures, and the arrival in Germany.",
+    t5_h:"Onboarding & Aftercare", t5_p:"We support the start at your business and remain available for both sides.",
+    faq_label:"FAQ", faq_title:"What employers ask us most often",
+    f1_h:"Do applicants need German language skills?", f1_p:"For most housekeeping positions, solid German at B1 level is sufficient. We check every candidate's language level in advance and communicate this transparently – no surprises.",
+    f2_h:"What does the placement cost?", f2_p:"A one-time flat fee, typically reflecting one to two months' salary of the position – depending on qualification and integration effort. Applicants never pay anything.",
+    f3_h:"How long does the process take?", f3_p:"Depending on the visa situation and country of origin, it typically takes a few weeks to a few months from initial consultation to employment start.",
+    f4_h:"What happens if it's not a good fit?", f4_p:"We don't place idealised profiles – we vet thoroughly beforehand. Should it still not work out, we look for a solution together – transparency is our principle.",
+    f5_h:"Do you also help with accommodation?", f5_p:"Where possible, we coordinate a housing solution together with you for the first months – this significantly increases retention.",
+    cta_label:"Next Step", cta_title:"Let's talk about your needs.",
+    cta_sub:"20 minutes, free, non-binding. We'll clarify together whether and how we can help you.",
+    cta_btn:"Request a free consultation",
+    other_sectors:'Also of interest: <a href="index.html#branchen">other industries</a> · <a href="bewerber.html">Information for applicants</a>'
+  }
+};
+
+let currentLang = localStorage.getItem('bwg_lang') || 'de';
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('bwg_lang', lang);
+  document.documentElement.lang = lang;
+  const btn = document.getElementById('langBtn');
+  if (btn) btn.textContent = lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+}
+function toggleLang() { applyLang(currentLang === 'de' ? 'en' : 'de'); }
+document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
+</script>
+
+</body>
+</html>
