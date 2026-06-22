@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bauhelfer & Handwerker aus dem Ausland einstellen | BridgeWork Germany</title>
+<meta name="description" content="Internationale Fachkräfte für Bau und Handwerk finden. Westbalkanregelung, Fachkräfteeinwanderungsgesetz, keine Vermittlungsgebühren für Bewerber. Kostenloses Erstgespräch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --forest:#1a3a28; --forest-mid:#214d34; --green:#3d8f60; --green-bright:#52c47e; --mint:#baf2d0; --cream:#f4f9f6; --text:#142010; --text-light:#526b5c; --white:#ffffff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); overflow-x:hidden; }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.2rem 4rem; display:flex; justify-content:space-between; align-items:center; background:rgba(26,58,40,0.97); backdrop-filter:blur(8px); border-bottom:1px solid rgba(82,196,126,0.15); }
+  .logo { font-family:'Playfair Display',serif; color:var(--white); font-size:1.4rem; text-decoration:none; }
+  .logo span { color:var(--green-bright); }
+  .nav-links { display:flex; gap:2rem; align-items:center; }
+  nav a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
+  nav a:hover { color:var(--mint); }
+  .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+  .lang-toggle { background:rgba(255,255,255,0.1); border:1px solid rgba(82,196,126,0.35); color:rgba(255,255,255,0.85)!important; padding:0.45rem 1rem; border-radius:2px; cursor:pointer; font-size:0.82rem; font-weight:500; letter-spacing:0.05em; transition:all 0.2s; text-decoration:none; }
+  .lang-toggle:hover { background:rgba(82,196,126,0.2); border-color:var(--green-bright); color:var(--mint)!important; }
+  .breadcrumb { background:var(--forest); padding:6.5rem 4rem 0; }
+  .breadcrumb-inner { max-width:1100px; margin:0 auto; }
+  .breadcrumb a { color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem; }
+  .breadcrumb a:hover { color:var(--mint); }
+  .breadcrumb span { color:rgba(255,255,255,0.4); font-size:0.8rem; margin:0 0.4rem; }
+  .hero { background:var(--forest); padding:2.5rem 4rem 4.5rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; top:-10%; right:-5%; width:600px; height:600px; background:radial-gradient(circle, rgba(82,196,126,0.09) 0%, transparent 65%); pointer-events:none; }
+  .hero-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:4rem; align-items:center; position:relative; }
+  .hero-label { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green-bright); margin-bottom:1.2rem; }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.6vw,3rem); color:var(--white); line-height:1.25; margin-bottom:1.3rem; }
+  .hero p { color:rgba(255,255,255,0.6); font-size:1.02rem; line-height:1.8; margin-bottom:2rem; font-weight:300; }
+  .hero-cta { display:inline-block; background:var(--green-bright); color:var(--forest); padding:1rem 2.2rem; font-weight:500; text-decoration:none; border-radius:2px; }
+  .hero-side { background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:1.8rem; }
+  .hero-side h4 { color:var(--mint); font-size:0.85rem; font-weight:500; margin-bottom:1rem; letter-spacing:0.05em; text-transform:uppercase; }
+  .hero-side ul { list-style:none; display:flex; flex-direction:column; gap:0.8rem; }
+  .hero-side li { display:flex; gap:0.6rem; align-items:flex-start; color:rgba(255,255,255,0.65); font-size:0.86rem; font-weight:300; line-height:1.5; }
+  .hero-side li::before { content:'✓'; color:var(--green-bright); flex-shrink:0; font-weight:700; }
+  section { padding:4.5rem 4rem; }
+  .section-inner { max-width:1100px; margin:0 auto; }
+  .section-label { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green); margin-bottom:1rem; }
+  .section-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.6vw,2.2rem); color:var(--forest); margin-bottom:1.2rem; line-height:1.3; }
+  .section-sub { color:var(--text-light); font-size:0.98rem; line-height:1.8; max-width:620px; font-weight:300; }
+  .roles { background:var(--white); }
+  .role-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
+  .role-card { background:var(--cream); border-radius:4px; padding:1.8rem; border-top:3px solid var(--green-bright); }
+  .role-card h3 { font-size:0.98rem; font-weight:500; color:var(--forest); margin-bottom:0.6rem; }
+  .role-card p { font-size:0.85rem; color:var(--text-light); line-height:1.65; font-weight:300; }
+  .why { background:var(--cream); }
+  .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-top:2.5rem; align-items:start; }
+  .why-points { display:flex; flex-direction:column; gap:1.2rem; }
+  .why-point { display:flex; gap:1rem; align-items:flex-start; }
+  .why-icon { width:38px; height:38px; background:rgba(61,143,96,0.08); border:1px solid var(--green); border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--green); font-size:1rem; }
+  .why-text h4 { font-weight:500; margin-bottom:0.3rem; font-size:0.95rem; color:var(--forest); }
+  .why-text p { color:var(--text-light); font-size:0.86rem; line-height:1.65; font-weight:300; }
+  .stat-box { background:var(--forest); color:var(--white); padding:2.2rem; border-radius:4px; }
+  .stat-box .big { font-family:'Playfair Display',serif; font-size:2.6rem; color:var(--mint); line-height:1; margin-bottom:0.5rem; }
+  .stat-box p { font-size:0.88rem; color:rgba(255,255,255,0.6); font-weight:300; line-height:1.6; margin-bottom:1.5rem; }
+  .stat-box .source { font-size:0.72rem; color:rgba(255,255,255,0.35); }
+  .legal { background:var(--white); }
+  .legal-box { background:var(--cream); border-radius:4px; padding:2.2rem; margin-top:2.5rem; border-left:3px solid var(--green-bright); }
+  .legal-box h4 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--forest); margin-bottom:0.8rem; }
+  .legal-box p { font-size:0.9rem; color:var(--text-light); line-height:1.75; font-weight:300; margin-bottom:0.8rem; }
+  .legal-box p:last-child { margin-bottom:0; }
+  .legal-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1.5rem; }
+  .highlight-box { background:var(--forest); color:var(--white); border-radius:4px; padding:2.2rem; margin-top:1.5rem; }
+  .highlight-box .hb-label { font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--green-bright); margin-bottom:0.8rem; }
+  .highlight-box h4 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--mint); margin-bottom:1rem; line-height:1.3; }
+  .highlight-box p { font-size:0.9rem; color:rgba(255,255,255,0.65); line-height:1.75; font-weight:300; margin-bottom:0.8rem; }
+  .highlight-box .countries { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
+  .highlight-box .country-tag { background:rgba(82,196,126,0.12); border:1px solid rgba(82,196,126,0.3); border-radius:2px; padding:0.4rem 0.9rem; font-size:0.82rem; color:var(--mint); }
+  .process { background:var(--forest-mid); color:var(--white); }
+  .process .section-title { color:var(--white); }
+  .process .section-label { color:var(--green-bright); }
+  .process .section-sub { color:rgba(255,255,255,0.55); }
+  .timeline { display:flex; flex-direction:column; gap:1.2rem; margin-top:2.5rem; }
+  .tl-item { display:grid; grid-template-columns:60px 1fr; gap:1.5rem; align-items:start; background:rgba(255,255,255,0.04); border:1px solid rgba(82,196,126,0.15); border-radius:4px; padding:1.5rem 1.8rem; }
+  .tl-number { font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--green-bright); opacity:0.6; }
+  .tl-item h4 { font-size:0.95rem; font-weight:500; color:var(--mint); margin-bottom:0.4rem; }
+  .tl-item p { font-size:0.86rem; color:rgba(255,255,255,0.6); font-weight:300; line-height:1.6; }
+  .faq { background:var(--white); }
+  .faq-list { display:flex; flex-direction:column; gap:1rem; margin-top:2.5rem; }
+  .faq-item { background:var(--cream); border-radius:4px; padding:1.6rem 1.8rem; border-left:3px solid var(--green-bright); }
+  .faq-item h4 { font-size:0.95rem; font-weight:500; color:var(--forest); margin-bottom:0.5rem; }
+  .faq-item p { font-size:0.87rem; color:var(--text-light); line-height:1.7; font-weight:300; }
+  .cta-final { background:var(--forest); color:var(--white); text-align:center; }
+  .cta-final .section-title { color:var(--white); }
+  .cta-final .section-sub { max-width:100%; margin:0 auto 2rem; color:rgba(255,255,255,0.6); }
+  .cta-btn { display:inline-block; background:var(--green-bright); color:var(--forest); padding:1.1rem 2.5rem; font-weight:500; text-decoration:none; border-radius:2px; font-size:1rem; }
+  .other-sectors { margin-top:1.5rem; font-size:0.85rem; }
+  .other-sectors a { color:var(--mint); text-decoration:none; }
+  .other-sectors a:hover { text-decoration:underline; }
+  footer { background:#0c1f14; color:rgba(255,255,255,0.3); padding:2rem 4rem; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; }
+  footer a { color:rgba(255,255,255,0.3); text-decoration:none; }
+  footer a:hover { color:var(--green-bright); }
+  @media (max-width:768px) {
+    nav { padding:1rem 1.5rem; } .nav-links { display:none; }
+    .breadcrumb { padding:6rem 1.5rem 0; }
+    section { padding:3rem 1.5rem; }
+    .hero { padding:2rem 1.5rem 3rem; }
+    .hero-inner, .why-grid, .legal-grid { grid-template-columns:1fr; gap:2rem; }
+    .role-grid { grid-template-columns:1fr; }
+    footer { flex-direction:column; gap:1rem; text-align:center; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRHHB7GQGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MRHHB7GQGB');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Was ist die Westbalkanregelung?","acceptedAnswer":{"@type":"Answer","text":"Die Westbalkanregelung ermöglicht Staatsangehörigen aus Albanien, Bosnien und Herzegowina, Kosovo, Montenegro, Nordmazedonien und Serbien die Einreise nach Deutschland mit einem konkreten Jobangebot, ohne formale Anerkennung der Berufsqualifikation in nicht-reglementierten Berufen. Es gilt ein jährliches Kontingent von 25.000 Visa."}},
+    {"@type":"Question","name":"Was kostet die Vermittlung von Bauhelfern oder Handwerkern?","acceptedAnswer":{"@type":"Answer","text":"Die Vermittlung erfolgt über eine einmalige Pauschale, die sich an etwa ein bis zwei Monatsgehältern der Position orientiert. Für Bewerber entstehen keine Kosten."}},
+    {"@type":"Question","name":"Brauchen Handwerker eine formale Anerkennung ihrer Qualifikation?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vom Beruf ab. Für nicht-reglementierte Berufe ist häufig keine formale Anerkennung notwendig. Bei reglementierten Berufen oder gewünschter Anerkennung begleiten wir das Verfahren."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Bridge<span>Work</span> Germany</a>
+  <div class="nav-links">
+    <a href="index.html#prozess" data-i18n="nav_process">Prozess</a>
+    <a href="index.html#branchen" data-i18n="nav_sectors">Branchen</a>
+    <a href="bewerber.html" data-i18n="nav_applicants">Für Bewerber</a>
+    <a href="#" class="lang-toggle" id="langBtn" onclick="toggleLang(); return false;">🇬🇧 English</a>
+    <a href="index.html#kontakt" class="nav-cta" data-i18n="nav_cta">Erstgespräch anfragen</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html" data-i18n="bc_home">Startseite</a><span>/</span><a href="index.html#branchen" data-i18n="bc_sectors">Branchen</a><span>/</span><span style="color:rgba(255,255,255,0.7)" data-i18n="bc_current">Bau & Handwerk</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-label" data-i18n="hero_label">Für Bau- und Handwerksbetriebe</p>
+      <h1 data-i18n="hero_h1">Bauhelfer & Handwerker aus dem Ausland einstellen.</h1>
+      <p data-i18n="hero_p">250.000 unbesetzte Stellen im Handwerk, Vakanzzeiten von über 160 Tagen. Wir vermitteln motivierte, vorqualifizierte Fachkräfte aus dem Ausland – inklusive Westbalkanregelung und vollständiger Visa-Begleitung.</p>
+      <a href="index.html#kontakt" class="hero-cta" data-i18n="hero_cta">Kostenloses Erstgespräch anfragen</a>
+    </div>
+    <div class="hero-side">
+      <h4 data-i18n="side_h">Auf einen Blick</h4>
+      <ul>
+        <li data-i18n="side_l1">Westbalkanregelung: vereinfachtes Verfahren nutzen</li>
+        <li data-i18n="side_l2">Visa- und Behördenbegleitung inklusive</li>
+        <li data-i18n="side_l3">Keine Kosten für Bewerber – nur Sie zahlen</li>
+        <li data-i18n="side_l4">Einmalige Pauschale, kein Abo</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="roles">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="roles_label">Positionen</p>
+    <h2 class="section-title" data-i18n="roles_title">Welche Rollen wir besetzen</h2>
+    <p class="section-sub" data-i18n="roles_sub">Vom Bauhelfer bis zur Fachkraft mit Berufserfahrung – wir kennen die Anforderungen jeder Position.</p>
+    <div class="role-grid">
+      <div class="role-card"><h3 data-i18n="r1_h">Bauhelfer</h3><p data-i18n="r1_p">Unterstützung auf der Baustelle, Materialtransport, Vorbereitungsarbeiten – idealer Einstieg auch für Quereinsteiger.</p></div>
+      <div class="role-card"><h3 data-i18n="r2_h">Maurer & Putzer</h3><p data-i18n="r2_p">Mauerwerk, Verputzarbeiten, Estricharbeiten – mit Berufserfahrung aus dem Heimatland.</p></div>
+      <div class="role-card"><h3 data-i18n="r3_h">Trockenbau & Innenausbau</h3><p data-i18n="r3_p">Trockenbauarbeiten, Dämmung, Innenausbau – stark gefragte Qualifikation.</p></div>
+      <div class="role-card"><h3 data-i18n="r4_h">Elektro- & SHK-Helfer</h3><p data-i18n="r4_p">Unterstützung für Elektriker und Sanitär-Heizung-Klima-Fachkräfte – besonders durch die Energiewende gefragt.</p></div>
+      <div class="role-card"><h3 data-i18n="r5_h">Maler & Lackierer</h3><p data-i18n="r5_p">Anstricharbeiten, Fassadengestaltung, Lackierarbeiten im Innen- und Außenbereich.</p></div>
+      <div class="role-card"><h3 data-i18n="r6_h">Fliesenleger</h3><p data-i18n="r6_p">Verlegung von Fliesen und Bodenbelägen – Präzisionsarbeit mit hoher Nachfrage.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="why_label">Die Ausgangslage</p>
+    <h2 class="section-title" data-i18n="why_title">Warum der lokale Markt nicht mehr reicht</h2>
+    <div class="why-grid">
+      <div class="why-points">
+        <div class="why-point"><div class="why-icon">↓</div><div class="why-text"><h4 data-i18n="wp1_h">Historischer Höchststand im Handwerk</h4><p data-i18n="wp1_p">Über 250.000 unbesetzte Stellen im deutschen Handwerk (ZDH, 2026). Jeder fünfte Betrieb hat Stellen, die seit über sechs Monaten offen sind.</p></div></div>
+        <div class="why-point"><div class="why-icon">⏱</div><div class="why-text"><h4 data-i18n="wp2_h">Vakanzzeiten von über 160 Tagen</h4><p data-i18n="wp2_p">Im Bauhandwerk dauert die Besetzung offener Stellen im Durchschnitt über 160 Tage – mit erheblichen Umsatzverlusten für die Betriebe.</p></div></div>
+        <div class="why-point"><div class="why-icon">🔁</div><div class="why-text"><h4 data-i18n="wp3_h">Demografischer Wandel verschärft die Lücke</h4><p data-i18n="wp3_p">Die geburtenstarken Jahrgänge gehen in Rente, während zu wenige junge Menschen eine Ausbildung im Handwerk beginnen.</p></div></div>
+      </div>
+      <div class="stat-box">
+        <div class="big">250.000</div>
+        <p data-i18n="stat_p">unbesetzte Stellen im deutschen Handwerk – mit weiter steigender Tendenz laut Zentralverband des Deutschen Handwerks (ZDH).</p>
+        <div class="source" data-i18n="stat_source">Quelle: ZDH, DIHK-Fachkräftereport 2025/2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="legal">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="legal_label">Rechtliche Grundlage</p>
+    <h2 class="section-title" data-i18n="legal_title">Was Sie als Arbeitgeber wissen sollten</h2>
+    <p class="section-sub" data-i18n="legal_sub">Für Bau- und Handwerksberufe gibt es mehrere rechtssichere Wege der internationalen Rekrutierung.</p>
+    <div class="legal-grid">
+      <div class="legal-box">
+        <h4 data-i18n="lb1_h">EU/EFTA-Staatsangehörige</h4>
+        <p data-i18n="lb1_p1">Für Fachkräfte aus EU- und EFTA-Staaten gilt die Arbeitnehmerfreizügigkeit. Kein Visum, keine Arbeitserlaubnis nötig.</p>
+      </div>
+      <div class="legal-box">
+        <h4 data-i18n="lb2_h">Fachkräfte aus Drittstaaten</h4>
+        <p data-i18n="lb2_p1">Für nicht-reglementierte Berufe wie Bauhelfer ermöglicht §16d Abs. 3 AufenthG die Einreise auch zur Anerkennung im Betrieb.</p>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <div class="hb-label" data-i18n="hb_label">Besonders relevant für Bau & Handwerk</div>
+      <h4 data-i18n="hb_title">Die Westbalkanregelung</h4>
+      <p data-i18n="hb_p1">Mit einem konkreten Jobangebot können Staatsangehörige aus sechs Westbalkan-Ländern nach Deutschland einreisen – ohne formale Anerkennung der Berufsqualifikation in nicht-reglementierten Berufen.</p>
+      <p data-i18n="hb_p2">Jährliches Kontingent: 25.000 Visa (2026). Einer der schnellsten und unkompliziertesten Wege, qualifizierte Arbeitskräfte für Bau und Handwerk zu gewinnen.</p>
+      <div class="countries">
+        <span class="country-tag">Albanien</span>
+        <span class="country-tag">Bosnien & Herzegowina</span>
+        <span class="country-tag">Kosovo</span>
+        <span class="country-tag">Montenegro</span>
+        <span class="country-tag">Nordmazedonien</span>
+        <span class="country-tag">Serbien</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="proc_label">Der Prozess</p>
+    <h2 class="section-title" data-i18n="proc_title">So läuft die Vermittlung konkret ab</h2>
+    <p class="section-sub" data-i18n="proc_sub">Speziell für Bau- und Handwerkspositionen – von der Anfrage bis zum ersten Arbeitstag.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-number">01</div><div><h4 data-i18n="t1_h">Bedarfsanalyse</h4><p data-i18n="t1_p">Welche Gewerke, wie viele Stellen, welche Erfahrungsstufe – wir klären den genauen Bedarf in einem kurzen Gespräch.</p></div></div>
+      <div class="tl-item"><div class="tl-number">02</div><div><h4 data-i18n="t2_h">Kandidatensuche & Vorqualifizierung</h4><p data-i18n="t2_p">Wir prüfen Berufserfahrung, Sprachstand und Motivation jedes Kandidaten, bevor wir ihn vorstellen.</p></div></div>
+      <div class="tl-item"><div class="tl-number">03</div><div><h4 data-i18n="t3_h">Kennenlernen & Entscheidung</h4><p data-i18n="t3_p">Sie lernen die Kandidaten per Videocall kennen und entscheiden in Ruhe, ohne Druck.</p></div></div>
+      <div class="tl-item"><div class="tl-number">04</div><div><h4 data-i18n="t4_h">Visa, Anerkennung & Anreise</h4><p data-i18n="t4_p">Wir prüfen, ob die Westbalkanregelung greift, koordinieren den Visumantrag und die Anreise nach Deutschland.</p></div></div>
+      <div class="tl-item"><div class="tl-number">05</div><div><h4 data-i18n="t5_h">Onboarding & Nachbetreuung</h4><p data-i18n="t5_p">Wir begleiten den Start auf der Baustelle oder im Betrieb und bleiben für beide Seiten ansprechbar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="faq_label">Häufige Fragen</p>
+    <h2 class="section-title" data-i18n="faq_title">Was Arbeitgeber uns am häufigsten fragen</h2>
+    <div class="faq-list">
+      <div class="faq-item"><h4 data-i18n="f1_h">Was ist die Westbalkanregelung genau?</h4><p data-i18n="f1_p">Sie ermöglicht Staatsangehörigen aus Albanien, Bosnien und Herzegowina, Kosovo, Montenegro, Nordmazedonien und Serbien die Einreise mit einem konkreten Jobangebot – ohne formale Anerkennung der Qualifikation in nicht-reglementierten Berufen. Jährliches Kontingent: 25.000 Visa.</p></div>
+      <div class="faq-item"><h4 data-i18n="f2_h">Was kostet die Vermittlung?</h4><p data-i18n="f2_p">Eine einmalige Pauschale, die sich an etwa ein bis zwei Monatsgehältern der Position orientiert. Für Bewerber entstehen niemals Kosten.</p></div>
+      <div class="faq-item"><h4 data-i18n="f3_h">Brauchen Handwerker eine formale Anerkennung?</h4><p data-i18n="f3_p">Das hängt vom Beruf ab. Für viele Helfer- und Anlerntätigkeiten ist keine formale Anerkennung nötig. Bei reglementierten Berufen oder gewünschter Anerkennung begleiten wir das Verfahren vollständig.</p></div>
+      <div class="faq-item"><h4 data-i18n="f4_h">Wie schnell kann eine Stelle besetzt werden?</h4><p data-i18n="f4_p">Über die Westbalkanregelung ist der Prozess oft deutlich schneller als über klassische Anerkennungsverfahren – typischerweise wenige Wochen bis Monate, abhängig von Botschaftsterminen.</p></div>
+      <div class="faq-item"><h4 data-i18n="f5_h">Übernehmen Sie auch die Wohnungssuche?</h4><p data-i18n="f5_p">Wo möglich, koordinieren wir gemeinsam mit Ihnen eine Unterkunftslösung für die ersten Monate – das erhöht die Bleibebereitschaft erheblich.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="cta_label">Nächster Schritt</p>
+    <h2 class="section-title" data-i18n="cta_title">Lassen Sie uns über Ihren Bedarf sprechen.</h2>
+    <p class="section-sub" data-i18n="cta_sub">20 Minuten, kostenlos, unverbindlich. Wir klären gemeinsam, ob und wie wir Ihnen helfen können.</p>
+    <a href="index.html#kontakt" class="cta-btn" data-i18n="cta_btn">Kostenloses Erstgespräch anfragen</a>
+    <div class="other-sectors" data-i18n="other_sectors">Auch interessant: <a href="housekeeping-personal.html">Housekeeping-Personal</a> · <a href="index.html#branchen">weitere Branchen</a> · <a href="bewerber.html">Informationen für Bewerber</a></div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" style="font-family:'Playfair Display',serif; font-size:1rem; color:rgba(255,255,255,0.3); text-decoration:none;">Bridge<span style="color:#52c47e">Work</span> Germany</a>
+  <div>© 2026 BridgeWork Germany · Michael Tospann</div>
+  <div><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+</footer>
+
+<script>
+const translations = {
+  de: {
+    nav_process:"Prozess", nav_sectors:"Branchen", nav_applicants:"Für Bewerber", nav_cta:"Erstgespräch anfragen",
+    bc_home:"Startseite", bc_sectors:"Branchen", bc_current:"Bau & Handwerk",
+    hero_label:"Für Bau- und Handwerksbetriebe",
+    hero_h1:"Bauhelfer & Handwerker aus dem Ausland einstellen.",
+    hero_p:"250.000 unbesetzte Stellen im Handwerk, Vakanzzeiten von über 160 Tagen. Wir vermitteln motivierte, vorqualifizierte Fachkräfte aus dem Ausland – inklusive Westbalkanregelung und vollständiger Visa-Begleitung.",
+    hero_cta:"Kostenloses Erstgespräch anfragen",
+    side_h:"Auf einen Blick",
+    side_l1:"Westbalkanregelung: vereinfachtes Verfahren nutzen",
+    side_l2:"Visa- und Behördenbegleitung inklusive",
+    side_l3:"Keine Kosten für Bewerber – nur Sie zahlen",
+    side_l4:"Einmalige Pauschale, kein Abo",
+    roles_label:"Positionen", roles_title:"Welche Rollen wir besetzen",
+    roles_sub:"Vom Bauhelfer bis zur Fachkraft mit Berufserfahrung – wir kennen die Anforderungen jeder Position.",
+    r1_h:"Bauhelfer", r1_p:"Unterstützung auf der Baustelle, Materialtransport, Vorbereitungsarbeiten – idealer Einstieg auch für Quereinsteiger.",
+    r2_h:"Maurer & Putzer", r2_p:"Mauerwerk, Verputzarbeiten, Estricharbeiten – mit Berufserfahrung aus dem Heimatland.",
+    r3_h:"Trockenbau & Innenausbau", r3_p:"Trockenbauarbeiten, Dämmung, Innenausbau – stark gefragte Qualifikation.",
+    r4_h:"Elektro- & SHK-Helfer", r4_p:"Unterstützung für Elektriker und Sanitär-Heizung-Klima-Fachkräfte – besonders durch die Energiewende gefragt.",
+    r5_h:"Maler & Lackierer", r5_p:"Anstricharbeiten, Fassadengestaltung, Lackierarbeiten im Innen- und Außenbereich.",
+    r6_h:"Fliesenleger", r6_p:"Verlegung von Fliesen und Bodenbelägen – Präzisionsarbeit mit hoher Nachfrage.",
+    why_label:"Die Ausgangslage", why_title:"Warum der lokale Markt nicht mehr reicht",
+    wp1_h:"Historischer Höchststand im Handwerk",
+    wp1_p:"Über 250.000 unbesetzte Stellen im deutschen Handwerk (ZDH, 2026). Jeder fünfte Betrieb hat Stellen, die seit über sechs Monaten offen sind.",
+    wp2_h:"Vakanzzeiten von über 160 Tagen",
+    wp2_p:"Im Bauhandwerk dauert die Besetzung offener Stellen im Durchschnitt über 160 Tage – mit erheblichen Umsatzverlusten für die Betriebe.",
+    wp3_h:"Demografischer Wandel verschärft die Lücke",
+    wp3_p:"Die geburtenstarken Jahrgänge gehen in Rente, während zu wenige junge Menschen eine Ausbildung im Handwerk beginnen.",
+    stat_p:"unbesetzte Stellen im deutschen Handwerk – mit weiter steigender Tendenz laut Zentralverband des Deutschen Handwerks (ZDH).",
+    stat_source:"Quelle: ZDH, DIHK-Fachkräftereport 2025/2026",
+    legal_label:"Rechtliche Grundlage", legal_title:"Was Sie als Arbeitgeber wissen sollten",
+    legal_sub:"Für Bau- und Handwerksberufe gibt es mehrere rechtssichere Wege der internationalen Rekrutierung.",
+    lb1_h:"EU/EFTA-Staatsangehörige",
+    lb1_p1:"Für Fachkräfte aus EU- und EFTA-Staaten gilt die Arbeitnehmerfreizügigkeit. Kein Visum, keine Arbeitserlaubnis nötig.",
+    lb2_h:"Fachkräfte aus Drittstaaten",
+    lb2_p1:"Für nicht-reglementierte Berufe wie Bauhelfer ermöglicht §16d Abs. 3 AufenthG die Einreise auch zur Anerkennung im Betrieb.",
+    hb_label:"Besonders relevant für Bau & Handwerk", hb_title:"Die Westbalkanregelung",
+    hb_p1:"Mit einem konkreten Jobangebot können Staatsangehörige aus sechs Westbalkan-Ländern nach Deutschland einreisen – ohne formale Anerkennung der Berufsqualifikation in nicht-reglementierten Berufen.",
+    hb_p2:"Jährliches Kontingent: 25.000 Visa (2026). Einer der schnellsten und unkompliziertesten Wege, qualifizierte Arbeitskräfte für Bau und Handwerk zu gewinnen.",
+    proc_label:"Der Prozess", proc_title:"So läuft die Vermittlung konkret ab",
+    proc_sub:"Speziell für Bau- und Handwerkspositionen – von der Anfrage bis zum ersten Arbeitstag.",
+    t1_h:"Bedarfsanalyse", t1_p:"Welche Gewerke, wie viele Stellen, welche Erfahrungsstufe – wir klären den genauen Bedarf in einem kurzen Gespräch.",
+    t2_h:"Kandidatensuche & Vorqualifizierung", t2_p:"Wir prüfen Berufserfahrung, Sprachstand und Motivation jedes Kandidaten, bevor wir ihn vorstellen.",
+    t3_h:"Kennenlernen & Entscheidung", t3_p:"Sie lernen die Kandidaten per Videocall kennen und entscheiden in Ruhe, ohne Druck.",
+    t4_h:"Visa, Anerkennung & Anreise", t4_p:"Wir prüfen, ob die Westbalkanregelung greift, koordinieren den Visumantrag und die Anreise nach Deutschland.",
+    t5_h:"Onboarding & Nachbetreuung", t5_p:"Wir begleiten den Start auf der Baustelle oder im Betrieb und bleiben für beide Seiten ansprechbar.",
+    faq_label:"Häufige Fragen", faq_title:"Was Arbeitgeber uns am häufigsten fragen",
+    f1_h:"Was ist die Westbalkanregelung genau?", f1_p:"Sie ermöglicht Staatsangehörigen aus Albanien, Bosnien und Herzegowina, Kosovo, Montenegro, Nordmazedonien und Serbien die Einreise mit einem konkreten Jobangebot – ohne formale Anerkennung der Qualifikation in nicht-reglementierten Berufen. Jährliches Kontingent: 25.000 Visa.",
+    f2_h:"Was kostet die Vermittlung?", f2_p:"Eine einmalige Pauschale, die sich an etwa ein bis zwei Monatsgehältern der Position orientiert. Für Bewerber entstehen niemals Kosten.",
+    f3_h:"Brauchen Handwerker eine formale Anerkennung?", f3_p:"Das hängt vom Beruf ab. Für viele Helfer- und Anlerntätigkeiten ist keine formale Anerkennung nötig. Bei reglementierten Berufen oder gewünschter Anerkennung begleiten wir das Verfahren vollständig.",
+    f4_h:"Wie schnell kann eine Stelle besetzt werden?", f4_p:"Über die Westbalkanregelung ist der Prozess oft deutlich schneller als über klassische Anerkennungsverfahren – typischerweise wenige Wochen bis Monate, abhängig von Botschaftsterminen.",
+    f5_h:"Übernehmen Sie auch die Wohnungssuche?", f5_p:"Wo möglich, koordinieren wir gemeinsam mit Ihnen eine Unterkunftslösung für die ersten Monate – das erhöht die Bleibebereitschaft erheblich.",
+    cta_label:"Nächster Schritt", cta_title:"Lassen Sie uns über Ihren Bedarf sprechen.",
+    cta_sub:"20 Minuten, kostenlos, unverbindlich. Wir klären gemeinsam, ob und wie wir Ihnen helfen können.",
+    cta_btn:"Kostenloses Erstgespräch anfragen",
+    other_sectors:'Auch interessant: <a href="housekeeping-personal.html">Housekeeping-Personal</a> · <a href="index.html#branchen">weitere Branchen</a> · <a href="bewerber.html">Informationen für Bewerber</a>'
+  },
+  en: {
+    nav_process:"Process", nav_sectors:"Industries", nav_applicants:"For Applicants", nav_cta:"Request Consultation",
+    bc_home:"Home", bc_sectors:"Industries", bc_current:"Construction & Trades",
+    hero_label:"For Construction & Trade Businesses",
+    hero_h1:"Hire construction workers & tradespeople from abroad.",
+    hero_p:"250,000 unfilled positions in German trades, vacancy times of over 160 days. We place motivated, pre-qualified professionals from abroad – including the Western Balkans regulation and full visa support.",
+    hero_cta:"Request a free consultation",
+    side_h:"At a glance",
+    side_l1:"Western Balkans regulation: use the simplified procedure",
+    side_l2:"Visa and authority support included",
+    side_l3:"No costs for applicants – only you pay",
+    side_l4:"One-time fee, no subscription",
+    roles_label:"Positions", roles_title:"Which roles we fill",
+    roles_sub:"From construction helpers to experienced tradespeople – we know the requirements of every position.",
+    r1_h:"Construction Helpers", r1_p:"Support on the construction site, material transport, preparation work – an ideal entry point even for career changers.",
+    r2_h:"Bricklayers & Plasterers", r2_p:"Masonry, plastering, screed work – with professional experience from their home country.",
+    r3_h:"Drywall & Interior Fitting", r3_p:"Drywall work, insulation, interior fit-out – a highly sought-after qualification.",
+    r4_h:"Electrical & HVAC Helpers", r4_p:"Support for electricians and heating/plumbing/AC specialists – especially in demand due to the energy transition.",
+    r5_h:"Painters & Decorators", r5_p:"Painting work, facade design, varnishing work indoors and outdoors.",
+    r6_h:"Tilers", r6_p:"Laying tiles and flooring – precision work with high demand.",
+    why_label:"The Situation", why_title:"Why the local market is no longer enough",
+    wp1_h:"Historic high in the trades sector",
+    wp1_p:"Over 250,000 unfilled positions in German trades (ZDH, 2026). One in five businesses has positions open for more than six months.",
+    wp2_h:"Vacancy times of over 160 days",
+    wp2_p:"In the construction trades, filling open positions takes an average of over 160 days – causing significant revenue losses for businesses.",
+    wp3_h:"Demographic change widens the gap",
+    wp3_p:"The baby-boomer generation is retiring, while too few young people start an apprenticeship in the trades.",
+    stat_p:"unfilled positions in German trades – with a continuing upward trend according to the Central Association of German Crafts (ZDH).",
+    stat_source:"Source: ZDH, DIHK Skilled Workers Report 2025/2026",
+    legal_label:"Legal Basis", legal_title:"What you should know as an employer",
+    legal_sub:"For construction and trade professions, there are several legally compliant routes to international recruitment.",
+    lb1_h:"EU/EFTA Nationals",
+    lb1_p1:"Freedom of movement applies to professionals from EU and EFTA states. No visa, no work permit required.",
+    lb2_h:"Professionals from Third Countries",
+    lb2_p1:"For non-regulated professions such as construction helpers, §16d Para. 3 of the Residence Act allows entry for on-the-job recognition.",
+    hb_label:"Especially relevant for construction & trades", hb_title:"The Western Balkans Regulation",
+    hb_p1:"With a concrete job offer, nationals from six Western Balkan countries can enter Germany – without formal recognition of professional qualifications in non-regulated professions.",
+    hb_p2:"Annual quota: 25,000 visas (2026). One of the fastest and most straightforward ways to recruit qualified workers for construction and trades.",
+    proc_label:"The Process", proc_title:"How the placement works in practice",
+    proc_sub:"Specifically for construction and trade positions – from inquiry to first working day.",
+    t1_h:"Needs Analysis", t1_p:"Which trades, how many positions, what level of experience – we clarify the exact needs in a short conversation.",
+    t2_h:"Candidate Search & Pre-qualification", t2_p:"We verify professional experience, language level and motivation of every candidate before presenting them.",
+    t3_h:"Getting to Know Each Other & Decision", t3_p:"You get to know candidates via video call and decide calmly, without pressure.",
+    t4_h:"Visa, Recognition & Arrival", t4_p:"We check whether the Western Balkans regulation applies, coordinate the visa application and the arrival in Germany.",
+    t5_h:"Onboarding & Aftercare", t5_p:"We support the start on site or in the business and remain available for both sides.",
+    faq_label:"FAQ", faq_title:"What employers ask us most often",
+    f1_h:"What exactly is the Western Balkans regulation?", f1_p:"It allows nationals from Albania, Bosnia and Herzegovina, Kosovo, Montenegro, North Macedonia and Serbia to enter with a concrete job offer – without formal recognition of qualifications in non-regulated professions. Annual quota: 25,000 visas.",
+    f2_h:"What does the placement cost?", f2_p:"A one-time flat fee, typically reflecting one to two months' salary of the position. Applicants never pay anything.",
+    f3_h:"Do tradespeople need formal recognition?", f3_p:"It depends on the profession. For many helper and semi-skilled roles, no formal recognition is needed. For regulated professions or where recognition is desired, we fully support the procedure.",
+    f4_h:"How quickly can a position be filled?", f4_p:"Via the Western Balkans regulation, the process is often significantly faster than classic recognition procedures – typically a few weeks to months, depending on embassy appointments.",
+    f5_h:"Do you also help with accommodation?", f5_p:"Where possible, we coordinate a housing solution together with you for the first months – this significantly increases retention.",
+    cta_label:"Next Step", cta_title:"Let's talk about your needs.",
+    cta_sub:"20 minutes, free, non-binding. We'll clarify together whether and how we can help you.",
+    cta_btn:"Request a free consultation",
+    other_sectors:'Also of interest: <a href="housekeeping-personal.html">Housekeeping Staff</a> · <a href="index.html#branchen">other industries</a> · <a href="bewerber.html">Information for applicants</a>'
+  }
+};
+
+let currentLang = localStorage.getItem('bwg_lang') || 'de';
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('bwg_lang', lang);
+  document.documentElement.lang = lang;
+  const btn = document.getElementById('langBtn');
+  if (btn) btn.textContent = lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+}
+function toggleLang() { applyLang(currentLang === 'de' ? 'en' : 'de'); }
+document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
+</script>
+
+</body>
+</html>
