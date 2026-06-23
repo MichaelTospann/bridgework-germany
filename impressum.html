@@ -34,7 +34,7 @@
   footer { background:#0c1f14; color:rgba(255,255,255,0.3); padding:2rem 4rem; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; margin-top:2rem; }
   footer a { color:rgba(255,255,255,0.3); text-decoration:none; }
   footer a:hover { color:var(--green-bright); }
-  @media (max-width:768px) { nav { padding:1rem 1.5rem; } .page-header { padding:7rem 1.5rem 3rem; } main { padding:2rem 1.5rem; } footer { flex-direction:column; gap:1rem; text-align:center; } }
+  @media (max-width:768px) { nav { padding:1rem 1.5rem; } .nav-text-link { display:none; } .page-header { padding:7rem 1.5rem 3rem; } main { padding:2rem 1.5rem; } footer { flex-direction:column; gap:1rem; text-align:center; } }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRHHB7GQGB"></script>
@@ -49,9 +49,9 @@
 <nav>
   <a href="index.html" class="logo">Bridge<span>Work</span> Germany</a>
   <div class="nav-right">
-    <a href="bewerber.html" data-i18n="nav_applicants">Für Bewerber</a>
+    <a href="bewerber.html" class="nav-text-link" data-i18n="nav_applicants">Für Bewerber</a>
     <a href="#" class="lang-toggle" id="langBtn" onclick="toggleLang(); return false;">🇬🇧 English</a>
-    <a href="index.html" data-i18n="nav_back">← Zurück zur Startseite</a>
+    <a href="index.html" class="nav-text-link" data-i18n="nav_back">← Zurück zur Startseite</a>
   </div>
 </nav>
 <div class="page-header">
