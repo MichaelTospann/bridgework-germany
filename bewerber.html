@@ -100,6 +100,7 @@
   .sector-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
   .sector-card { background:rgba(255,255,255,0.05); border:1px solid rgba(82,196,126,0.18); border-radius:4px; padding:2rem 1.5rem; transition:border-color 0.3s; }
   .sector-card:hover { border-color:var(--green-bright); }
+  a.sector-card { color:inherit; }
   .sector-icon { font-size:1.8rem; margin-bottom:0.9rem; }
   .sector-card h3 { font-weight:500; font-size:0.95rem; margin-bottom:0.6rem; color:var(--mint); }
   .sector-card p { font-size:0.84rem; color:rgba(255,255,255,0.45); line-height:1.65; font-weight:300; }
@@ -266,10 +267,10 @@
     <h2 class="section-title" data-i18n="sec_title">In diesen Bereichen vermitteln wir.</h2>
     <p class="section-sub" data-i18n="sec_sub">Inhabergeführte Betriebe in ganz Deutschland – mit echtem Personalbedarf.</p>
     <div class="sector-cards">
-      <div class="sector-card"><div class="sector-icon">🏨</div><h3 data-i18n="s1_h">Hotel & Gastgewerbe</h3><p data-i18n="s1_p">Housekeeping, Zimmerreinigung, Frühstücksservice, Küchenhilfe, Service.</p></div>
-      <div class="sector-card"><div class="sector-icon">🔨</div><h3 data-i18n="s2_h">Bau & Handwerk</h3><p data-i18n="s2_p">Bauhelfer, Montageunterstützung, Zuarbeiter in handwerklichen Betrieben.</p></div>
-      <div class="sector-card"><div class="sector-icon">🚚</div><h3 data-i18n="s3_h">Logistik & Spedition</h3><p data-i18n="s3_p">Lagerhelfer, Kommissionierer, Fahrer mit entsprechender Qualifikation.</p></div>
-      <div class="sector-card"><div class="sector-icon">🏥</div><h3 data-i18n="s4_h">Pflege & Soziales</h3><p data-i18n="s4_p">Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaftskräfte.</p></div>
+      <a href="jobs-housekeeping.html" class="sector-card" style="text-decoration:none; display:block; cursor:pointer;"><div class="sector-icon">🏨</div><h3 data-i18n="s1_h">Hotel & Gastgewerbe</h3><p data-i18n="s1_p">Housekeeping, Zimmerreinigung, Frühstücksservice, Küchenhilfe, Service.</p><span style="display:inline-block; margin-top:0.8rem; font-size:0.78rem; color:var(--mint); font-weight:500;" data-i18n="s1_link">Mehr erfahren →</span></a>
+      <a href="jobs-bau-handwerk.html" class="sector-card" style="text-decoration:none; display:block; cursor:pointer;"><div class="sector-icon">🔨</div><h3 data-i18n="s2_h">Bau & Handwerk</h3><p data-i18n="s2_p">Bauhelfer, Montageunterstützung, Zuarbeiter in handwerklichen Betrieben.</p><span style="display:inline-block; margin-top:0.8rem; font-size:0.78rem; color:var(--mint); font-weight:500;" data-i18n="s2_link">Mehr erfahren →</span></a>
+      <a href="jobs-logistik.html" class="sector-card" style="text-decoration:none; display:block; cursor:pointer;"><div class="sector-icon">🚚</div><h3 data-i18n="s3_h">Logistik & Spedition</h3><p data-i18n="s3_p">Lagerhelfer, Kommissionierer, Fahrer mit entsprechender Qualifikation.</p><span style="display:inline-block; margin-top:0.8rem; font-size:0.78rem; color:var(--mint); font-weight:500;" data-i18n="s3_link">Mehr erfahren →</span></a>
+      <a href="jobs-pflege.html" class="sector-card" style="text-decoration:none; display:block; cursor:pointer;"><div class="sector-icon">🏥</div><h3 data-i18n="s4_h">Pflege & Soziales</h3><p data-i18n="s4_p">Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaftskräfte.</p><span style="display:inline-block; margin-top:0.8rem; font-size:0.78rem; color:var(--mint); font-weight:500;" data-i18n="s4_link">Mehr erfahren →</span></a>
     </div>
   </div>
 </section>
@@ -378,6 +379,7 @@ const translations = {
     s2_h: "Bau & Handwerk", s2_p: "Bauhelfer, Montageunterstützung, Zuarbeiter in handwerklichen Betrieben.",
     s3_h: "Logistik & Spedition", s3_p: "Lagerhelfer, Kommissionierer, Fahrer mit entsprechender Qualifikation.",
     s4_h: "Pflege & Soziales", s4_p: "Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaftskräfte.",
+    s1_link: "Mehr erfahren →", s2_link: "Mehr erfahren →", s3_link: "Mehr erfahren →", s4_link: "Mehr erfahren →",
     con_label: "Kontakt", con_title: "Schreiben Sie uns.",
     con_sub: "Eine kurze Mail auf Deutsch oder Englisch genügt. Wir melden uns innerhalb von 48 Stunden.",
     ci1_label: "E-Mail", ci2_label: "Sprachen", ci2_val: "Deutsch · Englisch · Französisch",
@@ -444,6 +446,7 @@ const translations = {
     s2_h: "Construction & Trades", s2_p: "Construction helpers, assembly support, assistants in trade businesses.",
     s3_h: "Logistics & Freight", s3_p: "Warehouse helpers, pickers, drivers with appropriate qualifications.",
     s4_h: "Care & Social Services", s4_p: "Care assistants, support workers, domestic service staff.",
+    s1_link: "Learn more →", s2_link: "Learn more →", s3_link: "Learn more →", s4_link: "Learn more →",
     con_label: "Contact", con_title: "Write to us.",
     con_sub: "A short email in German or English is enough. We respond within 48 hours.",
     ci1_label: "Email", ci2_label: "Languages", ci2_val: "German · English · French",
