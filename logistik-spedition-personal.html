@@ -18,7 +18,15 @@
   .nav-links { display:flex; gap:2rem; align-items:center; }
   nav a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
   nav a:hover { color:var(--mint); }
-  .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+    .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+  .nav-dropdown { position:relative; }
+  .nav-dropdown > a { display:flex; align-items:center; gap:0.3rem; }
+  .nav-dropdown .caret { font-size:0.65rem; transition:transform 0.2s; opacity:0.6; }
+  .nav-dropdown:hover .caret, .nav-dropdown.open .caret { transform:rotate(180deg); }
+  .dropdown-menu { position:absolute; top:calc(100% + 0.8rem); left:50%; transform:translateX(-50%); background:var(--forest); border:1px solid rgba(82,196,126,0.2); border-radius:4px; padding:0.6rem; min-width:220px; box-shadow:0 12px 30px rgba(0,0,0,0.35); opacity:0; visibility:hidden; transform:translateX(-50%) translateY(-6px); transition:opacity 0.18s, transform 0.18s, visibility 0.18s; z-index:200; }
+  .nav-dropdown:hover .dropdown-menu, .nav-dropdown.open .dropdown-menu { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+  .dropdown-menu a { display:block; padding:0.6rem 0.9rem; border-radius:3px; font-size:0.85rem; color:rgba(255,255,255,0.75); white-space:nowrap; }
+  .dropdown-menu a:hover { background:rgba(82,196,126,0.12); color:var(--mint); }
   .lang-toggle { background:rgba(255,255,255,0.1); border:1px solid rgba(82,196,126,0.35); color:rgba(255,255,255,0.85)!important; padding:0.45rem 1rem; border-radius:2px; cursor:pointer; font-size:0.82rem; font-weight:500; letter-spacing:0.05em; transition:all 0.2s; text-decoration:none; }
   .lang-toggle:hover { background:rgba(82,196,126,0.2); border-color:var(--green-bright); color:var(--mint)!important; }
   .breadcrumb { background:var(--forest); padding:6.5rem 4rem 0; }
@@ -132,7 +140,15 @@
   <a href="index.html" class="logo">Bridge<span>Work</span> Germany</a>
   <div class="nav-links">
     <a href="index.html#prozess" data-i18n="nav_process">Prozess</a>
-    <a href="index.html#branchen" data-i18n="nav_sectors">Branchen</a>
+    <div class="nav-dropdown" id="branchenDropdown">
+      <a href="index.html#branchen" data-i18n="nav_sectors" onclick="toggleDropdown(event); return false;">Branchen <span class="caret">▾</span></a>
+      <div class="dropdown-menu">
+        <a href="housekeeping-personal.html" data-i18n="dd_hotel">Hotel &amp; Gastgewerbe</a>
+        <a href="bau-handwerk-personal.html" data-i18n="dd_bau">Bau &amp; Handwerk</a>
+        <a href="logistik-spedition-personal.html" data-i18n="dd_logistik">Logistik &amp; Spedition</a>
+        <a href="pflege-soziales-personal.html" data-i18n="dd_pflege">Pflege &amp; Soziales</a>
+      </div>
+    </div>
     <a href="bewerber.html" data-i18n="nav_applicants">Für Bewerber</a>
     <a href="#" class="lang-toggle" id="langBtn" onclick="toggleLang(); return false;">🇬🇧 English</a>
     <a href="index.html#kontakt" class="nav-cta" data-i18n="nav_cta">Erstgespräch anfragen</a>
@@ -272,7 +288,8 @@
 <script>
 const translations = {
   de: {
-    nav_process:"Prozess", nav_sectors:"Branchen", nav_applicants:"Für Bewerber", nav_cta:"Erstgespräch anfragen",
+    nav_process:"Prozess", nav_sectors:"Branchen",
+    dd_hotel:"Hotel &amp; Gastgewerbe", dd_bau:"Bau &amp; Handwerk", dd_logistik:"Logistik &amp; Spedition", dd_pflege:"Pflege &amp; Soziales", nav_applicants:"Für Bewerber", nav_cta:"Erstgespräch anfragen",
     bc_home:"Startseite", bc_sectors:"Branchen", bc_current:"Logistik & Spedition",
     hero_label:"Für Logistik- und Speditionsbetriebe",
     hero_h1:"Lagerpersonal & Fachkräfte für Logistik aus dem Ausland einstellen.",
@@ -328,7 +345,8 @@ const translations = {
     other_sectors:'Auch interessant: <a href="housekeeping-personal.html">Housekeeping-Personal</a> · <a href="bau-handwerk-personal.html">Bau &amp; Handwerk</a> · <a href="pflege-soziales-personal.html">Pflege &amp; Soziales</a> · <a href="bewerber.html">Informationen für Bewerber</a>'
   },
   en: {
-    nav_process:"Process", nav_sectors:"Industries", nav_applicants:"For Applicants", nav_cta:"Request Consultation",
+    nav_process:"Process", nav_sectors:"Industries",
+    dd_hotel:"Hotel &amp; Hospitality", dd_bau:"Construction &amp; Trades", dd_logistik:"Logistics &amp; Freight", dd_pflege:"Care &amp; Social Services", nav_applicants:"For Applicants", nav_cta:"Request Consultation",
     bc_home:"Home", bc_sectors:"Industries", bc_current:"Logistics & Freight",
     hero_label:"For Logistics & Freight Companies",
     hero_h1:"Hire warehouse staff & logistics professionals from abroad.",
@@ -401,6 +419,18 @@ function applyLang(lang) {
 }
 function toggleLang() { applyLang(currentLang === 'de' ? 'en' : 'de'); }
 document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
+function toggleDropdown(e) {
+  const dd = document.getElementById('branchenDropdown');
+  if (window.matchMedia('(hover: none)').matches) {
+    dd.classList.toggle('open');
+  } else {
+    window.location.href = 'index.html#branchen';
+  }
+}
+document.addEventListener('click', (e) => {
+  const dd = document.getElementById('branchenDropdown');
+  if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+});
 </script>
 
 </body>
