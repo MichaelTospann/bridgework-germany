@@ -32,6 +32,8 @@
   nav a:hover { color:var(--mint); }
   nav a.active { color:var(--green-bright); }
   .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+.nav-mobile-lang { display:none; }
+  @media (max-width:768px) { .nav-mobile-lang { display:inline-flex; } }
   .lang-toggle { background:rgba(255,255,255,0.1); border:1px solid rgba(82,196,126,0.35); color:rgba(255,255,255,0.85)!important; padding:0.45rem 1rem; border-radius:2px; cursor:pointer; font-size:0.82rem; font-weight:500; letter-spacing:0.05em; transition:all 0.2s; }
   .lang-toggle:hover { background:rgba(82,196,126,0.2); border-color:var(--green-bright); color:var(--mint)!important; }
 
@@ -147,6 +149,7 @@
     <a href="#" class="lang-toggle" id="langBtn" onclick="toggleLang(); return false;">🇬🇧 English</a>
     <a href="mailto:kontakt@bridgework-germany.de" class="nav-cta" data-i18n="nav_apply">Jetzt bewerben</a>
   </div>
+  <a href="#" class="lang-toggle nav-mobile-lang" id="langBtnMobile" onclick="toggleLang(); return false;">🇬🇧 EN</a>
 </nav>
 
 <section class="hero">
@@ -463,8 +466,11 @@ function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('bwg_lang', lang);
   document.documentElement.lang = lang;
-  const btn = document.getElementById('langBtn');
-  btn.textContent = lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch';
+  document.querySelectorAll('.lang-toggle').forEach(btn => {
+    btn.textContent = btn.classList.contains('nav-mobile-lang')
+      ? (lang === 'de' ? '🇬🇧 EN' : '🇩🇪 DE')
+      : (lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch');
+  });
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang] && translations[lang][key] !== undefined) {

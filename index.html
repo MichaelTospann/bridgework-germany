@@ -18,6 +18,8 @@
   nav a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
   nav a:hover { color:var(--mint); }
   .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+.nav-mobile-lang { display:none; }
+  @media (max-width:768px) { .nav-mobile-lang { display:inline-flex; } }
   .nav-dropdown { position:relative; }
   .nav-dropdown > a { display:flex; align-items:center; gap:0.3rem; }
   .nav-dropdown .caret { font-size:0.65rem; transition:transform 0.2s; opacity:0.6; }
@@ -149,6 +151,7 @@
     <a href="#" class="lang-toggle" id="langBtn" onclick="toggleLang(); return false;">🇬🇧 English</a>
     <a href="#kontakt" class="nav-cta" data-i18n="nav_cta">Erstgespräch anfragen</a>
   </div>
+  <a href="#" class="lang-toggle nav-mobile-lang" id="langBtnMobile" onclick="toggleLang(); return false;">🇬🇧 EN</a>
 </nav>
 
 <section class="hero">
@@ -461,8 +464,11 @@ function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('bwg_lang', lang);
   document.documentElement.lang = lang;
-  const btn = document.getElementById('langBtn');
-  if (btn) btn.textContent = lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch';
+  document.querySelectorAll('.lang-toggle').forEach(btn => {
+    btn.textContent = btn.classList.contains('nav-mobile-lang')
+      ? (lang === 'de' ? '🇬🇧 EN' : '🇩🇪 DE')
+      : (lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch');
+  });
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang] && translations[lang][key] !== undefined) {

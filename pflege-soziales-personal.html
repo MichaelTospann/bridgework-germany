@@ -19,6 +19,8 @@
   nav a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
   nav a:hover { color:var(--mint); }
     .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+.nav-mobile-lang { display:none; }
+  @media (max-width:768px) { .nav-mobile-lang { display:inline-flex; } }
   .nav-dropdown { position:relative; }
   .nav-dropdown > a { display:flex; align-items:center; gap:0.3rem; }
   .nav-dropdown .caret { font-size:0.65rem; transition:transform 0.2s; opacity:0.6; }
@@ -156,6 +158,7 @@
     <a href="#" class="lang-toggle" id="langBtn" onclick="toggleLang(); return false;">🇬🇧 English</a>
     <a href="index.html#kontakt" class="nav-cta" data-i18n="nav_cta">Erstgespräch anfragen</a>
   </div>
+  <a href="#" class="lang-toggle nav-mobile-lang" id="langBtnMobile" onclick="toggleLang(); return false;">🇬🇧 EN</a>
 </nav>
 
 <div class="breadcrumb">
@@ -227,7 +230,7 @@
       <div class="stat-box">
         <div class="big">40.000–60.000 €</div>
         <p data-i18n="stat_p">jährliche Kosten einer unbesetzten Pflegestelle durch Zeitarbeit – ein starkes Argument für strukturierte internationale Rekrutierung.</p>
-        <div class="source" data-i18n="stat_source">Quelle: Branchenanalyse Pflegepersonal 2026</div>
+        <div class="source" data-i18n="stat_source">Quelle: Branchenschätzung auf Basis durchschnittlicher Zeitarbeitskosten in der Pflege (Personaldienstleistungsbranche)</div>
       </div>
     </div>
   </div>
@@ -243,6 +246,7 @@
       <h4 data-i18n="eb_title">Anwerbeverbot für 55 Länder mit kritischem Personalmangel</h4>
       <p data-i18n="eb_p1">Die Weltgesundheitsorganisation (WHO) hat Länder identifiziert, in denen ein kritischer Mangel an Gesundheits- und Pflegepersonal herrscht. Für diese 55 Länder gilt nach §38 BeschV ein gesetzliches Anwerbeverbot.</p>
       <p data-i18n="eb_p2">Wir halten uns strikt an diese Vorgaben. Eine Vermittlung aus diesen Ländern findet bei uns grundsätzlich nicht statt – das ist Teil unseres ILO Employer Pays Principle und unseres ethischen Selbstverständnisses.</p>
+          <p style="font-size:0.75rem; color:rgba(255,255,255,0.4); margin-top:0.5rem;" data-i18n="eb_source">Quelle: WHO Global Code of Practice on the International Recruitment of Health Personnel; §38 BeschV</p>
     </div>
   </div>
 </section>
@@ -259,7 +263,7 @@
       </div>
       <div class="legal-box">
         <h4 data-i18n="lb2_h">Beschleunigtes Fachkräfteverfahren</h4>
-        <p data-i18n="lb2_p1">Nach §81a AufenthG verkürzt sich das Anerkennungsverfahren auf rund zwei Monate – Gesamtdauer ca. 3–4 statt 6–12 Monate. Gebühr: 411 € (Make it in Germany).</p>
+        <p data-i18n="lb2_p1">Nach §81a AufenthG verkürzt sich das Anerkennungsverfahren auf rund zwei Monate – Gesamtdauer ca. 3–4 statt 6–12 Monate. Gebühr: 411 € <span style="font-size:0.78rem; color:var(--text-light);">(Quelle: Make it in Germany, offizielles Portal der Bundesregierung)</span>.</p>
       </div>
       <div class="legal-box">
         <h4 data-i18n="lb3_h">Anerkennungspartnerschaft</h4>
@@ -353,18 +357,19 @@ const translations = {
     wp3_h:"Loyalität und Planbarkeit",
     wp3_p:"Internationale Fachkräfte zeigen häufig hohe Arbeitgeberloyalität und ermöglichen langfristige Personalplanung.",
     stat_p:"jährliche Kosten einer unbesetzten Pflegestelle durch Zeitarbeit – ein starkes Argument für strukturierte internationale Rekrutierung.",
-    stat_source:"Quelle: Branchenanalyse Pflegepersonal 2026",
+    stat_source:"Quelle: Branchenschätzung auf Basis durchschnittlicher Zeitarbeitskosten in der Pflege (Personaldienstleistungsbranche)",
     ethics_label:"Unser Ansatz", ethics_title:"Ethische Rekrutierung ist in der Pflege keine Option, sondern Pflicht",
     ethics_sub:"Gerade im Gesundheitswesen hat die Art der Rekrutierung direkte Auswirkungen auf die Versorgungssicherheit in den Herkunftsländern.",
     eb_label:"WHO-Verhaltenskodex", eb_title:"Anwerbeverbot für 55 Länder mit kritischem Personalmangel",
     eb_p1:"Die Weltgesundheitsorganisation (WHO) hat Länder identifiziert, in denen ein kritischer Mangel an Gesundheits- und Pflegepersonal herrscht. Für diese 55 Länder gilt nach §38 BeschV ein gesetzliches Anwerbeverbot.",
     eb_p2:"Wir halten uns strikt an diese Vorgaben. Eine Vermittlung aus diesen Ländern findet bei uns grundsätzlich nicht statt – das ist Teil unseres ILO Employer Pays Principle und unseres ethischen Selbstverständnisses.",
+    eb_source:"Quelle: WHO Global Code of Practice on the International Recruitment of Health Personnel; §38 BeschV",
     legal_label:"Rechtliche Grundlage", legal_title:"Was Sie als Arbeitgeber wissen sollten",
     legal_sub:"Pflege ist rechtlich besonders geregelt – wir kennen die Details und begleiten Sie strukturiert.",
     lb1_h:"EU/EWR-Staatsangehörige",
     lb1_p1:"Pflegefachkräfte aus EU/EWR-Staaten und der Schweiz erhalten in der Regel eine automatische Anerkennung ihrer Qualifikation.",
     lb2_h:"Beschleunigtes Fachkräfteverfahren",
-    lb2_p1:"Nach §81a AufenthG verkürzt sich das Anerkennungsverfahren auf rund zwei Monate – Gesamtdauer ca. 3–4 statt 6–12 Monate. Gebühr: 411 € (Make it in Germany).",
+    lb2_p1:"Nach §81a AufenthG verkürzt sich das Anerkennungsverfahren auf rund zwei Monate – Gesamtdauer ca. 3–4 statt 6–12 Monate. Gebühr: 411 € <span style='font-size:0.78rem; color:var(--text-light);'>(Quelle: Make it in Germany, offizielles Portal der Bundesregierung)</span>.",
     lb3_h:"Anerkennungspartnerschaft",
     lb3_p1:"Seit März 2024 können Pflegefachkräfte einreisen, bevor das Anerkennungsverfahren abgeschlossen ist – sie arbeiten währenddessen unter Anleitung als Pflegehilfskraft.",
     lb4_h:"Förderung der Qualifizierungskosten",
@@ -420,18 +425,19 @@ const translations = {
     wp3_h:"Loyalty and predictability",
     wp3_p:"International professionals often show high employer loyalty and enable long-term staff planning.",
     stat_p:"annual cost of an unfilled care position through temp staffing – a strong argument for structured international recruitment.",
-    stat_source:"Source: Care Staffing Industry Analysis 2026",
+    stat_source:"Source: Industry estimate based on average temp-staffing costs in care (personnel services sector)",
     ethics_label:"Our Approach", ethics_title:"Ethical recruitment in care is not optional – it's mandatory",
     ethics_sub:"Especially in healthcare, the way recruitment is conducted has direct effects on care provision in the countries of origin.",
     eb_label:"WHO Code of Practice", eb_title:"Recruitment ban for 55 countries with critical staff shortages",
     eb_p1:"The World Health Organization (WHO) has identified countries with a critical shortage of health and care personnel. A statutory recruitment ban applies to these 55 countries under §38 BeschV.",
     eb_p2:"We strictly adhere to these requirements. We fundamentally do not place candidates from these countries – this is part of our ILO Employer Pays Principle and our ethical self-understanding.",
+    eb_source:"Source: WHO Global Code of Practice on the International Recruitment of Health Personnel; §38 BeschV (German Employment Ordinance)",
     legal_label:"Legal Basis", legal_title:"What you should know as an employer",
     legal_sub:"Care is subject to special legal regulation – we know the details and provide structured support.",
     lb1_h:"EU/EEA Nationals",
     lb1_p1:"Qualified nurses from EU/EEA states and Switzerland generally receive automatic recognition of their qualification.",
     lb2_h:"Accelerated Skilled Worker Procedure",
-    lb2_p1:"Under §81a of the Residence Act, the recognition procedure is shortened to around two months – total duration approx. 3–4 instead of 6–12 months. Fee: €411 (Make it in Germany).",
+    lb2_p1:"Under §81a of the Residence Act, the recognition procedure is shortened to around two months – total duration approx. 3–4 instead of 6–12 months. Fee: €411 <span style='font-size:0.78rem; color:var(--text-light);'>(Source: Make it in Germany, official federal government portal)</span>.",
     lb3_h:"Recognition Partnership",
     lb3_p1:"Since March 2024, qualified nurses can enter before the recognition procedure is complete – they work as supervised care assistants in the meantime.",
     lb4_h:"Funding for Qualification Costs",
@@ -461,8 +467,11 @@ function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('bwg_lang', lang);
   document.documentElement.lang = lang;
-  const btn = document.getElementById('langBtn');
-  if (btn) btn.textContent = lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch';
+  document.querySelectorAll('.lang-toggle').forEach(btn => {
+    btn.textContent = btn.classList.contains('nav-mobile-lang')
+      ? (lang === 'de' ? '🇬🇧 EN' : '🇩🇪 DE')
+      : (lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch');
+  });
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang] && translations[lang][key] !== undefined) {

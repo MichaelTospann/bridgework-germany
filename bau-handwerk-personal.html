@@ -19,6 +19,8 @@
   nav a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
   nav a:hover { color:var(--mint); }
     .nav-cta { background:var(--green-bright); color:var(--forest)!important; padding:0.6rem 1.4rem; border-radius:2px; font-weight:500; }
+.nav-mobile-lang { display:none; }
+  @media (max-width:768px) { .nav-mobile-lang { display:inline-flex; } }
   .nav-dropdown { position:relative; }
   .nav-dropdown > a { display:flex; align-items:center; gap:0.3rem; }
   .nav-dropdown .caret { font-size:0.65rem; transition:transform 0.2s; opacity:0.6; }
@@ -152,6 +154,7 @@
     <a href="#" class="lang-toggle" id="langBtn" onclick="toggleLang(); return false;">🇬🇧 English</a>
     <a href="index.html#kontakt" class="nav-cta" data-i18n="nav_cta">Erstgespräch anfragen</a>
   </div>
+  <a href="#" class="lang-toggle nav-mobile-lang" id="langBtnMobile" onclick="toggleLang(); return false;">🇬🇧 EN</a>
 </nav>
 
 <div class="breadcrumb">
@@ -235,6 +238,7 @@
       <h4 data-i18n="hb_title">Die Westbalkanregelung</h4>
       <p data-i18n="hb_p1">Mit einem konkreten Jobangebot können Staatsangehörige aus sechs Westbalkan-Ländern nach Deutschland einreisen – ohne formale Anerkennung der Berufsqualifikation in nicht-reglementierten Berufen.</p>
       <p data-i18n="hb_p2">Jährliches Kontingent: 25.000 Visa (2026). Einer der schnellsten und unkompliziertesten Wege, qualifizierte Arbeitskräfte für Bau und Handwerk zu gewinnen.</p>
+      <p style="font-size:0.75rem; color:rgba(255,255,255,0.4); margin-top:0.5rem;" data-i18n="hb_source">Quelle: §26 Beschäftigungsverordnung (BeschV), Bundesagentur für Arbeit</p>
       <div class="countries">
         <span class="country-tag">Albanien</span>
         <span class="country-tag">Bosnien & Herzegowina</span>
@@ -333,6 +337,7 @@ const translations = {
     hb_label:"Besonders relevant für Bau & Handwerk", hb_title:"Die Westbalkanregelung",
     hb_p1:"Mit einem konkreten Jobangebot können Staatsangehörige aus sechs Westbalkan-Ländern nach Deutschland einreisen – ohne formale Anerkennung der Berufsqualifikation in nicht-reglementierten Berufen.",
     hb_p2:"Jährliches Kontingent: 25.000 Visa (2026). Einer der schnellsten und unkompliziertesten Wege, qualifizierte Arbeitskräfte für Bau und Handwerk zu gewinnen.",
+    hb_source:"Quelle: §26 Beschäftigungsverordnung (BeschV), Bundesagentur für Arbeit",
     proc_label:"Der Prozess", proc_title:"So läuft die Vermittlung konkret ab",
     proc_sub:"Speziell für Bau- und Handwerkspositionen – von der Anfrage bis zum ersten Arbeitstag.",
     t1_h:"Bedarfsanalyse", t1_p:"Welche Gewerke, wie viele Stellen, welche Erfahrungsstufe – wir klären den genauen Bedarf in einem kurzen Gespräch.",
@@ -390,6 +395,7 @@ const translations = {
     hb_label:"Especially relevant for construction & trades", hb_title:"The Western Balkans Regulation",
     hb_p1:"With a concrete job offer, nationals from six Western Balkan countries can enter Germany – without formal recognition of professional qualifications in non-regulated professions.",
     hb_p2:"Annual quota: 25,000 visas (2026). One of the fastest and most straightforward ways to recruit qualified workers for construction and trades.",
+    hb_source:"Source: §26 Employment Ordinance (BeschV), Federal Employment Agency",
     proc_label:"The Process", proc_title:"How the placement works in practice",
     proc_sub:"Specifically for construction and trade positions – from inquiry to first working day.",
     t1_h:"Needs Analysis", t1_p:"Which trades, how many positions, what level of experience – we clarify the exact needs in a short conversation.",
@@ -415,8 +421,11 @@ function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('bwg_lang', lang);
   document.documentElement.lang = lang;
-  const btn = document.getElementById('langBtn');
-  if (btn) btn.textContent = lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch';
+  document.querySelectorAll('.lang-toggle').forEach(btn => {
+    btn.textContent = btn.classList.contains('nav-mobile-lang')
+      ? (lang === 'de' ? '🇬🇧 EN' : '🇩🇪 DE')
+      : (lang === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch');
+  });
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang] && translations[lang][key] !== undefined) {
