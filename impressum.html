@@ -69,7 +69,7 @@
     </div>
     <div class="imprint-section">
       <h2 data-i18n="s2_h">Kontakt</h2>
-      <p><strong data-i18n="s2_tel">Telefon:</strong> <span data-i18n="s2_request">Auf Anfrage. Bitte schreiben Sie an</span> <a href="mailto:kontakt@bridgework-germany.de">kontakt@bridgework-germany.de</a></p>
+      <p><a data-bw-contact href="kontakt.html?lang=de">Kontaktformular</a></p>
       <p><strong>E-Mail:</strong> <a href="mailto:kontakt@bridgework-germany.de">kontakt@bridgework-germany.de</a></p>
     </div>
     <div class="imprint-section">
@@ -95,7 +95,7 @@
       <p data-i18n="s7_p">Die durch den Seitenbetreiber erstellten Inhalte unterliegen dem deutschen Urheberrecht. Die Vervielfältigung bedarf der schriftlichen Zustimmung.</p>
     </div>
     <div class="note-box">
-      <p data-i18n="note_p">Bei Fragen schreiben Sie bitte an kontakt@bridgework-germany.de. Telefonischer Kontakt ist auf Anfrage möglich.</p>
+      <p data-i18n="note_p">Sie erreichen uns über das Kontaktformular oder per Mail an kontakt@bridgework-germany.de.</p>
     </div>
   </div>
 </main>
@@ -103,7 +103,7 @@
   <a href="index.html" style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,0.3);text-decoration:none;">Bridge<span style="color:#52c47e">Work</span> Germany</a>
   <div>&#169; 2026 BridgeWork Germany · Michael Tospann</div>
   <div><a href="impressum.html">Impressum</a> · <a href="datenschutz.html" data-i18n="footer_ds">Datenschutz</a></div>
-</footer>
+<a data-bw-contact href="kontakt.html?lang=de">Kontaktformular</a></footer>
 
 <script>
 const translations = {
@@ -123,7 +123,7 @@ const translations = {
     s6_p2:"<strong>Haftung für Links:</strong> Auf Inhalte verlinkter Seiten habe ich keinen Einfluss und übernehme keine Haftung.",
     s7_h:"Urheberrecht",
     s7_p:"Die durch den Seitenbetreiber erstellten Inhalte unterliegen dem deutschen Urheberrecht. Die Vervielfältigung bedarf der schriftlichen Zustimmung.",
-    note_p:"Bei Fragen schreiben Sie bitte an kontakt@bridgework-germany.de. Telefonischer Kontakt ist auf Anfrage möglich.",
+    note_p:"Sie erreichen uns über das Kontaktformular oder per Mail an kontakt@bridgework-germany.de.",
     footer_ds:"Datenschutz"
   },
   en: {
@@ -142,12 +142,13 @@ const translations = {
     s6_p2:"<strong>Liability for links:</strong> I have no influence over the content of linked external websites and accept no liability for them.",
     s7_h:"Copyright",
     s7_p:"The content created by the site operator is subject to German copyright law. Reproduction requires written consent.",
-    note_p:"For questions, please email kontakt@bridgework-germany.de. Telephone contact is available on request.",
+    note_p:"Contact us using our contact form or email kontakt@bridgework-germany.de.",
     footer_ds:"Privacy Policy"
   }
 };
 
-let currentLang = localStorage.getItem('bwg_lang') || 'de';
+let currentLang = new URLSearchParams(location.search).get('lang') || localStorage.getItem('bwg_lang') || 'de';
+if (!['de','en'].includes(currentLang)) currentLang='de';
 function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('bwg_lang', lang);
@@ -164,5 +165,5 @@ function applyLang(lang) {
 function toggleLang() { applyLang(currentLang === 'de' ? 'en' : 'de'); }
 document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
 </script>
-</body>
+<script src="contact-links.js" defer></script></body>
 </html>

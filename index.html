@@ -289,14 +289,14 @@
     <div class="contact-inner">
       <div class="contact-info">
         <div class="contact-item"><div class="ci-icon">✉</div><div class="ci-text"><div class="ci-label" data-i18n="ci1_l">E-Mail</div><a href="mailto:kontakt@bridgework-germany.de" class="ci-value">kontakt@bridgework-germany.de</a></div></div>
-        <div class="contact-item"><div class="ci-icon">☎</div><div class="ci-text"><div class="ci-label" data-i18n="ci2_l">Telefon</div><a href="tel:+491789755191" class="ci-value">+49 178 9755191</a></div></div>
+        <div class="contact-item"><div class="ci-icon">✉</div><div class="ci-text"><div class="ci-label" data-i18n="ci2_l">Kontaktformular</div><a href="kontakt.html?lang=de" class="ci-value" data-bw-contact>Kontaktformular</a></div></div>
         <div class="contact-item"><div class="ci-icon">⏱</div><div class="ci-text"><div class="ci-label" data-i18n="ci3_l">Erstgespräch</div><span class="ci-value" data-i18n="ci3_v">Digital · 20–30 Minuten · kostenlos</span></div></div>
       </div>
       <div class="contact-note">
         <h3 data-i18n="note_h">Was Sie im Erstgespräch erwartet</h3>
         <p data-i18n="note_p1">Wir fragen Sie nach Ihrem konkreten Bedarf – welche Positionen, wie viele Personen, wann. Keine Verkaufspräsentation, kein Druck.</p>
         <p data-i18n="note_p2">Wenn es passt, erklären wir den genauen Prozess und das Kostenmodell transparent. Wenn nicht, sagen wir das auch direkt.</p>
-        <p data-i18n="note_p3">Rufen Sie einfach an oder schreiben Sie eine kurze Mail. Wir melden uns innerhalb von 24 Stunden.</p>
+        <p data-i18n="note_p3">Nutzen Sie unser Kontaktformular oder schreiben Sie eine kurze Mail.</p>
       </div>
     </div>
   </div>
@@ -306,7 +306,7 @@
   <a href="index.html" style="font-family:'Playfair Display',serif; font-size:1rem; color:rgba(255,255,255,0.3); text-decoration:none;">Bridge<span style="color:var(--green-bright)">Work</span> Germany</a>
   <div>&#169; 2026 BridgeWork Germany</div>
   <div><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
-</footer>
+<a data-bw-contact href="kontakt.html?lang=de">Kontaktformular</a></footer>
 
 <script>
 const translations = {
@@ -376,12 +376,12 @@ const translations = {
     s4_h:"Pflege &amp; Soziales", s4_p:"Pflegehilfskräfte, Betreuungsassistenten, Hauswirtschaft.", s4_link:"Mehr erfahren →",
     con_label:"Kontakt", con_title:"Sprechen wir.",
     con_sub:"Das erste Gespräch ist kostenlos und unverbindlich. In 20 Minuten klären wir, ob und wie wir Ihnen helfen können.",
-    ci1_l:"E-Mail", ci2_l:"Telefon", ci3_l:"Erstgespräch",
+    ci1_l:"E-Mail", ci2_l:"Kontaktformular", ci3_l:"Erstgespräch",
     ci3_v:"Digital · 20–30 Minuten · kostenlos",
     note_h:"Was Sie im Erstgespräch erwartet",
     note_p1:"Wir fragen Sie nach Ihrem konkreten Bedarf – welche Positionen, wie viele Personen, wann. Keine Verkaufspräsentation, kein Druck.",
     note_p2:"Wenn es passt, erklären wir den genauen Prozess und das Kostenmodell transparent. Wenn nicht, sagen wir das auch direkt.",
-    note_p3:"Rufen Sie einfach an oder schreiben Sie eine kurze Mail. Wir melden uns innerhalb von 24 Stunden."
+    note_p3:"Nutzen Sie unser Kontaktformular oder schreiben Sie eine kurze Mail."
   },
   en: {
     nav_process:"Process", nav_sectors:"Industries", nav_approach:"Our Approach",
@@ -449,12 +449,12 @@ const translations = {
     s4_h:"Care &amp; Social Services", s4_p:"Care assistants, support workers, domestic services.", s4_link:"Learn more →",
     con_label:"Contact", con_title:"Let's talk.",
     con_sub:"The first conversation is free and non-binding. In 20 minutes we clarify whether and how we can help you.",
-    ci1_l:"Email", ci2_l:"Phone", ci3_l:"Initial Consultation",
+    ci1_l:"Email", ci2_l:"Contact form", ci3_l:"Initial Consultation",
     ci3_v:"Digital · 20–30 minutes · free",
     note_h:"What to expect in the first call",
     note_p1:"We ask about your specific needs – which positions, how many people, when. No sales pitch, no pressure.",
     note_p2:"If it's a fit, we explain the exact process and cost model transparently. If not, we'll say that directly too.",
-    note_p3:"Simply call or send a short email. We respond within 24 hours."
+    note_p3:"Use our contact form or send us a short email."
   }
 };
 
@@ -498,5 +498,5 @@ document.addEventListener('click', (e) => {
 });
 </script>
 
-</body>
+<script src="contact-links.js" defer></script></body>
 </html>
