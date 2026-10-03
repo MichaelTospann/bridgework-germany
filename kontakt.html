@@ -1,13 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bw-legacy bw-legacy-contact">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="frame-src https://docs.google.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="description" content="Contact BridgeWork Germany about Google Ads audits, automation or recruitment.">
 <title>Contact | BridgeWork Germany</title>
 <style>
 :root{font-family:system-ui,sans-serif;color:#173527;background:#f4f9f6}*{box-sizing:border-box}body{margin:0}nav{background:#193b2a;color:white;padding:20px max(20px,calc((100% - 850px)/2));display:flex;gap:24px;align-items:center}nav a{color:white;text-decoration:none;font-weight:700}nav button{margin-left:auto;background:transparent;border:1px solid #9dcbb0;color:white;padding:9px 16px;border-radius:6px}main{max-width:760px;margin:56px auto;padding:0 20px}h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.12}p{line-height:1.65}form{background:white;border:1px solid #d2dfd7;border-radius:12px;padding:28px;margin:28px 0}label{display:block;font-weight:650;margin:20px 0 8px}input,textarea,select{font:inherit;width:100%;padding:12px;border:1px solid #789586;border-radius:5px}textarea{resize:vertical;min-height:160px}button{font:inherit;cursor:pointer}button[type=submit]{background:#225a3c;color:white;border:0;border-radius:6px;padding:14px 22px;margin-top:18px}button:disabled{opacity:.55;cursor:not-allowed}:focus-visible{outline:3px solid #d39411;outline-offset:3px}.hint{font-size:.9rem;color:#456452}a{color:#205f3b}.trap{position:absolute;left:-10000px}footer{border-top:1px solid #c9d9ce;padding:22px 0;display:flex;gap:20px;flex-wrap:wrap}.preview{padding:12px;background:#fff2c7;border-radius:5px}.direct-contact{background:#e5f3e9;border:2px solid #225a3c;border-radius:12px;padding:24px;margin:28px 0}.direct-contact h2{margin-top:0}.direct-mail{font-size:1.15rem;font-weight:750;overflow-wrap:anywhere}[hidden]{display:none!important}
+
+/* Native Google form, with a local dark glass BridgeWork surround. */
+#contact.bw-google-contact{background:linear-gradient(135deg,rgba(28,65,50,.95),rgba(11,34,26,.97));border:1px solid rgba(219,233,208,.24);border-radius:18px;padding:clamp(24px,4vw,36px);margin:28px 0;box-shadow:0 18px 50px rgba(0,0,0,.14);backdrop-filter:blur(12px);color:#f6f0e3}
+#contact.bw-google-contact h2{font-family:Georgia,serif;font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.2;color:#f6f0e3;margin:0 0 18px}
+#contact.bw-google-contact p{color:#e0e6d9;line-height:1.7;margin:0 0 18px}
+#contact.bw-google-contact .hint{font-size:.91rem;color:#c5d3c4}
+#contact .bw-form-eyebrow{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#dbc6a1}
+#contact .bw-form-language{font-weight:650;font-size:.92rem;color:#d6ead7}
+#contact .bw-form-actions{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0}
+#contact .bw-form-actions button,#contact .bw-form-external{font:inherit;min-height:48px;padding:13px 19px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-weight:650;line-height:1.4;text-decoration:none;cursor:pointer}
+#contact .bw-form-actions button{background:#e5eddb;border:1px solid #e5eddb;color:#12392a}
+#contact .bw-form-external{border:1px solid rgba(220,234,213,.48);background:rgba(255,255,255,.035);color:#f6f0e3}
+#contact .bw-form-actions button:hover{background:#f2f5e8}
+#contact .bw-form-external:hover{background:rgba(255,255,255,.09)}
+#contact .bw-form-actions button:disabled{opacity:.7;cursor:default}
+#contact a{color:#deecd9;text-decoration-color:#90ad94}
+#contact :is(a,button,iframe):focus-visible{outline:3px solid #e0c695;outline-offset:4px}
+#google-form-status:empty{display:none}
+#contact .bw-google-form-container{margin-top:25px;border:1px solid rgba(221,234,211,.35);border-radius:12px;overflow:hidden;background:#f5f2ed}
+#contact iframe{width:100%;height:1700px;border:0;display:block;background:#f5f2ed}
+@media(max-width:520px){#contact .bw-form-actions{flex-direction:column}#contact .bw-form-actions>*{width:100%}#contact iframe{height:2200px}}
+@media(prefers-reduced-motion:reduce){#contact *{scroll-behavior:auto;transition:none}}
+@media(forced-colors:active){#contact.bw-google-contact,#contact .bw-form-actions>*{border:1px solid CanvasText}}
+
 </style>
-<nav><a href="https://bridgework-germany.de/">BridgeWork Germany</a><button type="button" id="language">Deutsch</button></nav>
+<link rel="canonical" href="https://bridgework-germany.de/kontakt.html">
+<link rel="stylesheet" href="/assets/bridgework-premium.css">
+<nav class="bw-site-nav"><a href="/" data-bw-home="" class="logo">BridgeWork Germany</a><button type="button" id="language">Deutsch</button></nav>
 <main>
 <p data-key="eyebrow">DIRECT CONTACT</p><h1 data-key="heading">Tell us what you need.</h1>
 <p data-key="intro">Briefly describe your task and the result you need. No phone number is required.</p>
@@ -15,32 +42,35 @@
 <section class="direct-contact" aria-labelledby="direct-contact-heading">
 <h2 id="direct-contact-heading" data-key="directHeading">Email us directly</h2>
 <a class="direct-mail" href="mailto:kontakt@bridgework-germany.de">kontakt@bridgework-germany.de</a>
-<p class="hint" data-key="formDelivery">Please use email for now. Delivery from the form below has not yet been confirmed.</p>
+<p class="hint" data-key="contactNote">Prefer email? You can also contact us directly at this address.</p>
 </section>
 
-<form id="contact" method="post" action="https://form.taxi/s/mauaul95">
-<input type="hidden" name="_lang" id="form-language" value="en">
-<input type="hidden" name="_subject" value="BridgeWork Kontaktanfrage">
-<label for="name" data-key="name">Name (optional)</label><input id="name" name="name" autocomplete="name" maxlength="100">
-<label for="email" data-key="email">Your email address</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
-<label for="topic" data-key="topic">What is your enquiry about?</label><select id="topic" name="topic"><option value="general" data-key="general">General enquiry</option><option value="audit" data-key="audit">Google Ads audit</option><option value="automation" data-key="automation">Automation</option><option value="staff" data-key="staff">Staff recruitment</option><option value="applicant" data-key="applicant">Application enquiry</option></select>
-<label for="message" data-key="message">Your message</label><textarea id="message" name="message" required minlength="10" maxlength="5000" aria-describedby="message-hint"></textarea>
-<p id="message-hint" class="hint" data-key="hint">Please describe your request briefly. Do not send passwords, health information or confidential documents. Attachments are not required.</p>
-<div class="trap" aria-hidden="true"><label for="company-site">Leave empty</label><input id="company-site" name="_gotcha" tabindex="-1" autocomplete="off"></div>
-<p class="hint"><span data-key="privacy">Your details are sent through Form.taxi so we can process and reply to your enquiry. Further information:</span> <a href="https://bridgework-germany.de/datenschutz.html" data-key="privacyLink">Privacy policy</a>.</p>
-<button type="submit" data-key="send">Send enquiry</button><p id="status" role="status" aria-live="polite"></p>
-</form>
+<section id="contact" class="bw-google-contact" data-bw-google-contact aria-labelledby="google-contact-heading">
+<p class="bw-form-eyebrow">BridgeWork Germany</p>
+<h2 id="google-contact-heading" data-key="formHeading">Your enquiry to BridgeWork</h2>
+<p data-key="formIntro">Staffing needs, applications, Google Ads or automation: tell us what you need. We will get back to you by email.</p>
+<p class="bw-form-language" data-key="formLanguage">The form is labelled in German and English.</p>
+<p class="hint" data-key="formDetails">Name and company are optional.</p>
+<div class="bw-form-actions">
+<button type="button" data-bw-google-load aria-controls="google-form-container" aria-expanded="false" aria-describedby="google-form-privacy" data-key="loadForm">Load form here</button>
+<a class="bw-form-external" data-bw-google-link href="https://docs.google.com/forms/d/e/1FAIpQLSc8Wa50jVoifV7XeEdseia7otYZ_McdpZreT6_oBMTPX_ODGA/viewform" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" data-key="openForm">Open in Google Forms</a>
+</div>
+<p id="google-form-privacy" class="hint"><span data-key="formPrivacy">Loading the form connects you to Google. Your details are stored in our business Google Workspace account.</span> <a href="/datenschutz.html" data-key="privacyLink">Privacy policy</a>.</p>
+<p class="hint" data-key="formSafety">We will arrange application documents with you separately.</p>
+<p id="google-form-status" class="hint" role="status" aria-live="polite" aria-atomic="true"></p>
+<div id="google-form-container" class="bw-google-form-container" hidden></div>
+</section>
 <p><span data-key="alternative">You can also email us directly:</span> <a href="mailto:kontakt@bridgework-germany.de">kontakt@bridgework-germany.de</a></p>
 <footer><a href="https://bridgework-germany.de/impressum.html" data-key="legal">Legal notice</a><a href="https://bridgework-germany.de/datenschutz.html" data-key="privacyLink">Privacy policy</a></footer>
 </main>
 <script>
-const de={eyebrow:'DIREKTER KONTAKT',heading:'Wobei können wir helfen?',intro:'Beschreiben Sie kurz Ihre Aufgabe und das gewünschte Ergebnis. Eine Telefonnummer ist nicht erforderlich.',directHeading:'Direkt per Mail anfragen',formDelivery:'Bitte nutzen Sie vorerst den direkten Mailkontakt. Die Zustellung über das Formular ist noch nicht bestätigt.',preview:'Lokaler Entwurf: Der Versand bleibt deaktiviert, bis der Versanddienst eingerichtet und getestet ist.',name:'Name (optional)',email:'Ihre Mailadresse',topic:'Worum geht es?',general:'Allgemeine Anfrage',audit:'Google Ads Audit',automation:'Automatisierung',staff:'Personalvermittlung',applicant:'Anfrage zur Bewerbung',message:'Ihre Nachricht',hint:'Bitte beschreiben Sie Ihr Anliegen kurz. Senden Sie keine Passwörter, Gesundheitsdaten oder vertraulichen Dokumente. Anhänge sind nicht erforderlich.',privacy:'Ihre Angaben werden über Form.taxi zur Bearbeitung und Beantwortung Ihrer Anfrage übermittelt. Weitere Informationen:',privacyLink:'Datenschutz',send:'Anfrage senden',alternative:'Sie erreichen uns auch direkt per Mail:',legal:'Impressum'};
+const de={"eyebrow": "DIREKTER KONTAKT", "heading": "Wobei können wir helfen?", "intro": "Beschreiben Sie kurz Ihre Aufgabe und das gewünschte Ergebnis. Eine Telefonnummer ist nicht erforderlich.", "directHeading": "Direkt per Mail anfragen", "contactNote": "Lieber per E-Mail? Unter dieser Adresse erreichen Sie uns auch direkt.", "formHeading": "Ihre Anfrage an BridgeWork", "formIntro": "Personalbedarf, Bewerbung, Google Ads oder Automatisierung: Schildern Sie uns Ihr Anliegen. Wir melden uns per E-Mail bei Ihnen.", "formLanguage": "Das Formular ist auf Deutsch und Englisch beschriftet.", "formDetails": "Name und Firma sind freiwillig.", "formPrivacy": "Beim Laden des Formulars verbinden Sie sich mit Google. Ihre Angaben werden in unserem geschäftlichen Google-Workspace-Konto gespeichert.", "loadForm": "Formular hier laden", "openForm": "In Google Forms öffnen", "formSafety": "Bewerbungsunterlagen stimmen wir separat mit Ihnen ab.", "privacyLink": "Datenschutz", "alternative": "Sie erreichen uns auch direkt per Mail:", "legal": "Impressum"};
 const en=Object.fromEntries([...document.querySelectorAll('[data-key]')].map(el=>[el.dataset.key,el.textContent]));
 let lang=new URLSearchParams(location.search).get('lang')==='de'?'de':'en';
-function render(){document.documentElement.lang=lang;document.getElementById('form-language').value=lang;document.querySelectorAll('a[href*=\"datenschutz.html\"],a[href*=\"impressum.html\"]').forEach(a=>{const u=new URL(a.href);u.searchParams.set('lang',lang);a.href=u.href;});document.title=lang==='de'?'Kontakt | BridgeWork Germany':'Contact | BridgeWork Germany';document.querySelectorAll('[data-key]').forEach(el=>el.textContent=(lang==='de'?de:en)[el.dataset.key]);document.getElementById('language').textContent=lang==='de'?'English':'Deutsch';}
+function render(){document.documentElement.lang=lang;document.querySelectorAll('a[href*=\"datenschutz.html\"],a[href*=\"impressum.html\"]').forEach(a=>{const u=new URL(a.href);u.searchParams.set('lang',lang);a.href=u.href;});document.title=lang==='de'?'Kontakt | BridgeWork Germany':'Contact | BridgeWork Germany';document.querySelectorAll('[data-key]').forEach(el=>el.textContent=(lang==='de'?de:en)[el.dataset.key]);document.getElementById('language').textContent=lang==='de'?'English':'Deutsch';}
 document.getElementById('language').addEventListener('click',()=>{lang=lang==='de'?'en':'de';const u=new URL(location.href);u.searchParams.set('lang',lang);history.replaceState(null,'',u);render();});
-const requestedTopic=new URLSearchParams(location.search).get('topic');
-if([...document.getElementById('topic').options].some(o=>o.value===requestedTopic)) document.getElementById('topic').value=requestedTopic;
 render();
 </script>
+<script src="/assets/bridgework-site.js" defer></script>
+<script src="/assets/bridgework-contact.js" defer></script>
 </html>
