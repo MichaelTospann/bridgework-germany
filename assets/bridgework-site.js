@@ -1,10 +1,10 @@
 'use strict';
 (() => {
-  const langs = ['de', 'en', 'fr', 'pl', 'sq', 'sr', 'ar', 'ru', 'es', 'ja', 'tr'];
+  const langs = ['de', 'en', 'fr', 'pl', 'sq', 'sr', 'ar', 'ru', 'es', 'ja', 'tr', 'id', 'it', 'pt', 'vi', 'zh', 'ne', 'km', 'lo', 'th', 'my', 'ur'];
   const core = ['index.html', 'housekeeping-personal.html', 'bau-handwerk-personal.html', 'logistik-spedition-personal.html', 'pflege-soziales-personal.html', 'bewerber.html'];
   const legacy = ['kontakt.html', 'jobs-housekeeping.html', 'jobs-bau-handwerk.html', 'jobs-logistik.html', 'jobs-pflege.html', 'datenschutz.html', 'impressum.html', 'google-ads-audit.html', 'automatisierung.html'];
-  const names = {de:'Deutsch', en:'English', fr:'Français', pl:'Polski', sq:'Shqip', sr:'Srpski', ar:'العربية', ru:'Русский', es:'Español', ja:'日本語', tr:'Türkçe'};
-  const prompts = {de:'Sprache wählen', en:'Choose language', fr:'Choisir la langue', pl:'Wybierz język', sq:'Zgjidh gjuhën', sr:'Izaberite jezik', ar:'اختر اللغة', ru:'Выбрать язык', es:'Elegir idioma', ja:'言語を選択', tr:'Dil seçin'};
+  const names = {de:'Deutsch', en:'English', fr:'Français', pl:'Polski', sq:'Shqip', sr:'Srpski', ar:'العربية', ru:'Русский', es:'Español', ja:'日本語', tr:'Türkçe', id:'Bahasa Indonesia', it:'Italiano', pt:'Português', vi:'Tiếng Việt', zh:'中文', ne:'नेपाली', km:'ខ្មែរ', lo:'ລາວ', th:'ภาษาไทย', my:'မြန်မာ', ur:'اردو'};
+  const prompts = {de:'Sprache wählen', en:'Choose language', fr:'Choisir la langue', pl:'Wybierz język', sq:'Zgjidh gjuhën', sr:'Izaberite jezik', ar:'اختر اللغة', ru:'Выбрать язык', es:'Elegir idioma', ja:'言語を選択', tr:'Dil seçin', id:'Pilih bahasa', it:'Scegli la lingua', pt:'Escolher idioma', vi:'Chọn ngôn ngữ', zh:'选择语言', ne:'भाषा छान्नुहोस्', km:'ជ្រើសរើសភាសា', lo:'ເລືອກພາສາ', th:'เลือกภาษา', my:'ဘာသာစကားရွေးပါ', ur:'زبان منتخب کریں'};
   const here = new URL(location.href);
   const pieces = here.pathname.split('/').filter(Boolean);
   const currentPrefix = langs.includes(pieces[0]) ? pieces.shift() : 'de';
@@ -74,7 +74,7 @@
   }
   const menus = [...document.querySelectorAll('.lang-menu')];
   const homeLinks = [...document.querySelectorAll('[data-bw-home]')];
-  const homeLabels = {de:'Startseite', en:'Home', fr:'Accueil', pl:'Strona główna', sq:'Faqja kryesore', sr:'Početna stranica', ar:'الصفحة الرئيسية', ru:'Главная', es:'Inicio', ja:'ホーム', tr:'Ana sayfa'};
+  const homeLabels = {de:'Startseite', en:'Home', fr:'Accueil', pl:'Strona główna', sq:'Faqja kryesore', sr:'Početna stranica', ar:'الصفحة الرئيسية', ru:'Главная', es:'Inicio', ja:'ホーム', tr:'Ana sayfa', id:'Beranda', it:'Pagina iniziale', pt:'Início', vi:'Trang chủ', zh:'首页', ne:'गृहपृष्ठ', km:'ទំព័រដើម', lo:'ໜ້າຫຼັກ', th:'หน้าแรก', my:'ပင်မစာမျက်နှာ', ur:'صفحۂ اول'};
   const syncPageLanguage = () => {
     const code = currentLanguage();
     menus.forEach(menu => {

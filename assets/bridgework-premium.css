@@ -690,6 +690,86 @@ body .breadcrumb + section.hero { padding-top: 2.5rem; }
 .section-sub[style] { color: var(--bw-muted) !important; }
 .problem, .roles, .ethical, .requirements, .faq, .legal { background: #0e2d23; }
 .how, .why, .offer, .sectors { background: #102f25; }
+.bw-legacy-jobs .reality { background: #102f25; }
+.bw-legacy-jobs .role { background: #0e2d23; }
+.bw-wage-section { background: #102f25; }
+/* Wage evidence uses the same warm glass and forest ink as the existing cards.
+   Keeping its grid independent also accommodates the older jobs-page wrapper. */
+.bw-wage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.reality-grid > .bw-wage-grid, .reality-grid > .bw-wage-note {
+  grid-column: 1 / -1;
+}
+.reality-grid > .bw-wage-grid { margin-top: 0; }
+.bw-wage-card {
+  --bw-cream: var(--bw-paper-ink);
+  --bw-muted: var(--bw-paper-muted);
+  --bw-mint: var(--bw-paper-ink);
+  --bw-bronze: var(--bw-paper-accent);
+  min-width: 0;
+  padding: clamp(1.35rem, 3vw, 1.8rem);
+  color-scheme: light;
+  background: var(--bw-glass);
+  color: var(--bw-paper-ink);
+  border: 1px solid var(--bw-paper-border);
+  border-top-color: rgba(255, 249, 229, .48);
+  border-radius: var(--bw-radius);
+  box-shadow: var(--bw-shadow);
+  backdrop-filter: blur(12px) saturate(1.05);
+  -webkit-backdrop-filter: blur(12px) saturate(1.05);
+  overflow-wrap: anywhere;
+}
+.bw-wage-card p { margin: 0 0 .8rem; color: var(--bw-paper-muted); line-height: 1.75; }
+.bw-wage-card p:last-child { margin-bottom: 0; }
+.bw-wage-card .bw-wage-kind {
+  color: var(--bw-paper-accent);
+  font-size: .74rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+.bw-wage-card .bw-wage-role {
+  margin: 0 0 .8rem;
+  color: var(--bw-paper-ink);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.bw-wage-card .bw-wage-number {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .35rem .65rem;
+  color: var(--bw-paper-ink);
+  font: 400 clamp(2rem, 4.5vw, 2.6rem)/1.2 var(--bw-serif);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.025em;
+}
+.bw-wage-number bdi { overflow-wrap: normal; }
+.bw-wage-number .bw-wage-unit {
+  font: 400 .88rem/1.6 var(--bw-sans);
+  letter-spacing: normal;
+}
+.bw-wage-card .bw-wage-scope, .bw-wage-card .bw-wage-unavailable { font-size: .92rem; }
+.bw-wage-card .bw-wage-date, .bw-wage-card .bw-wage-source { font-size: .8rem; }
+.bw-wage-card .source-link {
+  color: var(--bw-paper-ink);
+  text-decoration: underline;
+  text-decoration-color: rgba(12, 41, 33, .5);
+  text-underline-offset: .2em;
+}
+.bw-wage-card .source-link:hover { text-decoration-thickness: 2px; }
+.bw-wage-card .source-link:focus-visible { outline-color: var(--bw-paper-ink); }
+.bw-wage-note {
+  max-width: 85ch;
+  margin: 1.5rem 0 0;
+  color: var(--bw-muted);
+  font-size: .88rem;
+  line-height: 1.8;
+}
 .pricing, .process, .contact, .cta-final, .ethics { background: #12382c; }
 .pricing .section-label, .process .section-label, .contact .section-label,
 .sectors .section-label { color: var(--bw-bronze); }
@@ -932,7 +1012,7 @@ footer > a:first-child { font-family: var(--bw-serif); }
   .sector-card, .contact-note, .role-card, .stat-box, .legal-box,
   .tl-item, .faq-item, .offer-point, .visa-box, .visa-note,
   .req-card, .ethics-box, .honesty-box, .highlight-box, .card,
-  .myth-card, .real-card, .scam-warning, .note-box, .panel, .example,
+  .myth-card, .real-card, .scam-warning, .bw-wage-card, .note-box, .panel, .example,
   .direct-contact, .bw-consent, .contact-form, .need-form,
   .employer-form, .brief-form, form#contact,
   .bw-legacy-legal .imprint-section, .bw-legacy-legal .main-inner > .section,
