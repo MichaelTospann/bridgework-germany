@@ -924,6 +924,8 @@ footer > a:first-child { font-family: var(--bw-serif); }
 }
 .bw-legacy-legal .nav-right { min-width: 0; flex-wrap: wrap; gap: .5rem 1rem; }
 
+/* The last main margin exposes the canvas below the legacy body. */
+html.bw-legacy-contact { background: var(--bw-base); }
 .bw-legacy-contact main {
   width: 100%;
   max-width: 760px;
