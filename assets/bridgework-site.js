@@ -165,8 +165,19 @@
     ru:['Необязательная статистика','С вашего согласия мы используем Google Analytics, чтобы понять, как используется этот сайт.','Разрешить статистику','Только необходимые функции','Настройки статистики'],
     es:['Estadísticas opcionales','Con tu consentimiento, utilizamos Google Analytics para comprender cómo se utiliza este sitio.','Permitir estadísticas','Solo funciones necesarias','Preferencias de estadísticas'],
     ja:['任意のアクセス解析','同意いただいた場合に、Google Analytics を使用して、このサイトの利用状況を把握します。','アクセス解析を許可','必要な機能のみ','アクセス解析の設定'],
-    tr:['İsteğe bağlı analiz','Onayınızla, bu web sitesinin nasıl kullanıldığını anlamak için Google Analytics kullanıyoruz.','Analize izin ver','Yalnızca gerekli işlevler','Analiz tercihleri']
-  }[lang] || [];
+    tr:['İsteğe bağlı analiz','Onayınızla, bu web sitesinin nasıl kullanıldığını anlamak için Google Analytics kullanıyoruz.','Analize izin ver','Yalnızca gerekli işlevler','Analiz tercihleri'],
+    id:['Analisis opsional','Dengan persetujuan Anda, kami menggunakan Google Analytics untuk memahami penggunaan situs ini.','Izinkan analisis','Hanya fungsi yang diperlukan','Preferensi analisis'],
+    it:['Statistiche facoltative','Con il tuo consenso usiamo Google Analytics per capire come viene utilizzato questo sito.','Consenti statistiche','Solo funzioni necessarie','Preferenze statistiche'],
+    pt:['Estatísticas opcionais','Com o seu consentimento, usamos o Google Analytics para compreender a utilização deste site.','Permitir estatísticas','Apenas funções necessárias','Preferências de estatísticas'],
+    vi:['Thống kê tùy chọn','Với sự đồng ý của bạn, chúng tôi sử dụng Google Analytics để hiểu cách trang web này được sử dụng.','Cho phép thống kê','Chỉ chức năng cần thiết','Tùy chọn thống kê'],
+    zh:['可选统计','经您同意，我们使用 Google Analytics 了解本网站的使用情况。','允许统计','仅必要功能','统计偏好设置'],
+    ne:['वैकल्पिक तथ्याङ्क','तपाईंको सहमतिमा यो वेबसाइट कसरी प्रयोग हुन्छ बुझ्न हामी Google Analytics प्रयोग गर्छौँ।','तथ्याङ्क अनुमति दिनुहोस्','आवश्यक कार्य मात्र','तथ्याङ्क प्राथमिकता'],
+    km:['ស្ថិតិជាជម្រើស','ដោយមានការយល់ព្រមរបស់អ្នក យើងប្រើ Google Analytics ដើម្បីយល់ពីការប្រើប្រាស់គេហទំព័រនេះ។','អនុញ្ញាតស្ថិតិ','មុខងារចាំបាច់តែប៉ុណ្ណោះ','ការកំណត់ស្ថិតិ'],
+    lo:['ສະຖິຕິທາງເລືອກ','ເມື່ອທ່ານຍິນຍອມ ພວກເຮົາໃຊ້ Google Analytics ເພື່ອເຂົ້າໃຈການໃຊ້ເວັບໄຊນີ້.','ອະນຸຍາດສະຖິຕິ','ສະເພາະຟັງຊັນທີ່ຈຳເປັນ','ການຕັ້ງຄ່າສະຖິຕິ'],
+    th:['สถิติทางเลือก','เมื่อคุณยินยอม เราใช้ Google Analytics เพื่อทำความเข้าใจการใช้งานเว็บไซต์นี้','อนุญาตสถิติ','เฉพาะฟังก์ชันที่จำเป็น','การตั้งค่าสถิติ'],
+    my:['ရွေးချယ်နိုင်သော စာရင်းအင်း','သင်၏ သဘောတူညီချက်ဖြင့် ဤဝက်ဘ်ဆိုက် အသုံးပြုမှုကို နားလည်ရန် Google Analytics ကို အသုံးပြုပါသည်။','စာရင်းအင်းကို ခွင့်ပြုမည်','လိုအပ်သော လုပ်ဆောင်ချက်များသာ','စာရင်းအင်း ဆက်တင်များ'],
+    ur:['اختیاری اعداد و شمار','آپ کی رضامندی سے ہم اس ویب سائٹ کے استعمال کو سمجھنے کے لیے Google Analytics استعمال کرتے ہیں۔','اعداد و شمار کی اجازت دیں','صرف ضروری افعال','اعداد و شمار کی ترجیحات']
+  }[lang];
   // Preserve the two existing digital-service pages' promise of no analytics.
   const production = ['bridgework-germany.de', 'www.bridgework-germany.de'].includes(location.hostname)
     && !['automatisierung.html', 'google-ads-audit.html'].includes(filename);
@@ -235,8 +246,11 @@
     if (!link) return;
     const href=link.getAttribute('href') || '';
     // Only event categories; no names, email addresses, form text or profiles.
-    if (href.startsWith('mailto:')) google('event','contact_email_click',{page_language:lang});
-    else if (/kontakt\.html/.test(href)) google('event','contact_form_open',{page_language:lang});
+    const category = ['candidate','employer','service'].includes(link.dataset.inquiry) ? link.dataset.inquiry : filename.startsWith('jobs-') || filename==='bewerber.html' ? 'candidate' : filename==='leistungen.html' ? 'service' : 'employer';
+    if (href.startsWith('mailto:')) google('event','contact_email_click',{page_language:lang,inquiry_type:category});
+    else if (/kontakt\.html/.test(href)) google('event','contact_form_open',{page_language:lang,inquiry_type:category});
+    else if (/arbeitgeber\.html/.test(href)) google('event','employer_intake_open',{page_language:lang,inquiry_type:'employer'});
+    else if (/script\.google\.com\/macros\/s\//.test(href)) google('event','intake_open',{page_language:lang,inquiry_type:category});
     else if (link.closest('.bw-language-switch')) google('event','language_switch',{target_language:link.hreflang || ''});
   });
 })();
