@@ -577,6 +577,7 @@ nav a:hover, nav a.active, nav a[aria-current="page"] { color: var(--bw-cream); 
 .stat-label { color: var(--bw-muted); font-size: .87rem; font-weight: 400; line-height: 1.6; }
 .stat-card [style*="color:"], .stat-box .source { color: var(--bw-muted) !important; }
 .hero-card { padding: 1.4rem 1.65rem; }
+.hero-card::before { display: none; }
 .hero-card h4, .hero-side h4 { color: var(--bw-cream); font-weight: 600; }
 .hero-card p, .hero-side li { color: var(--bw-muted); font-size: .89rem; font-weight: 400; line-height: 1.75; }
 .hero-card p { margin-bottom: 0; }
