@@ -153,8 +153,7 @@
     });
   });
 
-  const lang = langs.includes(document.documentElement.lang) ? document.documentElement.lang : currentPrefix;
-  const copy = {
+  const consentCopies = {
     de:['Optionale Statistik','Mit Ihrer Einwilligung verwenden wir Google Analytics, um die Nutzung dieser Website zu verstehen.','Statistik erlauben','Nur notwendige Funktionen','Statistik-Einstellungen'],
     en:['Optional analytics','With your consent, we use Google Analytics to understand how this website is used.','Allow analytics','Essential functions only','Analytics preferences'],
     fr:['Statistiques facultatives','Avec votre consentement, nous utilisons Google Analytics pour comprendre l’utilisation de ce site.','Autoriser les statistiques','Fonctions nécessaires uniquement','Préférences statistiques'],
@@ -177,16 +176,26 @@
     th:['สถิติทางเลือก','เมื่อคุณยินยอม เราใช้ Google Analytics เพื่อทำความเข้าใจการใช้งานเว็บไซต์นี้','อนุญาตสถิติ','เฉพาะฟังก์ชันที่จำเป็น','การตั้งค่าสถิติ'],
     my:['ရွေးချယ်နိုင်သော စာရင်းအင်း','သင်၏ သဘောတူညီချက်ဖြင့် ဤဝက်ဘ်ဆိုက် အသုံးပြုမှုကို နားလည်ရန် Google Analytics ကို အသုံးပြုပါသည်။','စာရင်းအင်းကို ခွင့်ပြုမည်','လိုအပ်သော လုပ်ဆောင်ချက်များသာ','စာရင်းအင်း ဆက်တင်များ'],
     ur:['اختیاری اعداد و شمار','آپ کی رضامندی سے ہم اس ویب سائٹ کے استعمال کو سمجھنے کے لیے Google Analytics استعمال کرتے ہیں۔','اعداد و شمار کی اجازت دیں','صرف ضروری افعال','اعداد و شمار کی ترجیحات']
-  }[lang];
+  };
   // Preserve the two existing digital-service pages' promise of no analytics.
-  const production = ['bridgework-germany.de', 'www.bridgework-germany.de'].includes(location.hostname)
+  const production = ['https://bridgework-germany.de', 'https://www.bridgework-germany.de'].includes(location.origin)
     && !['automatisierung.html', 'google-ads-audit.html'].includes(filename);
   const consentKey = 'bw_analytics_consent';
   const safeRead = () => { try { return localStorage.getItem(consentKey); } catch { return null; } };
   const safeWrite = value => { try { localStorage.setItem(consentKey, value); } catch { /* Work for this page without storage. */ } };
   let accepted = safeRead() === 'accepted';
   let started = false;
-  let banner;
+  let banner, preferences;
+  const syncConsentLanguage = () => {
+    const copy = consentCopies[currentLanguage()];
+    if (banner) {
+      banner.setAttribute('aria-label', copy[0]);
+      banner.querySelector('h2').textContent = copy[0];
+      banner.querySelector('p').textContent = copy[1];
+      banner.querySelectorAll('button').forEach((button, index) => { button.textContent = copy[index + 2]; });
+    }
+    if (preferences) preferences.textContent = copy[4];
+  };
   function google() {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(arguments);
@@ -194,10 +203,13 @@
   const startAnalytics = () => {
     if (!production || !accepted || started) return;
     started = true;
+    window['ga-disable-G-MRHHB7GQGB'] = false;
     google('consent', 'default', {analytics_storage:'denied', ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'});
     google('consent', 'update', {analytics_storage:'granted'});
     google('js', new Date());
-    const referrer = (() => { try { const ref = new URL(document.referrer); return ref.origin + ref.pathname; } catch { return ''; } })();
+    // External path segments can contain personal identifiers too. Retain
+    // only a web origin, never credentials, paths, queries or fragments.
+    const referrer = (() => { try { const ref = new URL(document.referrer); return ['https:', 'http:'].includes(ref.protocol) ? ref.origin : ''; } catch { return ''; } })();
     google('config', 'G-MRHHB7GQGB', {page_location:location.origin + location.pathname, page_referrer:referrer, allow_google_signals:false, allow_ad_personalization_signals:false});
     const tag = document.createElement('script');
     tag.async = true;
@@ -211,6 +223,9 @@
     if (banner) banner.hidden = true;
     if (accepted) startAnalytics();
     else if (started) {
+      // Stop collection immediately, including a Google script still loading.
+      // The subsequent reload also removes the loaded tag and its listeners.
+      window['ga-disable-G-MRHHB7GQGB'] = true;
       google('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
       // Expire first-party GA identifiers after withdrawing analytics consent.
       document.cookie.split(';').forEach(entry => {
@@ -224,7 +239,8 @@
     }
   };
   const showPreferences = () => {
-    if (banner) { banner.hidden=false; banner.querySelector('button')?.focus(); return; }
+    if (banner) { syncConsentLanguage(); banner.hidden=false; banner.querySelector('button')?.focus(); return; }
+    const copy = consentCopies[currentLanguage()];
     banner=el('aside',null,'bw-consent');
     banner.setAttribute('aria-label',copy[0]);
     banner.append(el('h2',copy[0]),el('p',copy[1]));
@@ -237,14 +253,16 @@
   if (production) {
     if (accepted) startAnalytics();
     else if (!safeRead()) showPreferences();
-    const preferences=el('button',copy[4],'bw-consent-preferences');preferences.type='button';preferences.addEventListener('click',showPreferences);
+    preferences=el('button',consentCopies[currentLanguage()][4],'bw-consent-preferences');preferences.type='button';preferences.addEventListener('click',showPreferences);
     (document.querySelector('footer') || document.body).append(preferences);
+    new MutationObserver(syncConsentLanguage).observe(document.documentElement, {attributes:true, attributeFilter:['lang']});
   }
   document.addEventListener('click', event => {
     if (!production || !accepted || !started) return;
     const link=event.target.closest('a');
     if (!link) return;
     const href=link.getAttribute('href') || '';
+    const lang=currentLanguage();
     // Only event categories; no names, email addresses, form text or profiles.
     const category = ['candidate','employer','service'].includes(link.dataset.inquiry) ? link.dataset.inquiry : filename.startsWith('jobs-') || filename==='bewerber.html' ? 'candidate' : filename==='leistungen.html' ? 'service' : 'employer';
     if (href.startsWith('mailto:')) google('event','contact_email_click',{page_language:lang,inquiry_type:category});
